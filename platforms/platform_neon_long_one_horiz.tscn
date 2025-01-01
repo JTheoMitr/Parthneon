@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://psn84okx7fmt"]
+
+[ext_resource type="Script" path="res://platforms/platform_neon_long_one_horiz.gd" id="1_5qrn1"]
+[ext_resource type="Texture2D" uid="uid://dqw7rrq7qa4rk" path="res://platforms/neon_blue_basic.png" id="2_wrp0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxwi1"]
+size = Vector2(1792, 6)
+
+[node name="PlatformNeonLongOneHoriz" type="AnimatableBody2D"]
+collision_layer = 7
+script = ExtResource("1_5qrn1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(7, 1)
+texture = ExtResource("2_wrp0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_gxwi1")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_gxwi1")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 45.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

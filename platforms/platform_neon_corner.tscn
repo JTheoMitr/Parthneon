@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://lpyk55nh35n8"]
+
+[ext_resource type="Script" path="res://platforms/platform_neon_corner.gd" id="1_1w4pl"]
+[ext_resource type="Texture2D" uid="uid://dnml8gnvg0c2i" path="res://platforms/neon_pink_corner_xl.png" id="2_bsvuk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxwi1"]
+size = Vector2(190.5, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6rof"]
+size = Vector2(122, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmor5"]
+size = Vector2(314, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agca3"]
+size = Vector2(156, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_un2c0"]
+size = Vector2(252, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb5jg"]
+size = Vector2(72, 16)
+
+[node name="PlatformNeonLongOneHoriz" type="AnimatableBody2D"]
+scale = Vector2(0.25, 0.25)
+collision_layer = 7
+script = ExtResource("1_1w4pl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bsvuk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-159.25, -55.75)
+shape = SubResource("RectangleShape2D_gxwi1")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -243)
+shape = SubResource("RectangleShape2D_e6rof")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-97, 48)
+shape = SubResource("RectangleShape2D_vmor5")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(-52, -150)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_agca3")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(52, -96)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_un2c0")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(-244, -4)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_rb5jg")
+one_way_collision = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

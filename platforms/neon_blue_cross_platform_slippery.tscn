@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://beild3peqepfp"]
+
+[ext_resource type="Script" path="res://platforms/neon_blue_cross_platform.gd" id="1_x10sc"]
+[ext_resource type="Texture2D" uid="uid://kvjuxfy3wp1b" path="res://platforms/neon_blue_cross_basic_xl.png" id="2_lm5lv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq41c"]
+size = Vector2(51, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n0i7y"]
+size = Vector2(13, 51)
+
+[node name="NeonBlueCrossPlatformSlippery" type="StaticBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 7
+script = ExtResource("1_x10sc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_lm5lv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.25)
+shape = SubResource("RectangleShape2D_cq41c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n0i7y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3g22ls7gjrvy"
+path="res://.godot/imported/WASMSFX_70_SFX-Cyber Punch.wav-90f4b8c8212bce69627e61c440950e9d.sample"
+
+[deps]
+
+source_file="res://audio/WASMSFX_70_SFX-Cyber Punch.wav"
+dest_files=["res://.godot/imported/WASMSFX_70_SFX-Cyber Punch.wav-90f4b8c8212bce69627e61c440950e9d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

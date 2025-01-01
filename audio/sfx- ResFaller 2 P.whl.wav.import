@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4wdq5go4sjkh"
+path="res://.godot/imported/sfx- ResFaller 2 P.whl.wav-912ad8a735e08f88f516a8dceba2cb43.sample"
+
+[deps]
+
+source_file="res://audio/sfx- ResFaller 2 P.whl.wav"
+dest_files=["res://.godot/imported/sfx- ResFaller 2 P.whl.wav-912ad8a735e08f88f516a8dceba2cb43.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
