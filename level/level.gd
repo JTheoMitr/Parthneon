@@ -119,9 +119,9 @@ func _process(_delta: float) -> void:
 		if (stats.score >= 10 && stats.score <= 99):
 			scoreDisplay.global_position.x -= 2.67
 		if (stats.score >= 100 && stats.score <= 999):
-			scoreDisplay.global_position.x -= 2.3
+			scoreDisplay.global_position.x -= 2.38
 		if stats.score >= 1000:
-			scoreDisplay.global_position.x -= 2
+			scoreDisplay.global_position.x -= 2.15
 		scoreDisplay.global_position.y += .87
 		scoreDisplay.scale.x += .00078
 		scoreDisplay.scale.y += .00078

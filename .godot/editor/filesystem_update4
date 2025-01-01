@@ -19,3 +19,10 @@ res://platforms/platform_neon_long_one_horiz.tscn
 res://platforms/neon_blue_cross_platform_slippery.tscn
 res://platforms/platform_neon_short_one_horiz.gd
 res://player/player.gd
+res://platforms/platform_neon_corner.gd
+res://platforms/platform_vertical_one_bt.tscn
+res://platforms/platform_vertical_two_tb.tscn
+res://platforms/neon_prison.tscn
+res://platforms/neon_blue_cross_platform.gd
+res://platforms/platform_vertical_one_bt.gd
+res://platforms/platform_vertical_two_tb.gd

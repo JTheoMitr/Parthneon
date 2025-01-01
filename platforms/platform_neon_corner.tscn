@@ -21,7 +21,7 @@ size = Vector2(252, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rb5jg"]
 size = Vector2(72, 16)
 
-[node name="PlatformNeonLongOneHoriz" type="AnimatableBody2D"]
+[node name="PlatformNeonCorner" type="AnimatableBody2D"]
 scale = Vector2(0.25, 0.25)
 collision_layer = 7
 script = ExtResource("1_1w4pl")

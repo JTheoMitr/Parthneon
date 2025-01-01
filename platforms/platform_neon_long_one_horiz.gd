@@ -1,17 +1,19 @@
 extends AnimatableBody2D
 
-@export var speed = 2.5
-@export var lift = 0
+@export var speed = 2.0
+@export var lift = 0.0
+var real_pos : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	real_pos = position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	self.global_position.x -= speed
+	real_pos.x -= speed
 	#self.global_position.y += lift
+	position = real_pos.round()
 
 
 func _on_timer_timeout() -> void:
