@@ -1,0 +1,159 @@
+[gd_scene load_steps=3 format=3 uid="uid://b233ag6p22gpw"]
+
+[ext_resource type="Texture2D" uid="uid://b2i8eex4n6sh8" path="res://enemies/smiley_drone_template.png" id="1_etnhr"]
+[ext_resource type="PackedScene" uid="uid://dp2nc828ubgtu" path="res://enemies/boss_drone_1.tscn" id="2_ir5bo"]
+
+[node name="SmileyDroneBoss" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1000, 450)
+scale = Vector2(7, 7)
+texture = ExtResource("1_etnhr")
+
+[node name="BossDrone1" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1046, 267)
+
+[node name="BossDrone2" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1077, 276)
+
+[node name="BossDrone3" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1108, 290)
+
+[node name="BossDrone4" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1135, 309)
+
+[node name="BossDrone5" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1159, 332)
+
+[node name="BossDrone6" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1179, 361)
+
+[node name="BossDrone48" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(901, 373)
+
+[node name="BossDrone49" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1091, 373)
+
+[node name="BossDrone7" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1193, 396)
+
+[node name="BossDrone8" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1204, 426)
+
+[node name="BossDrone9" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1207, 458)
+
+[node name="BossDrone10" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1206, 494)
+
+[node name="BossDrone11" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1198, 525)
+
+[node name="BossDrone12" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1179, 559)
+
+[node name="BossDrone13" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1158, 590)
+
+[node name="BossDrone14" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1128, 614)
+
+[node name="BossDrone15" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1100, 636)
+
+[node name="BossDrone16" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1068, 652)
+
+[node name="BossDrone17" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1035, 660)
+
+[node name="BossDrone18" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(999, 662)
+
+[node name="BossDrone19" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(961, 658)
+
+[node name="BossDrone20" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(929, 649)
+
+[node name="BossDrone21" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(898, 634)
+
+[node name="BossDrone22" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(870, 614)
+
+[node name="BossDrone23" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(841, 589)
+
+[node name="BossDrone24" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(820, 559)
+
+[node name="BossDrone25" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(802, 529)
+
+[node name="BossDrone26" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(793, 492)
+
+[node name="BossDrone27" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(792, 457)
+
+[node name="BossDrone28" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(795, 422)
+
+[node name="BossDrone29" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(807, 387)
+
+[node name="BossDrone30" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(825, 356)
+
+[node name="BossDrone31" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(848, 331)
+
+[node name="BossDrone32" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(875, 304)
+
+[node name="BossDrone33" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(908, 286)
+
+[node name="BossDrone34" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(942, 273)
+
+[node name="BossDrone35" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(977, 264)
+
+[node name="BossDrone36" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1011, 264)
+
+[node name="BossDrone37" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(864, 534)
+
+[node name="BossDrone38" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(886, 561)
+
+[node name="BossDrone39" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(911, 583)
+
+[node name="BossDrone40" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(942, 598)
+
+[node name="BossDrone41" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(975, 606)
+
+[node name="BossDrone42" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1010, 607)
+
+[node name="BossDrone43" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1042, 604)
+
+[node name="BossDrone44" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1074, 595)
+
+[node name="BossDrone45" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1102, 576)
+
+[node name="BossDrone46" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1125, 553)
+
+[node name="BossDrone47" parent="." instance=ExtResource("2_ir5bo")]
+position = Vector2(1144, 528)

@@ -1,24 +1,24 @@
-[gd_scene load_steps=27 format=3 uid="uid://cyn86eiscsgr8"]
+[gd_scene load_steps=27 format=3 uid="uid://dp2nc828ubgtu"]
 
-[ext_resource type="Script" path="res://platforms/neon_bot_enemy_2.gd" id="1_thohs"]
-[ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="2_lcbpt"]
-[ext_resource type="Texture2D" uid="uid://c73hqyhju3mk0" path="res://enemies/Robot1-all-sprites.png" id="3_f6kj7"]
-[ext_resource type="AudioStream" uid="uid://dkkc6n5od4tfa" path="res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav" id="4_pxk5t"]
+[ext_resource type="Script" path="res://enemies/boss_drone_1.gd" id="1_uuju8"]
+[ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="2_mkk56"]
+[ext_resource type="Texture2D" uid="uid://c73hqyhju3mk0" path="res://enemies/Robot1-all-sprites.png" id="3_lrvtl"]
+[ext_resource type="AudioStream" uid="uid://dkkc6n5od4tfa" path="res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav" id="4_sucl3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfmft"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(0, 768, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_juqs7"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(64, 768, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7swuv"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(0, 832, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyq44"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(64, 832, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gdsxc"]
@@ -42,23 +42,23 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j3i6"]
-atlas = ExtResource("3_f6kj7")
+atlas = ExtResource("3_lrvtl")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ycaoo"]
-atlas = ExtResource("3_f6kj7")
+atlas = ExtResource("3_lrvtl")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pex0r"]
-atlas = ExtResource("3_f6kj7")
+atlas = ExtResource("3_lrvtl")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20j7d"]
-atlas = ExtResource("3_f6kj7")
+atlas = ExtResource("3_lrvtl")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ik4rt"]
-atlas = ExtResource("3_f6kj7")
+atlas = ExtResource("3_lrvtl")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_42gou"]
@@ -88,39 +88,39 @@ animations = [{
 radius = 13.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sn1u"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(0, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rr3w"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(64, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_407vi"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(128, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sm3yl"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(192, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qeco"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(256, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_504hf"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(320, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yyg77"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(384, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33n08"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(448, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfjqo"]
-atlas = ExtResource("2_lcbpt")
+atlas = ExtResource("2_mkk56")
 region = Rect2(512, 448, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oidvu"]
@@ -158,10 +158,10 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="NeonBotEnemy2" type="Area2D"]
-collision_layer = 16
-collision_mask = 16
-script = ExtResource("1_thohs")
+[node name="BossDrone1" type="Area2D"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_uuju8")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 25.0
@@ -186,7 +186,7 @@ scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_oidvu")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_pxk5t")
+stream = ExtResource("4_sucl3")
 volume_db = -5.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

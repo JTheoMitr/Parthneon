@@ -39,8 +39,8 @@ var bcross1 = preload("res://platforms/neon_blue_cross_platform_slippery.tscn")
 var nrg1 = preload("res://items/energy_points_1.tscn")
 var nrg2 = preload("res://items/energy_points_2.tscn")
 var corner1 = preload("res://platforms/platform_neon_corner.tscn")
-var enemy1 = preload("res://platforms/neon_bot_enemy1.tscn")
-var enemy2 = preload("res://platforms/neon_bot_enemy2.tscn")
+var enemy1 = preload("res://enemies/neon_bot_enemy1.tscn")
+var enemy2 = preload("res://enemies/neon_bot_enemy2.tscn")
 var blueT1 = preload("res://platforms/platform_neon_T_blue.tscn")
 
 var timerStart
