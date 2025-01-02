@@ -16,7 +16,10 @@ func _process(_delta: float) -> void:
 		real_pos.x -= speed
 		
 	else:
-		real_pos.x += speed
+		if global_position.x >= 725.0:
+			real_pos.x += speed
+		if global_position.x < 725.0:
+			real_pos.x -= speed
 	#self.global_position.y += lift
 	position = real_pos.round()
 

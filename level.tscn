@@ -680,7 +680,7 @@ autostart = true
 wait_time = 3.5
 
 [node name="BossTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 10.0
 autostart = true
 
 [node name="LowPlatformTimer" type="Timer" parent="."]

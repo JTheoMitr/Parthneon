@@ -169,3 +169,19 @@ position = Vector2(144, 69)
 visible = false
 position = Vector2(-1, 5)
 shape = SubResource("CircleShape2D_oxjl5")
+
+[node name="FrownTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="FrownFreezeTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="DisperseTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="FrownTimer" to="." method="_on_frown_timer_timeout"]
+[connection signal="timeout" from="FrownFreezeTimer" to="." method="_on_frown_freeze_timer_timeout"]
+[connection signal="timeout" from="DisperseTimer" to="." method="_on_disperse_timer_timeout"]

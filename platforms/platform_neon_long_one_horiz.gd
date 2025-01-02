@@ -12,10 +12,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if stats.bossPhase == false:
-		real_pos.x -= speed
-	else:
-		real_pos.x += speed
+	
+	real_pos.x -= speed
+
 	#self.global_position.y += lift
 	position = real_pos.round()
 

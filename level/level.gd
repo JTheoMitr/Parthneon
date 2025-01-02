@@ -60,6 +60,7 @@ var scoreFontSize
 
 
 func _ready():
+	stats.bossPhase = false
 	timerStart = 0
 	timerStart2 = 0
 	timeScroll = false

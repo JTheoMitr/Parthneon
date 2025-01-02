@@ -32,7 +32,6 @@ texture = ExtResource("2_6i1y2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0714187, 27.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gxwi1")
 one_way_collision = true
 
@@ -43,26 +42,22 @@ autostart = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(-0.142854, -146.679)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_403fd")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(-88.5714, -33.5714)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nflyn")
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(88.9286, -33.9286)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nflyn")
 one_way_collision = true
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
 position = Vector2(-31.4286, -90)
 rotation = -1.5708
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dqx00")
 one_way_collision = true
 
@@ -83,7 +78,6 @@ one_way_collision = true
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
 position = Vector2(146.429, -3.57143)
 rotation = -1.5708
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0dsqn")
 one_way_collision = true
 

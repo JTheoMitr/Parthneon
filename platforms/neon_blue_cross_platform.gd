@@ -12,7 +12,10 @@ func _process(_delta: float) -> void:
 	if stats.bossPhase == false:
 		self.global_position.x -= speed
 	else:
-		self.global_position.x += speed
+		if global_position.x >= 725.0:
+			self.global_position.x += speed
+		if global_position.x < 725.0:
+			self.global_position.x -= speed
 	self.rotation += .03
 	
 	
