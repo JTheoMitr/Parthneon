@@ -1,13 +1,13 @@
-Sprite2D
-Timer
 CollisionShape2D
+Area2D
+Timer
+Sprite2D
 Panel
 Button
 TextureButton
 HBoxContainer
 AudioStreamPlayer
 AnimatedSprite2D
-Area2D
 VBoxContainer
 RichTextLabel
 StaticBody2D

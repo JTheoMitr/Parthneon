@@ -683,6 +683,13 @@ autostart = true
 [node name="Timer3" type="Timer" parent="."]
 wait_time = 3.5
 
+[node name="BossTimer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="LowPlatformTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]
 [connection signal="timeout" from="GameTimer1" to="." method="_on_game_timer_1_timeout"]
@@ -698,3 +705,5 @@ wait_time = 3.5
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="BossTimer" to="." method="_on_boss_timer_timeout"]
+[connection signal="timeout" from="LowPlatformTimer" to="." method="_on_low_platform_timer_timeout"]

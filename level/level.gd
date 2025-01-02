@@ -29,10 +29,16 @@ extends Node2D
 @onready var nightSky = $NightSky
 @onready var nightSky2 = $NightSky2
 @onready var xDisplay = $XDisplay
+@onready var timer = $Timer
+@onready var timer2 = $Timer2
+@onready var timer3 = $Timer3
+@onready var lowPlatTimer = $LowPlatformTimer
 
 
 var rng = RandomNumberGenerator.new()
 var breathing
+
+#platforms and basic enemies
 var long1 = preload("res://platforms/platform_neon_long_one_horiz.tscn")
 var short1 = preload("res://platforms/platform_neon_short_one_horiz.tscn")
 var bcross1 = preload("res://platforms/neon_blue_cross_platform_slippery.tscn")
@@ -42,6 +48,10 @@ var corner1 = preload("res://platforms/platform_neon_corner.tscn")
 var enemy1 = preload("res://enemies/neon_bot_enemy1.tscn")
 var enemy2 = preload("res://enemies/neon_bot_enemy2.tscn")
 var blueT1 = preload("res://platforms/platform_neon_T_blue.tscn")
+
+#bosses
+var smiley1 = preload("res://enemies/smiley_drone_boss.tscn")
+
 
 var timerStart
 var timerStart2
@@ -108,6 +118,8 @@ func _process(_delta: float) -> void:
 		player.global_position.x = 729
 	if player.global_position.x >= 730:
 		player.global_position.x = 229
+		
+	
 	
 	if timeScroll:
 		xDisplay.global_position.y -= 1.7
@@ -154,6 +166,7 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
+	print_debug("timer1up")
 	#use various timers to instance different platform types with various speeds and starting positions
 	#longNeon1
 	var my_random_number_x = rng.randf_range(1550.0, 5000.0)
@@ -316,6 +329,7 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_timer_2_timeout() -> void:
+	print_debug("timer2up")
 	# disperse some additional platforms and enemies here
 	#blueCross1
 	var my_random_number_x2 = rng.randf_range(950.0, 3500.0)
@@ -359,6 +373,7 @@ func _on_timer_2_timeout() -> void:
 
 
 func _on_timer_3_timeout() -> void:
+	print_debug("timer3up")
 	var my_random_number_x = rng.randf_range(950.0, 1350.0)
 	var my_random_number_y = rng.randf_range(-65.0, 65.0)
 	
@@ -366,3 +381,32 @@ func _on_timer_3_timeout() -> void:
 	shortNeon.global_position.x = my_random_number_x
 	shortNeon.global_position.y = my_random_number_y
 	add_child(shortNeon)
+
+
+func _on_boss_timer_timeout() -> void:
+	var my_random_number_x = rng.randf_range(1000.0, 1001.0)
+	var my_random_number_y = rng.randf_range(-85.0, -85.0)
+	
+	var smileyOne = smiley1.instantiate()
+	smileyOne.global_position.x = my_random_number_x
+	smileyOne.global_position.y = my_random_number_y
+	add_child(smileyOne)
+	
+	timer.stop()
+	timer2.stop()
+	timer3.stop()
+	lowPlatTimer.start(0.0)
+	print_debug("bosstimerd")
+	
+	
+
+
+func _on_low_platform_timer_timeout() -> void:
+	var my_random_number_x = rng.randf_range(850.0, 850.0)
+	var my_random_number_y = rng.randf_range(70.0, 70.0)
+	
+	var longNeon1 = long1.instantiate()
+	longNeon1.global_position.x = my_random_number_x
+	longNeon1.global_position.y = my_random_number_y
+	add_child(longNeon1)
+	print_debug("lowplatd")

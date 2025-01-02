@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b233ag6p22gpw"]
+[gd_scene load_steps=5 format=3 uid="uid://b233ag6p22gpw"]
 
+[ext_resource type="Script" path="res://enemies/smiley_drone_boss.gd" id="1_17lut"]
 [ext_resource type="Texture2D" uid="uid://b2i8eex4n6sh8" path="res://enemies/smiley_drone_template.png" id="1_etnhr"]
 [ext_resource type="PackedScene" uid="uid://dp2nc828ubgtu" path="res://enemies/boss_drone_1.tscn" id="2_ir5bo"]
 
-[node name="SmileyDroneBoss" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_oxjl5"]
+radius = 217.0
+
+[node name="SmileyDroneBoss" type="Area2D"]
+position = Vector2(-2, -4)
+scale = Vector2(0.45, 0.45)
+script = ExtResource("1_17lut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -12,148 +19,153 @@ scale = Vector2(7, 7)
 texture = ExtResource("1_etnhr")
 
 [node name="BossDrone1" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1046, 267)
+position = Vector2(46, -192)
 
 [node name="BossDrone2" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1077, 276)
+position = Vector2(77, -183)
 
 [node name="BossDrone3" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1108, 290)
+position = Vector2(108, -169)
 
 [node name="BossDrone4" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1135, 309)
+position = Vector2(135, -150)
 
 [node name="BossDrone5" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1159, 332)
+position = Vector2(159, -127)
 
 [node name="BossDrone6" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1179, 361)
+position = Vector2(179, -98)
 
 [node name="BossDrone48" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(901, 373)
+position = Vector2(-99, -86)
 
 [node name="BossDrone49" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1091, 373)
+position = Vector2(91, -86)
 
 [node name="BossDrone7" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1193, 396)
+position = Vector2(193, -63)
 
 [node name="BossDrone8" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1204, 426)
+position = Vector2(204, -33)
 
 [node name="BossDrone9" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1207, 458)
+position = Vector2(207, -1)
 
 [node name="BossDrone10" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1206, 494)
+position = Vector2(206, 35)
 
 [node name="BossDrone11" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1198, 525)
+position = Vector2(198, 66)
 
 [node name="BossDrone12" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1179, 559)
+position = Vector2(179, 100)
 
 [node name="BossDrone13" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1158, 590)
+position = Vector2(158, 131)
 
 [node name="BossDrone14" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1128, 614)
+position = Vector2(128, 155)
 
 [node name="BossDrone15" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1100, 636)
+position = Vector2(100, 177)
 
 [node name="BossDrone16" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1068, 652)
+position = Vector2(68, 193)
 
 [node name="BossDrone17" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1035, 660)
+position = Vector2(35, 201)
 
 [node name="BossDrone18" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(999, 662)
+position = Vector2(-1, 203)
 
 [node name="BossDrone19" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(961, 658)
+position = Vector2(-39, 199)
 
 [node name="BossDrone20" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(929, 649)
+position = Vector2(-71, 190)
 
 [node name="BossDrone21" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(898, 634)
+position = Vector2(-102, 175)
 
 [node name="BossDrone22" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(870, 614)
+position = Vector2(-130, 155)
 
 [node name="BossDrone23" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(841, 589)
+position = Vector2(-159, 130)
 
 [node name="BossDrone24" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(820, 559)
+position = Vector2(-180, 100)
 
 [node name="BossDrone25" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(802, 529)
+position = Vector2(-198, 70)
 
 [node name="BossDrone26" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(793, 492)
+position = Vector2(-207, 33)
 
 [node name="BossDrone27" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(792, 457)
+position = Vector2(-208, -2)
 
 [node name="BossDrone28" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(795, 422)
+position = Vector2(-205, -37)
 
 [node name="BossDrone29" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(807, 387)
+position = Vector2(-193, -72)
 
 [node name="BossDrone30" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(825, 356)
+position = Vector2(-175, -103)
 
 [node name="BossDrone31" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(848, 331)
+position = Vector2(-152, -128)
 
 [node name="BossDrone32" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(875, 304)
+position = Vector2(-125, -155)
 
 [node name="BossDrone33" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(908, 286)
+position = Vector2(-92, -173)
 
 [node name="BossDrone34" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(942, 273)
+position = Vector2(-58, -186)
 
 [node name="BossDrone35" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(977, 264)
+position = Vector2(-23, -195)
 
 [node name="BossDrone36" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1011, 264)
+position = Vector2(11, -195)
 
 [node name="BossDrone37" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(864, 534)
+position = Vector2(-136, 75)
 
 [node name="BossDrone38" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(886, 561)
+position = Vector2(-114, 102)
 
 [node name="BossDrone39" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(911, 583)
+position = Vector2(-89, 124)
 
 [node name="BossDrone40" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(942, 598)
+position = Vector2(-58, 139)
 
 [node name="BossDrone41" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(975, 606)
+position = Vector2(-25, 147)
 
 [node name="BossDrone42" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1010, 607)
+position = Vector2(10, 148)
 
 [node name="BossDrone43" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1042, 604)
+position = Vector2(42, 145)
 
 [node name="BossDrone44" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1074, 595)
+position = Vector2(74, 136)
 
 [node name="BossDrone45" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1102, 576)
+position = Vector2(102, 117)
 
 [node name="BossDrone46" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1125, 553)
+position = Vector2(125, 94)
 
 [node name="BossDrone47" parent="." instance=ExtResource("2_ir5bo")]
-position = Vector2(1144, 528)
+position = Vector2(144, 69)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 5)
+shape = SubResource("CircleShape2D_oxjl5")

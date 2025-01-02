@@ -29,3 +29,4 @@ res://platforms/platform_vertical_two_tb.gd
 res://enemies/smiley_drone_boss.tscn
 res://enemies/boss_drone_1.tscn
 res://enemies/boss_drone_1.gd
+res://enemies/smiley_drone_boss.gd
