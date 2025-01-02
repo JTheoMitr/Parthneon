@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 @export var speed = 2.0
-
+var stats = PlayerStats
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,7 +9,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	self.global_position.x -= speed
+	if stats.bossPhase == false:
+		self.global_position.x -= speed
+	else:
+		self.global_position.x += speed
 	self.rotation += .03
 	
 	

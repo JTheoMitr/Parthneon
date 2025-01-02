@@ -30,3 +30,5 @@ res://enemies/smiley_drone_boss.tscn
 res://enemies/boss_drone_1.tscn
 res://enemies/boss_drone_1.gd
 res://enemies/smiley_drone_boss.gd
+res://player_stats.gd
+res://enemies/neon_bot_enemy2.tscn

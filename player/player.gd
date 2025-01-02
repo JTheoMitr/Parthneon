@@ -173,7 +173,9 @@ func _on_sprinkle_animation_finished() -> void:
 	stats.alive = false
 	sprinkle.hide()
 	area2d.monitorable = false
+	area2d.monitoring = false
 	hurtbox.monitorable = false
+	hurtbox.monitoring = false
 	
 	
 	#queue free(?) the player and show the death alert, which displays the score, and gives the player to quit or retry. at this point, if the player is connected, the score should be sent up to the high score list and saved

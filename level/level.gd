@@ -384,6 +384,7 @@ func _on_timer_3_timeout() -> void:
 
 
 func _on_boss_timer_timeout() -> void:
+	#right now this creates a smiley every time, will be replaced with an array of bosses to iterate through
 	var my_random_number_x = rng.randf_range(1000.0, 1001.0)
 	var my_random_number_y = rng.randf_range(-85.0, -85.0)
 	
@@ -391,10 +392,16 @@ func _on_boss_timer_timeout() -> void:
 	smileyOne.global_position.x = my_random_number_x
 	smileyOne.global_position.y = my_random_number_y
 	add_child(smileyOne)
+	#boss should have a separate layer for damage (7) vs basic enemies (5 and 6). hurtbox should register
 	
+	
+	#change direction of all platforms that are not the most basic design to clear screen for boss. will need to revert to false once boss phase is complete.
+	stats.bossPhase = true
+	#stop creating new platforms and enemies for boss phase, will need to start these up again after boss phase is over
 	timer.stop()
 	timer2.stop()
 	timer3.stop()
+	#creating a run of low plats to use during fight, will need to stop this timer at the end of the fight, as well
 	lowPlatTimer.start(0.0)
 	print_debug("bosstimerd")
 	
