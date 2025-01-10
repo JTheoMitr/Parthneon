@@ -33,6 +33,14 @@ extends Node2D
 @onready var timer2 = $Timer2
 @onready var timer3 = $Timer3
 @onready var lowPlatTimer = $LowPlatformTimer
+@onready var bossPrepTimer = $BossPrepTimer
+@onready var bossCompletedTimer = $BossCompletedTimer
+@onready var bossTimer = $BossTimer
+@onready var floorsplosion = $Floorsplosion1
+@onready var floorsplosionTimer = $FloorsplosionTimer
+@onready var flspr1 = $FLSPSound1
+@onready var flspr2 = $FLSPSound2
+@onready var pauseMenu = $PauseMenu
 
 
 var rng = RandomNumberGenerator.new()
@@ -48,9 +56,11 @@ var corner1 = preload("res://platforms/platform_neon_corner.tscn")
 var enemy1 = preload("res://enemies/neon_bot_enemy1.tscn")
 var enemy2 = preload("res://enemies/neon_bot_enemy2.tscn")
 var blueT1 = preload("res://platforms/platform_neon_T_blue.tscn")
+var longAndLow1 = preload("res://platforms/platform_neon_longandlow_one_horiz.tscn")
 
 #bosses
 var smiley1 = preload("res://enemies/smiley_drone_boss.tscn")
+var boot1 = preload("res://enemies/boot_drone_boss.tscn")
 
 
 var timerStart
@@ -58,20 +68,32 @@ var timerStart2
 var timeScroll
 var scoreFontSize
 
+var bosses
+var bossCount
+
+var paused
 
 func _ready():
+	
+	bossCount = 0
+	bosses = [smiley1, boot1]
 	stats.bossPhase = false
+	
 	timerStart = 0
 	timerStart2 = 0
 	timeScroll = false
+	
 	scoreFontSize = 250
+	
 	var camera = find_child("Camera2D")
 	var min_pos = $CameraLimit_min.global_position
 	var max_pos = $CameraLimit_max.global_position
+	
 	camera.limit_left = min_pos.x
 	camera.limit_top = min_pos.y
 	camera.limit_right = max_pos.x
 	camera.limit_bottom = max_pos.y
+	
 	levelSong.play(0.0)
 	timerDisplay.hide()
 	timerDisplay2.hide()
@@ -86,6 +108,7 @@ func _ready():
 	hbox.hide()
 	pv1.speed = 1
 	pv2.speed = 1
+	floorsplosion.hide()
 
 	stats.alive = true
 	stats.score = 0
@@ -93,9 +116,16 @@ func _ready():
 	print_debug("readying up")
 	print_debug(timerDisplay.global_position.x)
 	
+	stats.connect("_game_unpaused", _unpause)
+	paused = false
+	pauseMenu.hide()
 	
 	
 func _process(_delta: float) -> void:
+	
+	if Input.is_action_just_pressed("pause"):
+		if paused == false:
+			paused = true
 	
 	#nightsky background mvmt
 	nightSky.global_position.x -= .08
@@ -121,6 +151,13 @@ func _process(_delta: float) -> void:
 		player.global_position.x = 229
 		
 	
+	if paused:
+		get_tree().paused = true
+		pauseMenu.show()
+		$PauseMenu/VBoxContainer/Resume.grab_focus()
+		
+	else:
+		get_tree().paused = false
 	
 	if timeScroll:
 		xDisplay.global_position.y -= 1.7
@@ -387,24 +424,16 @@ func _on_timer_3_timeout() -> void:
 func _on_boss_timer_timeout() -> void:
 	#right now this creates a smiley every time, will be replaced with an array of bosses to iterate through
 	var my_random_number_x = rng.randf_range(1000.0, 1001.0)
-	var my_random_number_y = rng.randf_range(-85.0, -85.0)
+	var my_random_number_y = rng.randf_range(-75.0, -75.0)
 	
-	var smileyOne = smiley1.instantiate()
-	smileyOne.global_position.x = my_random_number_x
-	smileyOne.global_position.y = my_random_number_y
-	add_child(smileyOne)
+	var currentBoss = bosses[bossCount].instantiate()
+	currentBoss.global_position.x = my_random_number_x
+	currentBoss.global_position.y = my_random_number_y
+	add_child(currentBoss)
 	#boss should have a separate layer for damage (7) vs basic enemies (5 and 6). hurtbox should register
 	
+	bossCompletedTimer.start(0.0)
 	
-	#change direction of all platforms that are not the most basic design to clear screen for boss. will need to revert to false once boss phase is complete.
-	stats.bossPhase = true
-	#stop creating new platforms and enemies for boss phase, will need to start these up again after boss phase is over
-	timer.stop()
-	timer2.stop()
-	timer3.stop()
-	#creating a run of low plats to use during fight, will need to stop this timer at the end of the fight, as well
-	lowPlatTimer.start(0.0)
-	print_debug("bosstimerd")
 	
 	
 
@@ -413,8 +442,54 @@ func _on_low_platform_timer_timeout() -> void:
 	var my_random_number_x = rng.randf_range(850.0, 850.0)
 	var my_random_number_y = rng.randf_range(70.0, 70.0)
 	
-	var longNeon1 = long1.instantiate()
+	var longNeon1 = longAndLow1.instantiate()
 	longNeon1.global_position.x = my_random_number_x
 	longNeon1.global_position.y = my_random_number_y
 	add_child(longNeon1)
 	print_debug("lowplatd")
+
+
+func _on_boss_prep_timer_timeout() -> void:
+	#change direction of all platforms that are not the most basic design to clear screen for boss. will need to revert to false once boss phase is complete.
+	stats.bossPhase = true
+	#stop creating new platforms and enemies for boss phase, will need to start these up again after boss phase is over
+	timer.stop()
+	timer2.stop()
+	timer3.stop()
+	#creating a run of low plats to use during fight, will need to stop this timer at the end of the fight, as well
+	lowPlatTimer.start(0.0)
+	floorsplosionTimer.start(0.0)
+	
+	print_debug("bosspreppd")
+
+
+func _on_boss_completed_timer_timeout() -> void:
+	timer.start()
+	timer2.start()
+	timer3.start()
+	stats.bossPhase = false
+	lowPlatTimer.stop()
+	print_debug("completed")
+	bossCount += 1
+	#re-start boss prep and boss entrance
+	bossPrepTimer.start(0.0)
+	bossTimer.start(0.0)
+
+
+func _on_floorsplosion_1_animation_finished() -> void:
+	floorsplosion.hide()
+	floorsplosion.stop()
+
+
+func _on_floorsplosion_timer_timeout() -> void:
+	floorsplosion.show()
+	floorsplosion.frame = 0
+	floorsplosion.play("default")
+	flspr1.play()
+	flspr2.play()
+	#add a cool sound! more sounds!
+
+func _unpause():
+	paused = false
+	
+	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://b0dcakpphuuc5"]
+[gd_scene load_steps=93 format=3 uid="uid://b0dcakpphuuc5"]
 
 [ext_resource type="TileSet" uid="uid://dlu6wo1aknvai" path="res://level/tileset/tileset.tres" id="1_0yenw"]
 [ext_resource type="Script" path="res://level/level.gd" id="1_bccge"]
@@ -17,7 +17,10 @@
 [ext_resource type="AudioStream" uid="uid://iwg0pirdphtd" path="res://audio/laser_bop.wav" id="14_syk2h"]
 [ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="18_uxxro"]
 [ext_resource type="AudioStream" uid="uid://dsca8y55y0vcu" path="res://audio/ESM_Retro_Game_Classic_Explosion_9_8_Bit_Arcade_80s_Weapon_Attack.wav" id="19_ouhkf"]
+[ext_resource type="AudioStream" uid="uid://cxixpryydoms0" path="res://audio/flsp1.wav" id="19_xslfq"]
 [ext_resource type="AudioStream" uid="uid://c7hoq417a4o5i" path="res://audio/SL_Circuit_Bent_Voice_04.mp3" id="20_cbpy7"]
+[ext_resource type="AudioStream" uid="uid://o3jnoctxukfj" path="res://audio/flsp2.wav" id="20_nvdjc"]
+[ext_resource type="PackedScene" uid="uid://cyg8n5m7hhle2" path="res://ui/pause_menu.tscn" id="21_fjd8j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cndus"]
 
@@ -430,6 +433,77 @@ content_margin_left = 6.0
 content_margin_right = 6.0
 bg_color = Color(0.11584, 0.0381281, 0.193509, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hkp1"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(0, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1sue6"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(64, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ivh"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(128, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36pxg"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(192, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld6rx"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(256, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxiuq"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(320, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3yto"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(384, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egkaq"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(448, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs8go"]
+atlas = ExtResource("18_uxxro")
+region = Rect2(512, 640, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yeauc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hkp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1sue6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ivh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36pxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ld6rx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxiuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3yto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egkaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs8go")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
 [node name="Level" type="Node2D"]
 process_mode = 1
 script = ExtResource("1_bccge")
@@ -680,11 +754,48 @@ autostart = true
 wait_time = 3.5
 
 [node name="BossTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 67.0
+one_shot = true
 autostart = true
 
 [node name="LowPlatformTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="BossPrepTimer" type="Timer" parent="."]
+wait_time = 63.0
+one_shot = true
+autostart = true
+
+[node name="BossCompletedTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="Floorsplosion1" type="AnimatedSprite2D" parent="."]
+visible = false
+self_modulate = Color(0.72549, 1, 0.545098, 1)
+position = Vector2(506, 65)
+scale = Vector2(15, 1.2)
+sprite_frames = SubResource("SpriteFrames_yeauc")
+
+[node name="FloorsplosionTimer" type="Timer" parent="."]
+wait_time = 2.8
+one_shot = true
+
+[node name="FLSPSound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_xslfq")
+volume_db = -3.0
+pitch_scale = 1.2
+
+[node name="FLSPSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_nvdjc")
+volume_db = -3.0
+pitch_scale = 0.5
+
+[node name="PauseMenu" parent="." instance=ExtResource("21_fjd8j")]
+visible = false
+z_index = 2
+position = Vector2(479, -31)
+metadata/_edit_group_ = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]
@@ -703,3 +814,9 @@ wait_time = 3.0
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
 [connection signal="timeout" from="BossTimer" to="." method="_on_boss_timer_timeout"]
 [connection signal="timeout" from="LowPlatformTimer" to="." method="_on_low_platform_timer_timeout"]
+[connection signal="timeout" from="BossPrepTimer" to="." method="_on_boss_prep_timer_timeout"]
+[connection signal="timeout" from="BossCompletedTimer" to="." method="_on_boss_completed_timer_timeout"]
+[connection signal="animation_finished" from="Floorsplosion1" to="." method="_on_floorsplosion_1_animation_finished"]
+[connection signal="timeout" from="FloorsplosionTimer" to="." method="_on_floorsplosion_timer_timeout"]
+
+[editable path="PauseMenu"]

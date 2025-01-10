@@ -25,6 +25,7 @@ var scrolling = false
 func _ready() -> void:
 	await get_tree().create_timer(1.0).timeout
 	$Welcome.play(0.0)
+	$Theme.play(0.0)
 	button.grab_focus()
 	$NightSky.play()
 	$NightSky2.play()

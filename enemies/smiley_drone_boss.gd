@@ -5,6 +5,9 @@ extends Area2D
 @onready var frownTimer = $FrownTimer
 @onready var frownFreezeTimer = $FrownFreezeTimer
 @onready var disperseTimer = $DisperseTimer
+@onready var qFreeTimer = $QueueFreeTimer
+@onready var rotateTimer = $RotateTimer
+@onready var bounceTimer = $BounceTimer
 @onready var bossDrone1 = $BossDrone1
 @onready var bossDrone2 = $BossDrone2
 @onready var bossDrone3 = $BossDrone3
@@ -59,6 +62,12 @@ extends Area2D
 var frowning
 var send1
 var send2
+var rotating
+var movingLeft
+var movingRight
+var starting
+var movingUp
+var movingDown
 
 
 # Called when the node enters the scene tree for the first time.
@@ -66,17 +75,43 @@ func _ready() -> void:
 	frowning = false
 	send1 = false
 	send2 = false
+	rotating = false
+	movingRight = false
+	movingLeft = false
+	starting = true
+	movingUp = false
+	movingDown = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	self.global_position.x -= speed
+	if starting:
+		self.global_position.x -= speed
+	if movingLeft:
+		self.global_position.x -= speed
+	if movingRight:
+		self.global_position.x += speed
+	if movingDown:
+		self.global_position.y += 1.0
+	if movingUp:
+		self.global_position.y -= 1.0
 	
-	if self.global_position.x <= 475.0:
+	if self.global_position.x <= 485.0 && (rotating == false):
 		if (frowning == false):
 			speed = 0.0
 			frowning = true
 			frownTimer.start(0.0)
-	
+	if rotating:
+		self.rotation += 0.3
+		speed = 2.5
+		#self.global_position.x -= speed
+		if self.global_position.x <= 250.0:
+			starting = false
+			movingRight = true
+			movingLeft = false
+		if self.global_position.x >= 700.0:
+			movingRight = false
+			movingLeft = true
+		
 	if send1:
 		if bossDrone38 != null:
 			bossDrone38.global_position.y -= .13
@@ -166,16 +201,16 @@ func _process(_delta: float) -> void:
 			bossDrone43.global_position.x += 0.3
 		if bossDrone44 != null:
 			bossDrone44.global_position.y += 1.0
-			bossDrone44.global_position.x += 0.4
+			bossDrone44.global_position.x -= 0.4
 		if bossDrone45 != null:
 			bossDrone45.global_position.y += 1.0
-			bossDrone45.global_position.x += 0.5
+			bossDrone45.global_position.x -= 0.5
 		if bossDrone46 != null:
 			bossDrone46.global_position.y += 1.0
-			bossDrone46.global_position.x += 0.6
+			bossDrone46.global_position.x -= 0.6
 		if bossDrone47 != null:
 			bossDrone47.global_position.y += 1.0
-			bossDrone47.global_position.x += 0.7
+			bossDrone47.global_position.x -= 0.7
 		
 		#SW Quadrant
 		if bossDrone37 != null:
@@ -249,6 +284,9 @@ func _process(_delta: float) -> void:
 		if bossDrone35 != null:
 			bossDrone35.global_position.y -= 1.0
 			bossDrone35.global_position.x -= 0.4
+		if bossDrone48 != null:
+			bossDrone48.global_position.y -= 1.0
+			bossDrone48.global_position.x -= 0.3
 
 func _on_frown_timer_timeout() -> void:
 	send1 = true
@@ -257,8 +295,32 @@ func _on_frown_timer_timeout() -> void:
 
 func _on_frown_freeze_timer_timeout() -> void:
 	send1 = false
-	disperseTimer.start(0.0)
+	rotateTimer.start(0.0)
+	rotating = true
+	movingDown = true
+	bounceTimer.start(0.0)
+	
 	
 
 func _on_disperse_timer_timeout() -> void:
 	send2 = true
+	rotating = false
+	print_debug("dispersing")
+	qFreeTimer.start(0.0)
+	
+
+func _on_queue_free_timer_timeout() -> void:
+	self.queue_free()
+
+
+func _on_rotate_timer_timeout() -> void:
+	disperseTimer.start(0.0)
+
+
+func _on_bounce_timer_timeout() -> void:
+	if movingUp:
+		movingDown = true
+		movingUp = false
+	else:
+		movingDown = false
+		movingUp = true

@@ -8,8 +8,10 @@
 radius = 217.0
 
 [node name="SmileyDroneBoss" type="Area2D"]
-position = Vector2(-2, -4)
+position = Vector2(-2, 3)
 scale = Vector2(0.45, 0.45)
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_17lut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -179,9 +181,22 @@ wait_time = 3.0
 one_shot = true
 
 [node name="DisperseTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 3.2
 one_shot = true
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 18.0
+one_shot = true
+
+[node name="RotateTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="BounceTimer" type="Timer" parent="."]
 
 [connection signal="timeout" from="FrownTimer" to="." method="_on_frown_timer_timeout"]
 [connection signal="timeout" from="FrownFreezeTimer" to="." method="_on_frown_freeze_timer_timeout"]
 [connection signal="timeout" from="DisperseTimer" to="." method="_on_disperse_timer_timeout"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="_on_queue_free_timer_timeout"]
+[connection signal="timeout" from="RotateTimer" to="." method="_on_rotate_timer_timeout"]
+[connection signal="timeout" from="BounceTimer" to="." method="_on_bounce_timer_timeout"]

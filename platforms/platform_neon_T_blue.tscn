@@ -22,7 +22,7 @@ size = Vector2(44.2857, 12.8572)
 size = Vector2(44.2857, 12.8571)
 
 [node name="PlatformNeonTBlue" type="AnimatableBody2D"]
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.5, 0.5)
 collision_layer = 7
 script = ExtResource("1_kecwr")
 

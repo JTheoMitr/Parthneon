@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyg8n5m7hhle2"]
+
+[ext_resource type="Texture2D" uid="uid://cbx183bn0nni4" path="res://ui/green_border_1.png" id="1_7452d"]
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_xvhjh"]
+[ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="2_tb28c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oajck"]
+bg_color = Color(0.152941, 0.552941, 0.490196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kg24f"]
+bg_color = Color(0.152941, 0.552941, 0.490196, 1)
+
+[node name="PauseMenu" type="Node2D"]
+process_mode = 3
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xvhjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_7452d")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -92.0
+offset_top = -46.0
+offset_right = 1848.0
+offset_bottom = 1374.0
+scale = Vector2(0.1, 0.1)
+theme_override_constants/separation = 30
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tb28c")
+theme_override_font_sizes/font_size = 330
+theme_override_styles/focus = SubResource("StyleBoxFlat_oajck")
+text = "Resume"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_tb28c")
+theme_override_font_sizes/font_size = 330
+theme_override_styles/focus = SubResource("StyleBoxFlat_kg24f")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
