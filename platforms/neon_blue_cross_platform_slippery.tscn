@@ -26,7 +26,7 @@ shape = SubResource("RectangleShape2D_cq41c")
 shape = SubResource("RectangleShape2D_n0i7y")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 40.0
+wait_time = 90.0
 one_shot = true
 autostart = true
 

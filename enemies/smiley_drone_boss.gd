@@ -58,6 +58,8 @@ extends Area2D
 @onready var bossDrone48 = $BossDrone48
 @onready var bossDrone49 = $BossDrone49
 
+@onready var frownSown = $FrownSown
+@onready var spinSound = $SpinSound
 
 var frowning
 var send1
@@ -291,6 +293,7 @@ func _process(_delta: float) -> void:
 func _on_frown_timer_timeout() -> void:
 	send1 = true
 	frownFreezeTimer.start(0.0)
+	frownSown.play(0.0)
 
 
 func _on_frown_freeze_timer_timeout() -> void:
@@ -299,6 +302,7 @@ func _on_frown_freeze_timer_timeout() -> void:
 	rotating = true
 	movingDown = true
 	bounceTimer.start(0.0)
+	spinSound.play(0.0)
 	
 	
 

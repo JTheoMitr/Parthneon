@@ -1,7 +1,7 @@
+AudioStreamPlayer
 Button
 VBoxContainer
 Sprite2D
-AudioStreamPlayer
 Timer
 AnimatedSprite2D
 CollisionShape2D

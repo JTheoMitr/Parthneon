@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b233ag6p22gpw"]
+[gd_scene load_steps=7 format=3 uid="uid://b233ag6p22gpw"]
 
 [ext_resource type="Script" path="res://enemies/smiley_drone_boss.gd" id="1_17lut"]
 [ext_resource type="Texture2D" uid="uid://b2i8eex4n6sh8" path="res://enemies/smiley_drone_template.png" id="1_etnhr"]
 [ext_resource type="PackedScene" uid="uid://dp2nc828ubgtu" path="res://enemies/boss_drone_1.tscn" id="2_ir5bo"]
+[ext_resource type="AudioStream" uid="uid://ddoqqpicg2rdm" path="res://audio/frownsown.wav" id="4_d0wm8"]
+[ext_resource type="AudioStream" uid="uid://dw0lgi3i3xdqi" path="res://audio/spinsound.wav" id="5_2rjdt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oxjl5"]
 radius = 217.0
@@ -193,6 +195,15 @@ wait_time = 5.0
 one_shot = true
 
 [node name="BounceTimer" type="Timer" parent="."]
+
+[node name="FrownSown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_d0wm8")
+volume_db = -7.0
+pitch_scale = 0.7
+
+[node name="SpinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2rjdt")
+volume_db = -3.0
 
 [connection signal="timeout" from="FrownTimer" to="." method="_on_frown_timer_timeout"]
 [connection signal="timeout" from="FrownFreezeTimer" to="." method="_on_frown_freeze_timer_timeout"]

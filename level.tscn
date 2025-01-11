@@ -783,12 +783,12 @@ one_shot = true
 
 [node name="FLSPSound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_xslfq")
-volume_db = -3.0
+volume_db = -7.0
 pitch_scale = 1.2
 
 [node name="FLSPSound2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_nvdjc")
-volume_db = -3.0
+volume_db = -7.0
 pitch_scale = 0.5
 
 [node name="PauseMenu" parent="." instance=ExtResource("21_fjd8j")]
