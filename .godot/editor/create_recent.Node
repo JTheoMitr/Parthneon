@@ -1,14 +1,14 @@
+Timer
+RichTextLabel
 AudioStreamPlayer
 Button
 VBoxContainer
 Sprite2D
-Timer
 AnimatedSprite2D
 CollisionShape2D
 Area2D
 Panel
 TextureButton
 HBoxContainer
-RichTextLabel
 StaticBody2D
 AudioStreamPlayer2D

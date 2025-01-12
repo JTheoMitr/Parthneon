@@ -1,9 +1,10 @@
-[gd_scene load_steps=27 format=3 uid="uid://cmx03okdarg2u"]
+[gd_scene load_steps=28 format=3 uid="uid://cmx03okdarg2u"]
 
 [ext_resource type="Script" path="res://enemies/neon_bot_enemy_1.gd" id="1_g8joa"]
 [ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="2_7of02"]
 [ext_resource type="Texture2D" uid="uid://c73hqyhju3mk0" path="res://enemies/Robot1-all-sprites.png" id="2_qlyab"]
 [ext_resource type="AudioStream" uid="uid://dkkc6n5od4tfa" path="res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav" id="4_q3l4v"]
+[ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="5_fb3yo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rfmft"]
 atlas = ExtResource("2_7of02")
@@ -189,6 +190,22 @@ sprite_frames = SubResource("SpriteFrames_oidvu")
 stream = ExtResource("4_q3l4v")
 volume_db = -5.0
 
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -34.0
+offset_top = -34.0
+offset_right = 2226.0
+offset_bottom = 426.0
+scale = Vector2(0.03, 0.03)
+theme_override_fonts/normal_font = ExtResource("5_fb3yo")
+theme_override_font_sizes/normal_font_size = 250
+bbcode_enabled = true
+text = "[center][rainbow]+15 Points"
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D3" to="." method="_on_animated_sprite_2d_3_animation_finished"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

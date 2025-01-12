@@ -564,7 +564,7 @@ position = Vector2(542, -1300)
 position = Vector2(2069, 22)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 12.0
+wait_time = 14.0
 autostart = true
 
 [node name="NeonBlueCrossPlatform" parent="." instance=ExtResource("9_rtld0")]
