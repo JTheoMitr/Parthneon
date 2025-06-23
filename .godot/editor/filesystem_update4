@@ -1,6 +1,3 @@
-res://level.tscn
+res://enemies/gun_drone_boss.tscn
 res://level/tileset/tileset.tres
-res://level/level.gd
-res://player/player.tscn
-res://enemies/neon_bot_enemy1.tscn
-res://enemies/neon_bot_enemy2.tscn
+res://enemies/gun_drone_boss.gd

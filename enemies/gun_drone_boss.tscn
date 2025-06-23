@@ -1,0 +1,309 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds885foqbgv5l"]
+
+[ext_resource type="Script" path="res://enemies/gun_drone_boss.gd" id="1_sboly"]
+[ext_resource type="Texture2D" uid="uid://cyq3pi7i7cf4b" path="res://enemies/pistol_template.jpg" id="2_k25ps"]
+[ext_resource type="PackedScene" uid="uid://dp2nc828ubgtu" path="res://enemies/boss_drone_1.tscn" id="3_oflk8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oxjl5"]
+radius = 217.0
+
+[node name="GunDroneBoss" type="Area2D"]
+position = Vector2(-2, 3)
+scale = Vector2(0.45, 0.45)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_sboly")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.000244141, -4.44452)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k25ps")
+
+[node name="BossDrone1" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(11.1111, -137.778)
+
+[node name="BossDrone2" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(35.5556, -126.667)
+
+[node name="BossDrone3" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(60, -117.778)
+
+[node name="BossDrone4" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(84.4444, -106.667)
+
+[node name="BossDrone5" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(108.889, -95.5556)
+
+[node name="BossDrone6" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(133.333, -86.6667)
+
+[node name="BossDrone48" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-64.4445, -166.667)
+
+[node name="BossDrone49" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-88.8889, -175.556)
+
+[node name="BossDrone50" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-162.222, -202.222)
+
+[node name="BossDrone51" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-140, -195.556)
+
+[node name="BossDrone52" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-115.556, -184.444)
+
+[node name="BossDrone53" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-13.3333, -146.667)
+
+[node name="BossDrone54" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(35.5556, 73.3333)
+
+[node name="BossDrone74" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(33.3333, 122.222)
+
+[node name="BossDrone55" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(0, -33.3333)
+
+[node name="BossDrone56" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-4.44445, 15.5556)
+
+[node name="BossDrone57" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-42.2222, -20)
+
+[node name="BossDrone58" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(4.44444, -8.88889)
+
+[node name="BossDrone59" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-26.6667, -28.8889)
+
+[node name="BossDrone60" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(75.5556, 148.889)
+
+[node name="BossDrone61" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(91.1111, 37.7778)
+
+[node name="BossDrone76" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(111.111, 111.111)
+
+[node name="BossDrone62" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(100, 155.556)
+
+[node name="BossDrone63" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(113.333, 137.778)
+
+[node name="BossDrone64" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(66.6667, 31.1111)
+
+[node name="BossDrone65" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(44.4444, 22.2222)
+
+[node name="BossDrone75" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(35.5556, 46.6667)
+
+[node name="BossDrone66" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(106.667, 84.4444)
+
+[node name="BossDrone67" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(104.444, 55.5556)
+
+[node name="BossDrone68" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-86.6667, -48.8889)
+
+[node name="BossDrone69" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-57.7778, 4.44445)
+
+[node name="BossDrone70" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-84.4445, -6.66667)
+
+[node name="BossDrone71" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(33.3333, 97.7778)
+
+[node name="BossDrone72" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-28.8889, 13.3333)
+
+[node name="BossDrone73" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-102.222, -26.6667)
+
+[node name="BossDrone7" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(160, -75.5556)
+
+[node name="BossDrone8" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(182.222, -64.4445)
+
+[node name="BossDrone9" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(51.1111, 140)
+
+[node name="BossDrone10" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(193.333, -42.2222)
+
+[node name="BossDrone11" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(184.444, -20)
+
+[node name="BossDrone12" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(184.444, 4.44444)
+
+[node name="BossDrone13" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(164.444, 13.3333)
+
+[node name="BossDrone14" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(140, 20)
+
+[node name="BossDrone15" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(128.889, 42.2222)
+
+[node name="BossDrone16" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(131.111, 66.6667)
+
+[node name="BossDrone17" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(133.333, 91.1111)
+
+[node name="BossDrone18" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(137.778, 117.778)
+
+[node name="BossDrone19" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(140, 142.222)
+
+[node name="BossDrone20" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(124.444, 191.111)
+
+[node name="BossDrone21" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(140, 168.889)
+
+[node name="BossDrone22" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(100, 184.444)
+
+[node name="BossDrone23" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(73.3333, 177.778)
+
+[node name="BossDrone24" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(48.8889, 168.889)
+
+[node name="BossDrone25" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(24.4444, 162.222)
+
+[node name="BossDrone26" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(8.88889, 146.667)
+
+[node name="BossDrone27" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(6.66667, 122.222)
+
+[node name="BossDrone28" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(6.66667, 93.3333)
+
+[node name="BossDrone29" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(6.66667, 68.8889)
+
+[node name="BossDrone30" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(4.44444, 42.2222)
+
+[node name="BossDrone31" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(106.667, -57.7778)
+
+[node name="BossDrone32" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(140, -64.4444)
+
+[node name="BossDrone33" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(113.333, -77.7778)
+
+[node name="BossDrone34" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(84.4444, -86.6667)
+
+[node name="BossDrone35" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(77.7778, -66.6667)
+
+[node name="BossDrone36" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(133.333, -48.8889)
+
+[node name="BossDrone37" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-26.6667, -48.8889)
+
+[node name="BossDrone38" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-51.1111, -64.4445)
+
+[node name="BossDrone39" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-75.5556, -73.3334)
+
+[node name="BossDrone40" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-102.222, -84.4444)
+
+[node name="BossDrone41" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-126.667, -93.3333)
+
+[node name="BossDrone42" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-151.111, -104.444)
+
+[node name="BossDrone43" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-175.556, -115.556)
+
+[node name="BossDrone44" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-195.556, -133.333)
+
+[node name="BossDrone45" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-186.667, -157.778)
+
+[node name="BossDrone46" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-182.222, -184.444)
+
+[node name="BossDrone47" parent="." instance=ExtResource("3_oflk8")]
+position = Vector2(-40, -155.556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-1, 5)
+shape = SubResource("CircleShape2D_oxjl5")
+
+[node name="ShakeLTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ShakeRTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="DisperseTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="QueueFreeTimer" type="Timer" parent="."]
+wait_time = 18.0
+one_shot = true
+
+[node name="StompTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="AimTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="LiftTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="SlideRightTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SlideLeftTimer" type="Timer" parent="."]
+wait_time = 1.75
+one_shot = true
+
+[node name="StompTimer2" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="timeout" from="ShakeLTimer" to="." method="_on_shake_l_timer_timeout"]
+[connection signal="timeout" from="ShakeRTimer" to="." method="_on_shake_r_timer_timeout"]
+[connection signal="timeout" from="DisperseTimer" to="." method="_on_disperse_timer_timeout"]
+[connection signal="timeout" from="QueueFreeTimer" to="." method="_on_queue_free_timer_timeout"]
+[connection signal="timeout" from="StompTimer" to="." method="_on_stomp_timer_timeout"]
+[connection signal="timeout" from="AimTimer" to="." method="_on_aim_timer_timeout"]
+[connection signal="timeout" from="LiftTimer" to="." method="_on_lift_timer_timeout"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
+[connection signal="timeout" from="SlideRightTimer" to="." method="_on_slide_right_timer_timeout"]
+[connection signal="timeout" from="SlideLeftTimer" to="." method="_on_slide_left_timer_timeout"]
+[connection signal="timeout" from="StompTimer2" to="." method="_on_stomp_timer_2_timeout"]
