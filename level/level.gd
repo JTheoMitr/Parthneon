@@ -61,6 +61,7 @@ var longAndLow1 = preload("res://platforms/platform_neon_longandlow_one_horiz.ts
 #bosses
 var smiley1 = preload("res://enemies/smiley_drone_boss.tscn")
 var boot1 = preload("res://enemies/boot_drone_boss.tscn")
+var gun1 = preload("res://enemies/gun_drone_boss.tscn")
 
 
 var timerStart
@@ -76,7 +77,7 @@ var paused
 func _ready():
 	
 	bossCount = 0
-	bosses = [smiley1, boot1]
+	bosses = [gun1, smiley1, boot1]
 	stats.bossPhase = false
 	
 	timerStart = 0

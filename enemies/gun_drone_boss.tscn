@@ -9,6 +9,7 @@ radius = 217.0
 
 [node name="GunDroneBoss" type="Area2D"]
 position = Vector2(-2, 3)
+rotation = -0.349066
 scale = Vector2(0.45, 0.45)
 collision_layer = 0
 collision_mask = 0
@@ -254,11 +255,10 @@ position = Vector2(-1, 5)
 shape = SubResource("CircleShape2D_oxjl5")
 
 [node name="ShakeLTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="ShakeRTimer" type="Timer" parent="."]
-wait_time = 0.25
+wait_time = 0.5
 one_shot = true
 
 [node name="DisperseTimer" type="Timer" parent="."]
@@ -270,19 +270,19 @@ wait_time = 18.0
 one_shot = true
 
 [node name="StompTimer" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
-
-[node name="AimTimer" type="Timer" parent="."]
-wait_time = 0.25
-one_shot = true
-
-[node name="LiftTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
-[node name="WaitTimer" type="Timer" parent="."]
+[node name="AimTimer" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
+
+[node name="LiftTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 
 [node name="SlideRightTimer" type="Timer" parent="."]
@@ -296,6 +296,9 @@ one_shot = true
 wait_time = 0.25
 one_shot = true
 
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="timeout" from="ShakeLTimer" to="." method="_on_shake_l_timer_timeout"]
 [connection signal="timeout" from="ShakeRTimer" to="." method="_on_shake_r_timer_timeout"]
 [connection signal="timeout" from="DisperseTimer" to="." method="_on_disperse_timer_timeout"]
@@ -307,3 +310,4 @@ one_shot = true
 [connection signal="timeout" from="SlideRightTimer" to="." method="_on_slide_right_timer_timeout"]
 [connection signal="timeout" from="SlideLeftTimer" to="." method="_on_slide_left_timer_timeout"]
 [connection signal="timeout" from="StompTimer2" to="." method="_on_stomp_timer_2_timeout"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

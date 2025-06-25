@@ -89,8 +89,9 @@ extends Area2D
 @onready var bossDrone74 = $BossDrone74
 @onready var bossDrone75 = $BossDrone75
 @onready var bossDrone76 = $BossDrone76
+@onready var shootTimer = $ShootTimer
 
-
+var enemy1 = preload("res://enemies/neon_bot_enemy1.tscn")
 
 var stompStarted
 var movingRight
@@ -103,6 +104,22 @@ var send3
 var stompedOnce
 var rotating
 
+var shootCount = 0
+var shoot1
+var shoot2
+var shoot3
+var shoot4
+var shoot5
+var shoot6
+var shoot7
+var shoot8
+var shoot9
+var shoot10
+var shoot11
+var shoot12
+var shoot13
+var shoot14
+var shoot15
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -120,6 +137,67 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	self.global_position.x -= speed
+	
+	if shoot1:
+		if bossDrone45 != null:
+			bossDrone45.global_position.x -= 5
+	
+	if shoot2:
+		if bossDrone46 != null:
+			bossDrone46.global_position.x -= 5
+	
+	if shoot3:
+		if bossDrone44 != null:
+			bossDrone44.global_position.x -= 5
+			
+	if shoot4:
+		if bossDrone50 != null:
+			bossDrone50.global_position.x -= 5
+	
+	if shoot5:
+		if bossDrone43 != null:
+			bossDrone43.global_position.x -= 5
+	
+	if shoot6:
+		if bossDrone51 != null:
+			bossDrone51.global_position.x -= 5
+	
+	if shoot7:
+		if bossDrone42 != null:
+			bossDrone42.global_position.x -= 5
+			
+	if shoot8:
+		if bossDrone52 != null:
+			bossDrone52.global_position.x -= 5
+			
+	if shoot9:
+		if bossDrone41 != null:
+			bossDrone41.global_position.x -= 5
+	
+	if shoot10:
+		if bossDrone49 != null:
+			bossDrone49.global_position.x -= 5
+	
+	if shoot11:
+		if bossDrone40 != null:
+			bossDrone40.global_position.x -= 5
+			
+	if shoot12:
+		if bossDrone48 != null:
+			bossDrone48.global_position.x -= 5
+	
+	if shoot13:
+		if bossDrone39 != null:
+			bossDrone39.global_position.x -= 5
+	
+	if shoot14:
+		if bossDrone47 != null:
+			bossDrone47.global_position.x -= 5
+	
+	if shoot15:
+		if bossDrone38 != null:
+			bossDrone38.global_position.x -= 5
+
 	
 	if self.global_position.x <= 475.0:
 		if (stompStarted == false):
@@ -155,9 +233,6 @@ func _process(_delta: float) -> void:
 		if bossDrone39 != null:
 			bossDrone39.global_position.x -= 2.5
 			bossDrone39.global_position.y += 1.0
-		if bossDrone45 != null:
-			bossDrone45.global_position.x -= 2.5
-			bossDrone45.global_position.y -= 1.0
 		if bossDrone40 != null:
 			bossDrone40.global_position.x -= 2.5
 			bossDrone40.global_position.y += 1.0
@@ -444,12 +519,13 @@ func _on_aim_timer_timeout() -> void:
 	movingRight = false
 	stomping = true
 	stompTimer.start(0.0)
-
+	shootTimer.start(0.0)
 
 func _on_stomp_timer_timeout() -> void:
 	stomping = false
 	lifting = true
 	liftTimer.start(0.0)
+	
 	
 
 
@@ -462,13 +538,14 @@ func _on_lift_timer_timeout() -> void:
 
 
 func _on_wait_timer_timeout() -> void:
-	if stompedOnce == false:
-		movingRight = true
-		stompedOnce = true
-		slideRTimer.start(0.0)
-	else:
-		movingLeft = true
+	#if stompedOnce == false:
+		#movingRight = true
+		#stompedOnce = true
+		#slideRTimer.start(0.0)
+	#else:
+		#movingLeft = true
 		slideLTimer.start(0.0)
+		rotating = true
 
 
 func _on_slide_right_timer_timeout() -> void:
@@ -482,12 +559,47 @@ func _on_slide_right_timer_timeout() -> void:
 
 
 func _on_slide_left_timer_timeout() -> void:
-	movingLeft = false
+	#movingLeft = false
 	disperseTimer.start(0.0)
-	rotating = true
+	#rotating = true
 
 
 func _on_stomp_timer_2_timeout() -> void:
 	stomping = false
 	lifting = true
 	liftTimer.start(0.0)
+
+
+func _on_shoot_timer_timeout() -> void:
+	print_debug("shoot")
+	shootCount += 1
+	if shootCount == 1:
+		shoot1 = true
+	if shootCount == 2:
+		shoot2 = true
+	if shootCount == 3:
+		shoot3 = true
+	if shootCount == 4:
+		shoot4 = true
+	if shootCount == 5:
+		shoot5 = true
+	if shootCount == 6:
+		shoot6 = true
+	if shootCount == 7:
+		shoot7 = true
+	if shootCount == 8:
+		shoot8 = true
+	if shootCount == 9:
+		shoot9 = true
+	if shootCount == 10:
+		shoot10 = true
+	if shootCount == 11:
+		shoot11 = true
+	if shootCount == 12:
+		shoot12 = true
+	if shootCount == 13:
+		shoot10 = true
+	if shootCount == 14:
+		shoot11 = true
+	if shootCount == 15:
+		shoot12 = true
