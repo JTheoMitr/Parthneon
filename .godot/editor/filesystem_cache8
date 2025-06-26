@@ -52,7 +52,7 @@ FX052_01.png::CompressedTexture2D::2115827544602356915::1602617674::1734661341::
 FX052_02.png::CompressedTexture2D::4254701142558394694::1602617674::1734661341::1::::<><>::
 FX052_03.png::CompressedTexture2D::7933429447405354471::1602617674::1734661341::1::::<><>::
 FX052_04.png::CompressedTexture2D::4634602183312815818::1602617674::1734661341::1::::<><>::
-::res://enemies/::1750903325
+::res://enemies/::1750904106
 boot_drone_boss.gd::GDScript::-1::1736390012::0::1::::<>Area2D<>::
 boot_drone_boss.tscn::PackedScene::791338480702423131::1750903325::0::1::::<><>::res://enemies/boot_drone_boss.gd<>uid://cs0shpvq3lnv3::::res://enemies/cowboy_boot_template.png<>uid://dp2nc828ubgtu::::res://enemies/boss_drone_1.tscn
 boss_drone_1.gd::GDScript::-1::1735762691::0::1::::<>Area2D<>::
@@ -60,12 +60,13 @@ boss_drone_1.tscn::PackedScene::8268627574009593306::1736487440::0::1::::<><>::r
 cowboy_boot_template.png::CompressedTexture2D::6088956224205387250::1735889856::1735957533::1::::<><>::
 dagger_template.png::CompressedTexture2D::102864822623140324::1735890071::1735957533::1::::<><>::
 gun_drone_boss.gd::GDScript::-1::1750903325::0::1::::<>Area2D<>::
-gun_drone_boss.tscn::PackedScene::8492843221998875675::1750903325::0::1::::<><>::res://enemies/gun_drone_boss.gd<>uid://cyq3pi7i7cf4b::::res://enemies/pistol_template.jpg<>uid://dp2nc828ubgtu::::res://enemies/boss_drone_1.tscn
+gun_drone_boss.tscn::PackedScene::8492843221998875675::1750903783::0::1::::<><>::res://enemies/gun_drone_boss.gd<>uid://cyq3pi7i7cf4b::::res://enemies/pistol_template.jpg<>uid://dp2nc828ubgtu::::res://enemies/boss_drone_1.tscn
 neon_bot_enemy1.tscn::PackedScene::5664156857346392746::1750903325::0::1::::<><>::res://enemies/neon_bot_enemy_1.gd<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://c73hqyhju3mk0::::res://enemies/Robot1-all-sprites.png<>uid://dkkc6n5od4tfa::::res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
 neon_bot_enemy2.tscn::PackedScene::6486269769147162731::1750727357::0::1::::<><>::res://enemies/neon_bot_enemy_2.gd<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://c73hqyhju3mk0::::res://enemies/Robot1-all-sprites.png<>uid://dkkc6n5od4tfa::::res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
 neon_bot_enemy_1.gd::GDScript::-1::1736580054::0::1::::<>Area2D<>::
 neon_bot_enemy_2.gd::GDScript::-1::1736659755::0::1::::<>Area2D<>::
 pistol_template.jpg::CompressedTexture2D::6492130991496844159::1750569071::1750569239::1::::<><>::
+planet_1_medium.tscn::PackedScene::1108555911811295266::1750904106::0::1::::<><>::res://enemies/neon_bot_enemy_1.gd<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://c73hqyhju3mk0::::res://enemies/Robot1-all-sprites.png<>uid://dkkc6n5od4tfa::::res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
 Robot1-all-sprites.png::CompressedTexture2D::7077141804379550365::1734915309::1734915367::1::::<><>::
 smiley_drone_boss.gd::GDScript::-1::1736577928::0::1::::<>Area2D<>::
 smiley_drone_boss.tscn::PackedScene::4341022478578829012::1750903325::0::1::::<><>::res://enemies/smiley_drone_boss.gd<>uid://b2i8eex4n6sh8::::res://enemies/smiley_drone_template.png<>uid://dp2nc828ubgtu::::res://enemies/boss_drone_1.tscn<>uid://ddoqqpicg2rdm::::res://audio/frownsown.wav<>uid://dw0lgi3i3xdqi::::res://audio/spinsound.wav
@@ -134,7 +135,7 @@ fajrbackground.png::CompressedTexture2D::8431148221842626914::1600897776::173553
 nightbackgroundwithmoon.png::CompressedTexture2D::6818776415166972644::1553031146::1735539646::1::::<><>::
 noonbackground.png::CompressedTexture2D::6721646586194760667::1554523284::1735539646::1::::<><>::
 sunsetbackground.png::CompressedTexture2D::3815275393367985278::1554666290::1735539646::1::::<><>::
-::res://level/background/Planets/::1750903676
+::res://level/background/Planets/::1750903769
 Baren.png::CompressedTexture2D::1169792982977925025::1581135856::1750903769::1::::<><>::
 Black_hole.png::CompressedTexture2D::1857229476927483410::1610081256::1750903769::1::::<><>::
 Ice.png::CompressedTexture2D::5351478838154120164::1581296524::1750903769::1::::<><>::

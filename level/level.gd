@@ -41,6 +41,7 @@ extends Node2D
 @onready var flspr1 = $FLSPSound1
 @onready var flspr2 = $FLSPSound2
 @onready var pauseMenu = $PauseMenu
+@onready var planetTimer = $PlanetTimer
 
 
 var rng = RandomNumberGenerator.new()
@@ -62,6 +63,9 @@ var longAndLow1 = preload("res://platforms/platform_neon_longandlow_one_horiz.ts
 var smiley1 = preload("res://enemies/smiley_drone_boss.tscn")
 var boot1 = preload("res://enemies/boot_drone_boss.tscn")
 var gun1 = preload("res://enemies/gun_drone_boss.tscn")
+
+#planets
+var planet1med = preload("res://level/planet_1_medium.tscn")
 
 
 var timerStart
@@ -120,6 +124,14 @@ func _ready():
 	stats.connect("_game_unpaused", _unpause)
 	paused = false
 	pauseMenu.hide()
+	
+	#planet
+	var planetOne = planet1med.instantiate()
+	var my_random_number_x = rng.randf_range(1550.0, 2000.0)
+	var my_random_number_y = rng.randf_range(-135.0, 65.0)
+	planetOne.global_position.x = my_random_number_x
+	planetOne.global_position.y = my_random_number_y
+	add_child(planetOne)
 	
 	
 func _process(_delta: float) -> void:
@@ -265,6 +277,7 @@ func _on_timer_timeout() -> void:
 	korner2.global_position.y = my_random_number_y9
 	add_child(korner2)
 	#give L an R enemies different collision layers and put both in player hutbox? yes, works. current setup
+	
 	
 
 func _death_display() -> void:

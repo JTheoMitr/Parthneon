@@ -797,6 +797,8 @@ z_index = 2
 position = Vector2(479, -31)
 metadata/_edit_group_ = true
 
+[node name="PlanetTimer" type="Timer" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]
 [connection signal="timeout" from="GameTimer1" to="." method="_on_game_timer_1_timeout"]

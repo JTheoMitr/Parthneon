@@ -27,6 +27,7 @@ collision_layer = 7
 script = ExtResource("1_1w4pl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("2_bsvuk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

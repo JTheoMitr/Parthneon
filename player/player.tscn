@@ -1951,6 +1951,7 @@ parameters/state/current_index = 0
 parameters/walk_timescale/scale = 0.1
 
 [node name="Sprite2D" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(0, -15)
 scale = Vector2(0.06, 0.06)
 

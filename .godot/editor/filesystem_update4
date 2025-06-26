@@ -7,3 +7,14 @@ res://enemies/smiley_drone_boss.tscn
 res://enemies/gun_drone_boss.tscn
 res://enemies/gun_drone_boss.gd
 res://enemies/neon_bot_enemy1.tscn
+res://level/planet_1_medium.tscn
+res://level/planet_1_medium.gd
+res://platforms/neon_blue_cross_platform_slippery.tscn
+res://platforms/platform_neon_corner.tscn
+res://platforms/platform_neon_longandlow_one_horiz.tscn
+res://platforms/platform_neon_long_one_horiz.tscn
+res://platforms/platform_neon_short_one_horiz.tscn
+res://platforms/platform_neon_T_blue.tscn
+res://platforms/simple_platform_horizontal_1.tscn
+res://platforms/platform_vertical_one_bt.tscn
+res://platforms/platform_vertical_two_tb.tscn
