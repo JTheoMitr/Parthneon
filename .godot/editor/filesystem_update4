@@ -18,3 +18,7 @@ res://platforms/platform_neon_T_blue.tscn
 res://platforms/simple_platform_horizontal_1.tscn
 res://platforms/platform_vertical_one_bt.tscn
 res://platforms/platform_vertical_two_tb.tscn
+res://level/planet_1_small.tscn
+res://level/planet_1_small.gd
+res://level/planet_1_large.tscn
+res://level/planet_1_large.gd

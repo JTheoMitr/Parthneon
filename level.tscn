@@ -798,6 +798,10 @@ position = Vector2(479, -31)
 metadata/_edit_group_ = true
 
 [node name="PlanetTimer" type="Timer" parent="."]
+wait_time = 28.0
+
+[node name="LrgPlanetTimer" type="Timer" parent="."]
+wait_time = 55.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]
@@ -820,5 +824,7 @@ metadata/_edit_group_ = true
 [connection signal="timeout" from="BossCompletedTimer" to="." method="_on_boss_completed_timer_timeout"]
 [connection signal="animation_finished" from="Floorsplosion1" to="." method="_on_floorsplosion_1_animation_finished"]
 [connection signal="timeout" from="FloorsplosionTimer" to="." method="_on_floorsplosion_timer_timeout"]
+[connection signal="timeout" from="PlanetTimer" to="." method="_on_planet_timer_timeout"]
+[connection signal="timeout" from="LrgPlanetTimer" to="." method="_on_lrg_planet_timer_timeout"]
 
 [editable path="PauseMenu"]

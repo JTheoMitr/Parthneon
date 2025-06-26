@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjkba14xh3u1k"]
+
+[ext_resource type="Script" path="res://level/planet_1_large.gd" id="1_wuvkp"]
+[ext_resource type="Texture2D" uid="uid://qwwk4mpc40vl" path="res://level/background/Planets/Baren.png" id="2_216f3"]
+
+[node name="Planet1Lrg" type="Area2D"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_wuvkp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.886262, 0.886261, 0.886262, 1)
+scale = Vector2(11, 11)
+texture = ExtResource("2_216f3")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
