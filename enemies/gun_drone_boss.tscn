@@ -255,10 +255,11 @@ position = Vector2(-1, 5)
 shape = SubResource("CircleShape2D_oxjl5")
 
 [node name="ShakeLTimer" type="Timer" parent="."]
+wait_time = 0.65
 one_shot = true
 
 [node name="ShakeRTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.65
 one_shot = true
 
 [node name="DisperseTimer" type="Timer" parent="."]
@@ -270,11 +271,11 @@ wait_time = 18.0
 one_shot = true
 
 [node name="StompTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.65
 one_shot = true
 
 [node name="AimTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 0.8
 one_shot = true
 
 [node name="LiftTimer" type="Timer" parent="."]
@@ -282,7 +283,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="WaitTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
 
 [node name="SlideRightTimer" type="Timer" parent="."]
@@ -297,7 +298,7 @@ wait_time = 0.25
 one_shot = true
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.25
 
 [connection signal="timeout" from="ShakeLTimer" to="." method="_on_shake_l_timer_timeout"]
 [connection signal="timeout" from="ShakeRTimer" to="." method="_on_shake_r_timer_timeout"]

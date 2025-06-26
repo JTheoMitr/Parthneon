@@ -213,7 +213,7 @@ func _process(_delta: float) -> void:
 		self.global_position.x -= 3.0
 		
 	if stomping:
-		self.global_position.y += 5.0
+		self.global_position.y += 3.0
 		
 	if lifting:
 		self.global_position.y -= 2.0
@@ -505,21 +505,21 @@ func _on_queue_free_timer_timeout() -> void:
 
 func _on_shake_r_timer_timeout() -> void:
 	movingRight = false
-	movingLeft = true
+	stomping = true
 	shakeLTimer.start(0.0)
 
 
 func _on_shake_l_timer_timeout() -> void:
-	movingLeft = false
-	movingRight = true
+	stomping = false
+	lifting = true
 	aimTimer.start(0.0)
-
+	shootTimer.start(0.0)
 
 func _on_aim_timer_timeout() -> void:
-	movingRight = false
+	lifting = false
 	stomping = true
 	stompTimer.start(0.0)
-	shootTimer.start(0.0)
+	
 
 func _on_stomp_timer_timeout() -> void:
 	stomping = false
@@ -531,6 +531,7 @@ func _on_stomp_timer_timeout() -> void:
 
 func _on_lift_timer_timeout() -> void:
 	lifting = false
+	stomping = true
 	waitTimer.start(0.0)
 	
 	
@@ -545,7 +546,8 @@ func _on_wait_timer_timeout() -> void:
 	#else:
 		#movingLeft = true
 		slideLTimer.start(0.0)
-		rotating = true
+		stomping = false
+		
 
 
 func _on_slide_right_timer_timeout() -> void:
@@ -561,6 +563,7 @@ func _on_slide_right_timer_timeout() -> void:
 func _on_slide_left_timer_timeout() -> void:
 	#movingLeft = false
 	disperseTimer.start(0.0)
+	rotating = true
 	#rotating = true
 
 
@@ -568,6 +571,7 @@ func _on_stomp_timer_2_timeout() -> void:
 	stomping = false
 	lifting = true
 	liftTimer.start(0.0)
+	rotating = true
 
 
 func _on_shoot_timer_timeout() -> void:
@@ -603,3 +607,5 @@ func _on_shoot_timer_timeout() -> void:
 		shoot11 = true
 	if shootCount == 15:
 		shoot12 = true
+	if shootCount >= 16:
+		shootTimer.stop()
