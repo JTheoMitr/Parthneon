@@ -143,3 +143,7 @@ func _on_button_4_focus_entered() -> void:
 func _on_button_4_focus_exited() -> void:
 	level4Btn.self_modulate.a = 0.7
 	panel4.hide()
+
+
+func _on_controls_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://ControlsScreen.tscn")

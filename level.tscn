@@ -801,7 +801,7 @@ metadata/_edit_group_ = true
 wait_time = 28.0
 
 [node name="LrgPlanetTimer" type="Timer" parent="."]
-wait_time = 55.0
+wait_time = 10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]

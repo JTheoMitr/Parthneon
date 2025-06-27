@@ -42,6 +42,7 @@ extends Node2D
 @onready var flspr2 = $FLSPSound2
 @onready var pauseMenu = $PauseMenu
 @onready var planetTimer = $PlanetTimer
+@onready var lrgPlanetTimer = $LrgPlanetTimer
 
 
 var rng = RandomNumberGenerator.new()
@@ -67,6 +68,9 @@ var gun1 = preload("res://enemies/gun_drone_boss.tscn")
 #planets
 var planet1med = preload("res://level/planet_1_medium.tscn")
 var planet1sm = preload("res://level/planet_1_small.tscn")
+var planet2med = preload("res://level/planet_2_medium.tscn")
+var planet2sm = preload("res://level/planet_2_small.tscn")
+
 var planet1lrg = preload("res://level/planet_1_large.tscn")
 
 
@@ -86,8 +90,8 @@ func _ready():
 	
 	bossCount = 0
 	bosses = [gun1, smiley1, boot1]
-	planets = [planet1med, planet1sm]
-	lrgPlanets = [planet1lrg]
+	planets = [planet1med, planet1sm, planet2med, planet2sm]
+	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false
 	
 	timerStart = 0
@@ -132,9 +136,11 @@ func _ready():
 	pauseMenu.hide()
 	
 	#planets
-	planetTimer.start()
+	planetTimer.start(0.0)
+	lrgPlanetTimer.start(0.0)
 	
-	var randomNumber = rng.randf_range(0,2)
+	var randomNumber = rng.randf_range(0,3)
+	print_debug(randomNumber)
 	var planetOne = planets[randomNumber].instantiate()
 	var my_random_number_x = rng.randf_range(1000.0, 1200.0)
 	var my_random_number_y = rng.randf_range(-135.0, 65.0)
@@ -521,7 +527,8 @@ func _unpause():
 
 func _on_planet_timer_timeout() -> void:
 	#randomize from a list of small and medium planets, create a second timer for the large planets with a lower y (more of a close-to-the-surface effect) and go from there.
-	var randomNumber = rng.randf_range(0,2)
+	var randomNumber = rng.randf_range(0,4)
+	print_debug(randomNumber)
 	var planetOne = planets[randomNumber].instantiate()
 	var my_random_number_x = rng.randf_range(1000.0, 1200.0)
 	var my_random_number_y = rng.randf_range(-135.0, 65.0)
@@ -531,10 +538,11 @@ func _on_planet_timer_timeout() -> void:
 
 
 func _on_lrg_planet_timer_timeout() -> void:
-	var randomNumber = rng.randf_range(0,1)
-	var planetOne = lrgPlanets[randomNumber].instantiate()
-	var my_random_number_x = rng.randf_range(1000.0, 1200.0)
-	var my_random_number_y = rng.randf_range(0.0, 500.0)
-	planetOne.global_position.x = my_random_number_x
-	planetOne.global_position.y = my_random_number_y
-	add_child(planetOne)
+	pass
+	#var randomNumber = rng.randf_range(0,1)
+	#var planetOne = lrgPlanets[randomNumber].instantiate()
+	#var my_random_number_x = rng.randf_range(1000.0, 1200.0)
+	#var my_random_number_y = rng.randf_range(190.0, 205.0)
+	#planetOne.global_position.x = my_random_number_x
+	#planetOne.global_position.y = my_random_number_y
+	#add_child(planetOne)

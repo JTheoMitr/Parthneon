@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmcplmetj2cw5"]
+
+[ext_resource type="Script" path="res://level/planet_1_medium.gd" id="1_s5h8p"]
+[ext_resource type="Texture2D" uid="uid://bp7st1ldvfvvj" path="res://level/background/Planets/Lava.png" id="2_kol0y"]
+
+[node name="Planet2Med" type="Area2D"]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_s5h8p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.585062, 0.585062, 0.585062, 1)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("2_kol0y")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -14,8 +14,9 @@ one_shot = true
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.886262, 0.886261, 0.886262, 1)
-scale = Vector2(11, 11)
+self_modulate = Color(0.554955, 0.554953, 0.554955, 1)
+rotation = 3.14159
+scale = Vector2(7, 7)
 texture = ExtResource("2_216f3")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
