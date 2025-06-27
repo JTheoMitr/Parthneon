@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://df7bfpv41d0aw"]
+[gd_scene load_steps=67 format=3 uid="uid://df7bfpv41d0aw"]
 
 [ext_resource type="Script" path="res://controls_screen.gd" id="1_nrx28"]
 [ext_resource type="Texture2D" uid="uid://rdyr5fb3spxb" path="res://level/background/nightsky_1.png" id="2_hovcw"]
@@ -14,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://0c1b8l6q4nx1" path="res://ui/gdb-playstation-2 cross flat.png" id="12_8iclg"]
 [ext_resource type="Texture2D" uid="uid://cpj2wevsuyukj" path="res://ui/gdb-playstation-2 triangle flat.png" id="13_gqgbp"]
 [ext_resource type="Texture2D" uid="uid://bosfdgi0rhxxl" path="res://ui/gdb-playstation-2-square-flat.png" id="14_0uumd"]
+[ext_resource type="Texture2D" uid="uid://bm6tsof7j3ogx" path="res://ui/Single keyboard (dark).png" id="15_imlq1"]
+[ext_resource type="Texture2D" uid="uid://desy7kc5rpyue" path="res://ui/Single keyboard (light) overlay.png" id="16_f6k2d"]
+[ext_resource type="Texture2D" uid="uid://h5kwf6tc4e2q" path="res://ui/Single keyboard (light) X.png" id="17_y3pf0"]
+[ext_resource type="Texture2D" uid="uid://brwbm6oltt1sg" path="res://ui/Single keyboard (light) up.png" id="18_ydi1f"]
+[ext_resource type="Texture2D" uid="uid://cdotxoh565ier" path="res://ui/Single keyboard (light) down.png" id="19_srlak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ow5o"]
 bg_color = Color(0.2, 0.227451, 0.505882, 0.909804)
@@ -330,6 +335,9 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyb76"]
 bg_color = Color(0.748004, 0.500216, 0.736765, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5m7c"]
+bg_color = Color(0.360784, 0.392157, 0.466667, 1)
+
 [node name="ControlsScreen" type="Node2D"]
 script = ExtResource("1_nrx28")
 
@@ -377,20 +385,28 @@ theme_override_font_sizes/normal_font_size = 2000
 bbcode_enabled = true
 text = "[center]Controls[/center]"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = 672.0
 offset_top = 961.0
-offset_right = 1248.0
+offset_right = 1227.0
 offset_bottom = 1057.0
 theme_override_constants/separation = 28
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_x6isi")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_dyb76")
-text = "Back"
+text = "  Back  "
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_x6isi")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_dyb76")
+text = " Keyboard "
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -507,7 +523,117 @@ position = Vector2(640, 60)
 scale = Vector2(3.5, 3.5)
 texture = ExtResource("14_0uumd")
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="Panel3" type="Panel" parent="."]
+offset_left = 394.0
+offset_top = 191.0
+offset_right = 1511.0
+offset_bottom = 870.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ow5o")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel3"]
+position = Vector2(555, 369)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("15_imlq1")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Panel3"]
+position = Vector2(555, 369)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_f6k2d")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel3"]
+layout_mode = 0
+offset_left = 534.0
+offset_top = 469.0
+offset_right = 904.0
+offset_bottom = 643.0
+theme_override_fonts/normal_font = ExtResource("6_x6isi")
+theme_override_font_sizes/normal_font_size = 40
+text = "\\ 
+  Jump"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel3"]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 427.0
+offset_right = 474.0
+offset_bottom = 558.0
+theme_override_fonts/normal_font = ExtResource("6_x6isi")
+theme_override_font_sizes/normal_font_size = 42
+text = "      /
+Flash "
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel3"]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 482.0
+offset_right = 1229.0
+offset_bottom = 604.0
+theme_override_fonts/normal_font = ExtResource("6_x6isi")
+theme_override_font_sizes/normal_font_size = 40
+text = "    |
+Movement"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Panel3"]
+layout_mode = 0
+offset_left = 754.0
+offset_top = 306.0
+offset_right = 1191.0
+offset_bottom = 428.0
+theme_override_fonts/normal_font = ExtResource("6_x6isi")
+theme_override_font_sizes/normal_font_size = 40
+text = "-------- Pause"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel3"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 26.0
+offset_right = 767.0
+offset_bottom = 159.0
+theme_override_fonts/normal_font = ExtResource("6_x6isi")
+theme_override_font_sizes/normal_font_size = 40
+text = "Flash:   /
+"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel3"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 92.0
+offset_right = 767.0
+offset_bottom = 225.0
+theme_override_fonts/normal_font = ExtResource("6_x6isi")
+theme_override_font_sizes/normal_font_size = 40
+text = "Jump:   /
+"
+
+[node name="Sprite2D2" type="Sprite2D" parent="Panel3"]
+position = Vector2(534, 122)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_y3pf0")
+
+[node name="Panel" type="Panel" parent="Panel3/Sprite2D2"]
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 10.0
+offset_bottom = 8.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w5m7c")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Panel3"]
+position = Vector2(636, 122)
+scale = Vector2(2, 2)
+texture = ExtResource("18_ydi1f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Panel3"]
+position = Vector2(560, 56)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_y3pf0")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Panel3"]
+position = Vector2(653, 54)
+scale = Vector2(2, 2)
+texture = ExtResource("19_srlak")
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

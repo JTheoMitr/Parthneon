@@ -1,13 +1,15 @@
 extends Node2D
 
-@onready var vbox = $VBoxContainer
-@onready var button = $VBoxContainer/Button
+@onready var button = $HBoxContainer/Button
 @onready var city3 = $City3
 @onready var city4 = $City4
 @onready var city5 = $City5
 @onready var theme = $Theme
 @onready var nightSky = $NightSky
 @onready var nightSky2 = $NightSky2
+@onready var controllerPanel = $Panel2
+@onready var keyboardPanel = $Panel3
+@onready var controlTypeButton = $HBoxContainer/Button2
 
 
 var levelOne = preload("res://level.tscn")
@@ -17,6 +19,9 @@ var scrolling = false
 func _ready() -> void:
 	button.grab_focus()
 	$Theme.play(0.0)
+	controllerPanel.show()
+	keyboardPanel.hide()
+	controlTypeButton.text = " Keyboard "
 	
 
 
@@ -51,3 +56,14 @@ func _on_button_pressed() -> void:
 
 func _on_theme_finished() -> void:
 	theme.play(0.0)
+
+
+func _on_button_2_pressed() -> void:
+	if controllerPanel.is_visible_in_tree():
+		controllerPanel.hide()
+		keyboardPanel.show()
+		controlTypeButton.text = " Controller "
+	else:
+		controllerPanel.show()
+		keyboardPanel.hide()
+		controlTypeButton.text = " Keyboard "

@@ -1,14 +1,10 @@
-res://level.tscn
+res://ControlsScreen.tscn
 res://level/tileset/tileset.tres
+res://controls_screen.gd
+res://level.tscn
 res://player/player.tscn
 res://level/planet_1_medium.tscn
-res://level/planet_1_small.tscn
-res://level/planet_1_large.tscn
-res://level/level.gd
 res://level/planet_2_medium.tscn
 res://level/planet_2_small.tscn
 res://ui/pause_menu.tscn
-res://ControlsScreen.tscn
-res://controls_screen.gd
 res://menu.tscn
-res://menu.gd
