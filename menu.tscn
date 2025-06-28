@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://drdus1llilb66"]
+[gd_scene load_steps=68 format=3 uid="uid://drdus1llilb66"]
 
 [ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="1_6ps7o"]
 [ext_resource type="Script" path="res://menu.gd" id="1_c4g7y"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://cssuvyujnsakc" path="res://level/background/comet_bgnd_icon.png" id="11_kaupo"]
 [ext_resource type="Texture2D" uid="uid://bumfa7yx0tfr7" path="res://level/background/pixel-sky-backgrounds-byCaniaEast/sunsetbackground.png" id="12_4bbki"]
 [ext_resource type="Texture2D" uid="uid://udfadsye12qi" path="res://level/background/pixel_sky_evening.jpg" id="13_h53k4"]
+[ext_resource type="Texture2D" uid="uid://wfohouh0neh1" path="res://ui/exit_pixel_sign.png" id="14_xfm6b"]
+[ext_resource type="Texture2D" uid="uid://ofd1p3w6cedb" path="res://ui/exit_pixel_sign_pressed.png" id="15_x3uqj"]
+[ext_resource type="Texture2D" uid="uid://cubeavlr7yrqw" path="res://ui/exit_pixel_sign_focused.png" id="16_dyonu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ow5o"]
 bg_color = Color(0, 0, 0, 1)
@@ -414,6 +417,14 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_dyb76")
 text = "Controls"
 
+[node name="Tutorials" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6ps7o")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_dyb76")
+text = "Tutorial"
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
@@ -538,8 +549,20 @@ offset_right = 212.0
 offset_bottom = 211.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a800i")
 
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 78.0
+offset_top = 929.0
+offset_right = 678.0
+offset_bottom = 1259.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("14_xfm6b")
+texture_pressed = ExtResource("15_x3uqj")
+texture_focused = ExtResource("16_dyonu")
+
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorials" to="." method="_on_tutorials_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
@@ -557,3 +580,4 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_a800i")
 [connection signal="focus_entered" from="HBoxContainer/Button4" to="." method="_on_button_4_focus_entered"]
 [connection signal="focus_exited" from="HBoxContainer/Button4" to="." method="_on_button_4_focus_exited"]
 [connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

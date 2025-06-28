@@ -17,6 +17,7 @@ extends Node2D
 @onready var panel2 = $HBoxContainer/Button2/Panel
 @onready var panel3 = $HBoxContainer/Button3/Panel
 @onready var panel4 = $HBoxContainer/Button4/Panel
+@onready var exitButton = $TextureButton
 
 var levelOne = preload("res://level.tscn")
 var scrolling = false
@@ -31,6 +32,7 @@ func _ready() -> void:
 	$NightSky2.play()
 	vbox.show()
 	hbox.hide()
+	exitButton.hide()
 	
 
 
@@ -45,6 +47,12 @@ func _process(_delta: float) -> void:
 		$Prism.global_position.y += 5.6
 		$RichTextLabel.hide()
 		$VBoxContainer.hide()
+		
+	if hbox.is_visible_in_tree():
+		if Input.is_action_just_pressed("ui_down"):
+			exitButton.grab_focus()
+		if Input.is_action_just_pressed("ui_up"):
+			level1Btn.grab_focus()
 		
 		
 
@@ -68,6 +76,7 @@ func _on_timer_3_timeout() -> void:
 
 func _on_button_pressed() -> void:
 	hbox.show()
+	exitButton.show()
 	level1Btn.grab_focus()
 	vbox.hide()
 	
@@ -147,3 +156,14 @@ func _on_button_4_focus_exited() -> void:
 
 func _on_controls_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://ControlsScreen.tscn")
+
+
+func _on_texture_button_pressed() -> void:
+	hbox.hide()
+	button.grab_focus()
+	vbox.show()
+	exitButton.hide()
+
+
+func _on_tutorials_pressed() -> void:
+	get_tree().change_scene_to_file("res://TutorialScreen.tscn")

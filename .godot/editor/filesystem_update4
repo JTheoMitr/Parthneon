@@ -8,3 +8,6 @@ res://level/planet_2_medium.tscn
 res://level/planet_2_small.tscn
 res://ui/pause_menu.tscn
 res://menu.tscn
+res://menu.gd
+res://TutorialScreen.tscn
+res://tutorial_screen.gd

@@ -1,14 +1,14 @@
+TextureButton
+Sprite2D
+VBoxContainer
 HBoxContainer
 Panel
-Sprite2D
 RichTextLabel
 Timer
 AudioStreamPlayer
 Button
-VBoxContainer
 AnimatedSprite2D
 CollisionShape2D
 Area2D
-TextureButton
 StaticBody2D
 AudioStreamPlayer2D
