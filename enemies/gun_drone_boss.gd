@@ -575,7 +575,7 @@ func _on_stomp_timer_2_timeout() -> void:
 
 
 func _on_shoot_timer_timeout() -> void:
-	print_debug("shoot")
+	#print_debug("shoot")
 	shootCount += 1
 	if shootCount == 1:
 		shoot1 = true

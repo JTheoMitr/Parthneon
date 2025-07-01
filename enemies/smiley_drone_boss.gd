@@ -309,7 +309,7 @@ func _on_frown_freeze_timer_timeout() -> void:
 func _on_disperse_timer_timeout() -> void:
 	send2 = true
 	rotating = false
-	print_debug("dispersing")
+	#print_debug("dispersing")
 	qFreeTimer.start(0.0)
 	
 

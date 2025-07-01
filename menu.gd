@@ -94,6 +94,7 @@ func _on_button_1_pressed() -> void:
 	scrolling = true
 	$ScrollTimer.start()
 	hbox.hide()
+	exitButton.hide()
 
 
 func _on_button_1_focus_entered() -> void:

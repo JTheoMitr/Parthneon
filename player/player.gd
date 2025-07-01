@@ -129,7 +129,7 @@ func _physics_process(delta: float) -> void:
 
 	if stats.health <= 0:
 		if alive:
-			print_debug("YOU DEAD")
+			#print_debug("YOU DEAD")
 			sprite.hide()
 			sprinkle.show()
 			sprinkle.play("default")
@@ -159,11 +159,11 @@ func _on_dust_animation_finished() -> void:
 
 func _on_hurtbox_area_entered(_area: Area2D) -> void:
 	if flashing:
-		print_debug("flashed")
+		#print_debug("flashed")
 		velocity.y = JUMP_VELOCITY
 		jumpSound.play(0.0)
 	else:
-		print_debug("hurt")
+		#print_debug("hurt")
 		stats.health -= 1
 		
 		

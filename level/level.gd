@@ -128,8 +128,8 @@ func _ready():
 	stats.alive = true
 	stats.score = 0
 	stats.health = 1
-	print_debug("readying up")
-	print_debug(timerDisplay.global_position.x)
+	#print_debug("readying up")
+	#print_debug(timerDisplay.global_position.x)
 	
 	stats.connect("_game_unpaused", _unpause)
 	paused = false
@@ -140,7 +140,7 @@ func _ready():
 	lrgPlanetTimer.start(0.0)
 	
 	var randomNumber = rng.randf_range(0,3)
-	print_debug(randomNumber)
+	#print_debug(randomNumber)
 	var planetOne = planets[randomNumber].instantiate()
 	var my_random_number_x = rng.randf_range(1000.0, 1200.0)
 	var my_random_number_y = rng.randf_range(-135.0, 65.0)
@@ -233,19 +233,19 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	print_debug("timer1up")
+	#print_debug("timer1up")
 	#use various timers to instance different platform types with various speeds and starting positions
 	#longNeon1
-	var my_random_number_x = rng.randf_range(1550.0, 5000.0)
+	var my_random_number_x = rng.randf_range(2550.0, 5000.0)
 	var my_random_number_y = rng.randf_range(-135.0, 65.0)
 	#blueCross1
-	var my_random_number_x2 = rng.randf_range(950.0, 3500.0)
+	var my_random_number_x2 = rng.randf_range(1950.0, 3500.0)
 	var my_random_number_y2 = rng.randf_range(-135.0, 65.0)
 	#corner1
-	var my_random_number_x3 = rng.randf_range(950.0, 3500.0)
+	var my_random_number_x3 = rng.randf_range(2950.0, 3500.0)
 	var my_random_number_y3 = rng.randf_range(-135.0, 65.0)
 	#enemy1
-	var my_random_number_x4 = rng.randf_range(950.0, 3500.0)
+	var my_random_number_x4 = rng.randf_range(1950.0, 3500.0)
 	var my_random_number_y4 = rng.randf_range(-135.0, 65.0)
 	#enemy2 L->R
 	var my_random_number_x5 = rng.randf_range(-1950.0, -180.0)
@@ -397,16 +397,16 @@ func _on_button_2_pressed() -> void:
 
 
 func _on_timer_2_timeout() -> void:
-	print_debug("timer2up")
+	#print_debug("timer2up")
 	# disperse some additional platforms and enemies here
 	#blueCross1
-	var my_random_number_x2 = rng.randf_range(950.0, 3500.0)
+	var my_random_number_x2 = rng.randf_range(1950.0, 3500.0)
 	var my_random_number_y2 = rng.randf_range(-135.0, 65.0)
 	#corner1
 	var my_random_number_x3 = rng.randf_range(950.0, 3500.0)
 	var my_random_number_y3 = rng.randf_range(-135.0, 65.0)
 	#enemy1
-	var my_random_number_x4 = rng.randf_range(950.0, 3500.0)
+	var my_random_number_x4 = rng.randf_range(950.0, 2500.0)
 	var my_random_number_y4 = rng.randf_range(-135.0, 65.0)
 	#enemy2 L->R
 	var my_random_number_x5 = rng.randf_range(-1950.0, -180.0)
@@ -441,7 +441,7 @@ func _on_timer_2_timeout() -> void:
 
 
 func _on_timer_3_timeout() -> void:
-	print_debug("timer3up")
+	#print_debug("timer3up")
 	var my_random_number_x = rng.randf_range(950.0, 1350.0)
 	var my_random_number_y = rng.randf_range(-65.0, 65.0)
 	
@@ -476,7 +476,7 @@ func _on_low_platform_timer_timeout() -> void:
 	longNeon1.global_position.x = my_random_number_x
 	longNeon1.global_position.y = my_random_number_y
 	add_child(longNeon1)
-	print_debug("lowplatd")
+	#print_debug("lowplatd")
 
 
 func _on_boss_prep_timer_timeout() -> void:
@@ -490,7 +490,7 @@ func _on_boss_prep_timer_timeout() -> void:
 	lowPlatTimer.start(0.0)
 	floorsplosionTimer.start(0.0)
 	
-	print_debug("bosspreppd")
+	#print_debug("bosspreppd")
 
 
 func _on_boss_completed_timer_timeout() -> void:
@@ -499,7 +499,7 @@ func _on_boss_completed_timer_timeout() -> void:
 	timer3.start()
 	stats.bossPhase = false
 	lowPlatTimer.stop()
-	print_debug("completed")
+	#print_debug("completed")
 	bossCount += 1
 	#re-start boss prep and boss entrance
 	bossPrepTimer.start(0.0)
@@ -528,7 +528,7 @@ func _unpause():
 func _on_planet_timer_timeout() -> void:
 	#randomize from a list of small and medium planets, create a second timer for the large planets with a lower y (more of a close-to-the-surface effect) and go from there.
 	var randomNumber = rng.randf_range(0,4)
-	print_debug(randomNumber)
+	#print_debug(randomNumber)
 	var planetOne = planets[randomNumber].instantiate()
 	var my_random_number_x = rng.randf_range(1000.0, 1200.0)
 	var my_random_number_y = rng.randf_range(-135.0, 65.0)

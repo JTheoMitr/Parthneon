@@ -1,14 +1,14 @@
+Button
+Panel
+VideoStreamPlayer
 TextureButton
 Sprite2D
 VBoxContainer
 HBoxContainer
-Panel
 RichTextLabel
 Timer
 AudioStreamPlayer
-Button
 AnimatedSprite2D
 CollisionShape2D
 Area2D
 StaticBody2D
-AudioStreamPlayer2D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://8xk7vjcr371x"]
+[gd_scene load_steps=63 format=3 uid="uid://8xk7vjcr371x"]
 
 [ext_resource type="Script" path="res://tutorial_screen.gd" id="1_lnlat"]
 [ext_resource type="Texture2D" uid="uid://rdyr5fb3spxb" path="res://level/background/nightsky_1.png" id="2_dhbiw"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cpj2wevsuyukj" path="res://ui/gdb-playstation-2 triangle flat.png" id="13_8sgxc"]
 [ext_resource type="Texture2D" uid="uid://ofd1p3w6cedb" path="res://ui/exit_pixel_sign_pressed.png" id="13_nfa0f"]
 [ext_resource type="Texture2D" uid="uid://cubeavlr7yrqw" path="res://ui/exit_pixel_sign_focused.png" id="14_ivmnu"]
+[ext_resource type="VideoStream" path="res://ui/ParthTut1.ogv" id="15_fpi6t"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ow5o"]
 bg_color = Color(0.2, 0.227451, 0.505882, 0.909804)
@@ -330,6 +331,9 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyb76"]
 bg_color = Color(0.748004, 0.500216, 0.736765, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqsil"]
+bg_color = Color(0.261113, 0.261113, 0.261112, 1)
+
 [node name="TutorialScreen" type="Node2D"]
 script = ExtResource("1_lnlat")
 
@@ -461,21 +465,22 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3ow5o")
 [node name="RichTextLabel6" type="RichTextLabel" parent="Panel3"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 606.0
+offset_top = 653.0
 offset_right = 1354.0
-offset_bottom = 847.0
+offset_bottom = 851.0
 theme_override_fonts/normal_font = ExtResource("6_ija6j")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]Use Jump (  ) to leap between moving platforms. You may jump up through most, but spinning platforms will block you. Use Flash (  ) to shift through walls and obstacles."
+text = "[center]Use (  ) to jump. 
+Use Flash (  ) to shift through walls and obstacles."
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel3/RichTextLabel6"]
-position = Vector2(288, 29)
+position = Vector2(612, 29)
 scale = Vector2(3, 3)
 texture = ExtResource("12_a1xsf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Panel3/RichTextLabel6"]
-position = Vector2(392, 131)
+position = Vector2(341, 79)
 scale = Vector2(3, 3)
 texture = ExtResource("13_8sgxc")
 
@@ -495,7 +500,7 @@ offset_bottom = 847.0
 theme_override_fonts/normal_font = ExtResource("6_ija6j")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]Be Wary of enemy drones; Collision is fatal. Destory them with your flash technique (  )."
+text = "[center]Be Wary of enemy drones; Collision is fatal. Destroy them with your flash technique (  )."
 
 [node name="Sprite2D2" type="Sprite2D" parent="Panel4/RichTextLabel6"]
 position = Vector2(951, 79)
@@ -518,7 +523,7 @@ offset_bottom = 847.0
 theme_override_fonts/normal_font = ExtResource("6_ija6j")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]Destroying an enemy will net the player additional xp and an air boost. This air boost can be chained infinitely."
+text = "[center]Destroying an enemy will net additional xp and an air boost. This air boost can be chained."
 
 [node name="Panel5" type="Panel" parent="."]
 offset_left = 270.0
@@ -530,9 +535,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3ow5o")
 [node name="RichTextLabel6" type="RichTextLabel" parent="Panel5"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 670.0
+offset_top = 649.0
 offset_right = 1354.0
-offset_bottom = 847.0
+offset_bottom = 866.0
 theme_override_fonts/normal_font = ExtResource("6_ija6j")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
@@ -548,7 +553,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3ow5o")
 [node name="RichTextLabel6" type="RichTextLabel" parent="Panel6"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 658.0
+offset_top = 648.0
 offset_right = 1354.0
 offset_bottom = 847.0
 theme_override_fonts/normal_font = ExtResource("6_ija6j")
@@ -566,25 +571,42 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3ow5o")
 [node name="RichTextLabel6" type="RichTextLabel" parent="Panel7"]
 layout_mode = 0
 offset_left = 29.0
-offset_top = 564.0
+offset_top = 548.0
 offset_right = 1354.0
 offset_bottom = 847.0
 theme_override_fonts/normal_font = ExtResource("6_ija6j")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "[center]Will you make it to the end of parthneon?
+text = "[center]Will you make it to the end?
 
 Pass all challenges laid ahead and you may find yourself at the edge of space and time itself..."
 
 [node name="TextureButton" type="TextureButton" parent="."]
-offset_left = 25.0
-offset_top = 955.0
-offset_right = 625.0
-offset_bottom = 1285.0
-scale = Vector2(0.3, 0.3)
+offset_left = 36.0
+offset_top = 31.0
+offset_right = 636.0
+offset_bottom = 361.0
+scale = Vector2(0.2, 0.2)
 texture_normal = ExtResource("12_gxc07")
 texture_pressed = ExtResource("13_nfa0f")
 texture_focused = ExtResource("14_ivmnu")
+
+[node name="Panel9" type="Panel" parent="."]
+self_modulate = Color(0.262932, 0.262932, 0.262932, 1)
+offset_left = 447.0
+offset_top = 109.0
+offset_right = 1466.0
+offset_bottom = 621.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aqsil")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = 507.0
+offset_top = 112.0
+offset_right = 1787.0
+offset_bottom = 832.0
+scale = Vector2(0.7, 0.7)
+stream = ExtResource("15_fpi6t")
+loop = true
 
 [connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/Next" to="." method="_on_next_pressed"]
