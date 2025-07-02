@@ -89,7 +89,7 @@ var paused
 func _ready():
 	
 	bossCount = 0
-	bosses = [gun1, smiley1, boot1]
+	bosses = [boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
 	planets = [planet1med, planet1sm, planet2med, planet2sm]
 	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=93 format=3 uid="uid://b0dcakpphuuc5"]
+[gd_scene load_steps=94 format=3 uid="uid://b0dcakpphuuc5"]
 
 [ext_resource type="TileSet" uid="uid://dlu6wo1aknvai" path="res://level/tileset/tileset.tres" id="1_0yenw"]
 [ext_resource type="Script" path="res://level/level.gd" id="1_bccge"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://c7hoq417a4o5i" path="res://audio/SL_Circuit_Bent_Voice_04.mp3" id="20_cbpy7"]
 [ext_resource type="AudioStream" uid="uid://o3jnoctxukfj" path="res://audio/flsp2.wav" id="20_nvdjc"]
 [ext_resource type="PackedScene" uid="uid://cyg8n5m7hhle2" path="res://ui/pause_menu.tscn" id="21_fjd8j"]
+[ext_resource type="PackedScene" uid="uid://7jqna4amlwxt" path="res://enemies/bottom_catcher.tscn" id="22_2srsq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cndus"]
 
@@ -531,7 +532,6 @@ sprite_frames = SubResource("SpriteFrames_2m55w")
 position = Vector2(-96, 34)
 tile_set = ExtResource("1_0yenw")
 format = 2
-layer_0/tile_data = PackedInt32Array(131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0)
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("3")]
 visible = false
@@ -802,6 +802,9 @@ wait_time = 28.0
 
 [node name="LrgPlanetTimer" type="Timer" parent="."]
 wait_time = 10.0
+
+[node name="BottomCatcher" parent="." instance=ExtResource("22_2srsq")]
+position = Vector2(488, 2195)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]

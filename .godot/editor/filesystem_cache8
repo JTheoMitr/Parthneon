@@ -1,17 +1,17 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1751263068
-ControlsScreen.tscn::PackedScene::7576336825005332626::1751261525::0::1::::<><>::res://controls_screen.gd<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://btpcjj2r8q6pj::::res://level/background/cityscroller_3.png<>uid://b0fgn0bnx1j55::::res://level/background/cityscroller_4.png<>uid://m6e7n0n2o7it::::res://level/background/cityscoller_5.png<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>uid://8fdmxw0dmaje::::res://audio/welcometoparthneon.mp3<>uid://c3g6kk8ssuwth::::res://audio/Beat_02_Arpeggiator.mp3<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://dh2re7kh00xpk::::res://ui/ps4_gamepad isolated.png<>uid://dh04l3lfh5cqi::::res://ui/gdb-playstation-2 circle flat.png<>uid://0c1b8l6q4nx1::::res://ui/gdb-playstation-2 cross flat.png<>uid://cpj2wevsuyukj::::res://ui/gdb-playstation-2 triangle flat.png<>uid://bosfdgi0rhxxl::::res://ui/gdb-playstation-2-square-flat.png<>uid://bm6tsof7j3ogx::::res://ui/Single keyboard (dark).png<>uid://desy7kc5rpyue::::res://ui/Single keyboard (light) overlay.png<>uid://h5kwf6tc4e2q::::res://ui/Single keyboard (light) X.png<>uid://brwbm6oltt1sg::::res://ui/Single keyboard (light) up.png<>uid://cdotxoh565ier::::res://ui/Single keyboard (light) down.png
+::res://::1751428285
+ControlsScreen.tscn::PackedScene::7576336825005332626::1751349536::0::1::::<><>::res://controls_screen.gd<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://btpcjj2r8q6pj::::res://level/background/cityscroller_3.png<>uid://b0fgn0bnx1j55::::res://level/background/cityscroller_4.png<>uid://m6e7n0n2o7it::::res://level/background/cityscoller_5.png<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>uid://8fdmxw0dmaje::::res://audio/welcometoparthneon.mp3<>uid://c3g6kk8ssuwth::::res://audio/Beat_02_Arpeggiator.mp3<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://dh2re7kh00xpk::::res://ui/ps4_gamepad isolated.png<>uid://dh04l3lfh5cqi::::res://ui/gdb-playstation-2 circle flat.png<>uid://0c1b8l6q4nx1::::res://ui/gdb-playstation-2 cross flat.png<>uid://cpj2wevsuyukj::::res://ui/gdb-playstation-2 triangle flat.png<>uid://bosfdgi0rhxxl::::res://ui/gdb-playstation-2-square-flat.png<>uid://bm6tsof7j3ogx::::res://ui/Single keyboard (dark).png<>uid://desy7kc5rpyue::::res://ui/Single keyboard (light) overlay.png<>uid://h5kwf6tc4e2q::::res://ui/Single keyboard (light) X.png<>uid://brwbm6oltt1sg::::res://ui/Single keyboard (light) up.png<>uid://cdotxoh565ier::::res://ui/Single keyboard (light) down.png
 controls_screen.gd::GDScript::-1::1751067969::0::1::::<>Node2D<>::
 export_presets.cfg::TextFile::-1::1735706473::0::1::::<><>::
 icon.webp::CompressedTexture2D::3626017087650301524::1707204490::1734123286::1::::<><>::
 level2.tscn::PackedScene::3693561697278233646::1750387993::0::1::::<><>::res://level/level.gd<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://dlu6wo1aknvai::::res://level/tileset/tileset.tres<>uid://c1n07vnm2brb8::::res://level/parallax_background.tscn<>uid://c657hgr7fcptm::::res://player/player.tscn<>uid://dk8uqn6ylqdl1::::res://platforms/platform_vertical_one_bt.tscn<>uid://bscjd77dw23ia::::res://platforms/platform_vertical_two_tb.tscn<>uid://psn84okx7fmt::::res://platforms/platform_neon_long_one_horiz.tscn<>uid://beild3peqepfp::::res://platforms/neon_blue_cross_platform_slippery.tscn<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://dcab1c68l4rqq::::res://audio/Kamek's Kitchen _ HN.mp3<>uid://cengt3fd1a6su::::res://platforms/neon_prison.tscn<>uid://b38fndvctlexn::::res://audio/get_ready1.mp3<>uid://iwg0pirdphtd::::res://audio/laser_bop.wav<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://dsca8y55y0vcu::::res://audio/ESM_Retro_Game_Classic_Explosion_9_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://c7hoq417a4o5i::::res://audio/SL_Circuit_Bent_Voice_04.mp3<>uid://cxixpryydoms0::::res://audio/flsp1.wav<>uid://o3jnoctxukfj::::res://audio/flsp2.wav<>uid://cyg8n5m7hhle2::::res://ui/pause_menu.tscn
-level.tscn::PackedScene::4147456890988885602::1751261525::0::1::::<><>::uid://dlu6wo1aknvai::::res://level/tileset/tileset.tres<>res://level/level.gd<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://c1n07vnm2brb8::::res://level/parallax_background.tscn<>uid://c657hgr7fcptm::::res://player/player.tscn<>uid://dk8uqn6ylqdl1::::res://platforms/platform_vertical_one_bt.tscn<>uid://bscjd77dw23ia::::res://platforms/platform_vertical_two_tb.tscn<>uid://psn84okx7fmt::::res://platforms/platform_neon_long_one_horiz.tscn<>uid://beild3peqepfp::::res://platforms/neon_blue_cross_platform_slippery.tscn<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://dcab1c68l4rqq::::res://audio/Kamek's Kitchen _ HN.mp3<>uid://cengt3fd1a6su::::res://platforms/neon_prison.tscn<>uid://b38fndvctlexn::::res://audio/get_ready1.mp3<>uid://iwg0pirdphtd::::res://audio/laser_bop.wav<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://dsca8y55y0vcu::::res://audio/ESM_Retro_Game_Classic_Explosion_9_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://cxixpryydoms0::::res://audio/flsp1.wav<>uid://c7hoq417a4o5i::::res://audio/SL_Circuit_Bent_Voice_04.mp3<>uid://o3jnoctxukfj::::res://audio/flsp2.wav<>uid://cyg8n5m7hhle2::::res://ui/pause_menu.tscn
-menu.gd::GDScript::-1::1751132000::0::1::::<>Node2D<>::
-menu.tscn::PackedScene::8359913393444517689::1751261525::0::1::::<><>::uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>res://menu.gd<>uid://btpcjj2r8q6pj::::res://level/background/cityscroller_3.png<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://b0fgn0bnx1j55::::res://level/background/cityscroller_4.png<>uid://m6e7n0n2o7it::::res://level/background/cityscoller_5.png<>uid://8fdmxw0dmaje::::res://audio/welcometoparthneon.mp3<>uid://c3g6kk8ssuwth::::res://audio/Beat_02_Arpeggiator.mp3<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://uk1skx6cxpjb::::res://level/background/nightsky_1_cut.png<>uid://cssuvyujnsakc::::res://level/background/comet_bgnd_icon.png<>uid://bumfa7yx0tfr7::::res://level/background/pixel-sky-backgrounds-byCaniaEast/sunsetbackground.png<>uid://udfadsye12qi::::res://level/background/pixel_sky_evening.jpg<>uid://wfohouh0neh1::::res://ui/exit_pixel_sign.png<>uid://ofd1p3w6cedb::::res://ui/exit_pixel_sign_pressed.png<>uid://cubeavlr7yrqw::::res://ui/exit_pixel_sign_focused.png
+level.tscn::PackedScene::4147456890988885602::1751349535::0::1::::<><>::uid://dlu6wo1aknvai::::res://level/tileset/tileset.tres<>res://level/level.gd<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://c1n07vnm2brb8::::res://level/parallax_background.tscn<>uid://c657hgr7fcptm::::res://player/player.tscn<>uid://dk8uqn6ylqdl1::::res://platforms/platform_vertical_one_bt.tscn<>uid://bscjd77dw23ia::::res://platforms/platform_vertical_two_tb.tscn<>uid://psn84okx7fmt::::res://platforms/platform_neon_long_one_horiz.tscn<>uid://beild3peqepfp::::res://platforms/neon_blue_cross_platform_slippery.tscn<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://dcab1c68l4rqq::::res://audio/Kamek's Kitchen _ HN.mp3<>uid://cengt3fd1a6su::::res://platforms/neon_prison.tscn<>uid://b38fndvctlexn::::res://audio/get_ready1.mp3<>uid://iwg0pirdphtd::::res://audio/laser_bop.wav<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://dsca8y55y0vcu::::res://audio/ESM_Retro_Game_Classic_Explosion_9_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://cxixpryydoms0::::res://audio/flsp1.wav<>uid://c7hoq417a4o5i::::res://audio/SL_Circuit_Bent_Voice_04.mp3<>uid://o3jnoctxukfj::::res://audio/flsp2.wav<>uid://cyg8n5m7hhle2::::res://ui/pause_menu.tscn
+menu.gd::GDScript::-1::1751320655::0::1::::<>Node2D<>::
+menu.tscn::PackedScene::8359913393444517689::1751349536::0::1::::<><>::uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>res://menu.gd<>uid://btpcjj2r8q6pj::::res://level/background/cityscroller_3.png<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://b0fgn0bnx1j55::::res://level/background/cityscroller_4.png<>uid://m6e7n0n2o7it::::res://level/background/cityscoller_5.png<>uid://8fdmxw0dmaje::::res://audio/welcometoparthneon.mp3<>uid://c3g6kk8ssuwth::::res://audio/Beat_02_Arpeggiator.mp3<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://uk1skx6cxpjb::::res://level/background/nightsky_1_cut.png<>uid://cssuvyujnsakc::::res://level/background/comet_bgnd_icon.png<>uid://bumfa7yx0tfr7::::res://level/background/pixel-sky-backgrounds-byCaniaEast/sunsetbackground.png<>uid://udfadsye12qi::::res://level/background/pixel_sky_evening.jpg<>uid://wfohouh0neh1::::res://ui/exit_pixel_sign.png<>uid://ofd1p3w6cedb::::res://ui/exit_pixel_sign_pressed.png<>uid://cubeavlr7yrqw::::res://ui/exit_pixel_sign_focused.png
 player_stats.gd::GDScript::-1::1736493230::0::1::::<>Node<>::
 README.md::TextFile::-1::1750961996::0::1::::<><>::
-TutorialScreen.tscn::PackedScene::2364377960739384571::1751261526::0::1::::<><>::res://tutorial_screen.gd<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://btpcjj2r8q6pj::::res://level/background/cityscroller_3.png<>uid://b0fgn0bnx1j55::::res://level/background/cityscroller_4.png<>uid://m6e7n0n2o7it::::res://level/background/cityscoller_5.png<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>uid://8fdmxw0dmaje::::res://audio/welcometoparthneon.mp3<>uid://c3g6kk8ssuwth::::res://audio/Beat_02_Arpeggiator.mp3<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://0c1b8l6q4nx1::::res://ui/gdb-playstation-2 cross flat.png<>uid://wfohouh0neh1::::res://ui/exit_pixel_sign.png<>uid://cpj2wevsuyukj::::res://ui/gdb-playstation-2 triangle flat.png<>uid://ofd1p3w6cedb::::res://ui/exit_pixel_sign_pressed.png<>uid://cubeavlr7yrqw::::res://ui/exit_pixel_sign_focused.png<>res://ui/ParthTut1.ogv
-tutorial_screen.gd::GDScript::-1::1751260901::0::1::::<>Node2D<>::
+TutorialScreen.tscn::PackedScene::2364377960739384571::1751349536::0::1::::<><>::res://tutorial_screen.gd<>uid://rdyr5fb3spxb::::res://level/background/nightsky_1.png<>uid://btpcjj2r8q6pj::::res://level/background/cityscroller_3.png<>uid://b0fgn0bnx1j55::::res://level/background/cityscroller_4.png<>uid://m6e7n0n2o7it::::res://level/background/cityscoller_5.png<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf<>uid://8fdmxw0dmaje::::res://audio/welcometoparthneon.mp3<>uid://c3g6kk8ssuwth::::res://audio/Beat_02_Arpeggiator.mp3<>uid://c2esqovrwlsqf::::res://platforms/basic_neon_block_blue.png<>uid://0c1b8l6q4nx1::::res://ui/gdb-playstation-2 cross flat.png<>uid://wfohouh0neh1::::res://ui/exit_pixel_sign.png<>uid://cpj2wevsuyukj::::res://ui/gdb-playstation-2 triangle flat.png<>uid://ofd1p3w6cedb::::res://ui/exit_pixel_sign_pressed.png<>uid://cubeavlr7yrqw::::res://ui/exit_pixel_sign_focused.png<>res://ui/ParthTut1.ogv
+tutorial_screen.gd::GDScript::-1::1751333420::0::1::::<>Node2D<>::
 ::res://audio/::1736577600
 Beat_02_Arpeggiator.mp3::AudioStreamMP3::6752415917545027877::1734854435::1734854450::1::::<><>::
 BONG1.wav::AudioStreamWAV::8745666591098259036::1734588283::1734588722::1::::<><>::
@@ -56,14 +56,15 @@ FX052_01.png::CompressedTexture2D::2115827544602356915::1602617674::1734661341::
 FX052_02.png::CompressedTexture2D::4254701142558394694::1602617674::1734661341::1::::<><>::
 FX052_03.png::CompressedTexture2D::7933429447405354471::1602617674::1734661341::1::::<><>::
 FX052_04.png::CompressedTexture2D::4634602183312815818::1602617674::1734661341::1::::<><>::
-::res://enemies/::1750908606
+::res://enemies/::1751428520
 boot_drone_boss.gd::GDScript::-1::1736390012::0::1::::<>Area2D<>::
 boot_drone_boss.tscn::PackedScene::791338480702423131::1750903325::0::1::::<><>::res://enemies/boot_drone_boss.gd<>uid://cs0shpvq3lnv3::::res://enemies/cowboy_boot_template.png<>uid://dp2nc828ubgtu::::res://enemies/boss_drone_1.tscn
 boss_drone_1.gd::GDScript::-1::1735762691::0::1::::<>Area2D<>::
 boss_drone_1.tscn::PackedScene::8268627574009593306::1736487440::0::1::::<><>::res://enemies/boss_drone_1.gd<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://c73hqyhju3mk0::::res://enemies/Robot1-all-sprites.png<>uid://dkkc6n5od4tfa::::res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav
+Bottom_Catcher.tscn::PackedScene::2265617128224424017::1751428520::0::1::::<><>::res://enemies/neon_bot_enemy_1.gd<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://c73hqyhju3mk0::::res://enemies/Robot1-all-sprites.png<>uid://dkkc6n5od4tfa::::res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
 cowboy_boot_template.png::CompressedTexture2D::6088956224205387250::1735889856::1735957533::1::::<><>::
 dagger_template.png::CompressedTexture2D::102864822623140324::1735890071::1735957533::1::::<><>::
-gun_drone_boss.gd::GDScript::-1::1750903325::0::1::::<>Area2D<>::
+gun_drone_boss.gd::GDScript::-1::1751263207::0::1::::<>Area2D<>::
 gun_drone_boss.tscn::PackedScene::8492843221998875675::1750908606::0::1::::<><>::res://enemies/gun_drone_boss.gd<>uid://cyq3pi7i7cf4b::::res://enemies/pistol_template.jpg<>uid://dp2nc828ubgtu::::res://enemies/boss_drone_1.tscn
 neon_bot_enemy1.tscn::PackedScene::5664156857346392746::1750903325::0::1::::<><>::res://enemies/neon_bot_enemy_1.gd<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://c73hqyhju3mk0::::res://enemies/Robot1-all-sprites.png<>uid://dkkc6n5od4tfa::::res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
 neon_bot_enemy2.tscn::PackedScene::6486269769147162731::1750727357::0::1::::<><>::res://enemies/neon_bot_enemy_2.gd<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png<>uid://c73hqyhju3mk0::::res://enemies/Robot1-all-sprites.png<>uid://dkkc6n5od4tfa::::res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
@@ -71,7 +72,7 @@ neon_bot_enemy_1.gd::GDScript::-1::1736580054::0::1::::<>Area2D<>::
 neon_bot_enemy_2.gd::GDScript::-1::1736659755::0::1::::<>Area2D<>::
 pistol_template.jpg::CompressedTexture2D::6492130991496844159::1750569071::1750569239::1::::<><>::
 Robot1-all-sprites.png::CompressedTexture2D::7077141804379550365::1734915309::1734915367::1::::<><>::
-smiley_drone_boss.gd::GDScript::-1::1736577928::0::1::::<>Area2D<>::
+smiley_drone_boss.gd::GDScript::-1::1751263207::0::1::::<>Area2D<>::
 smiley_drone_boss.tscn::PackedScene::4341022478578829012::1750908606::0::1::::<><>::res://enemies/smiley_drone_boss.gd<>uid://b2i8eex4n6sh8::::res://enemies/smiley_drone_template.png<>uid://dp2nc828ubgtu::::res://enemies/boss_drone_1.tscn<>uid://ddoqqpicg2rdm::::res://audio/frownsown.wav<>uid://dw0lgi3i3xdqi::::res://audio/spinsound.wav
 smiley_drone_template.png::CompressedTexture2D::4300045534849507839::1735761976::1735762010::1::::<><>::
 ::res://fonts/::1734386050
@@ -105,17 +106,17 @@ EquipmentIconsC357.png::CompressedTexture2D::8741476482247614705::1581367406::17
 EquipmentIconsC358.png::CompressedTexture2D::2122299360199385540::1581367406::1734933801::1::::<><>::
 EquipmentIconsC359.png::CompressedTexture2D::8869277810342236094::1581367406::1734933801::1::::<><>::
 EquipmentIconsC360.png::CompressedTexture2D::690999018616718201::1581367406::1734933801::1::::<><>::
-::res://level/::1751261525
-level.gd::GDScript::-1::1751052490::0::1::::<>Node2D<>::
+::res://level/::1751349315
+level.gd::GDScript::-1::1751349315::0::1::::<>Node2D<>::
 parallax_background.tscn::PackedScene::6626164406656115071::1711400410::0::1::::<><>::uid://do8unqmg6yew6::::res://level/background/distant_platforms_2.png<>uid://c8jm7s3tbb3b::::res://level/background/sky.png<>uid://j28pf8bfgty::::res://level/background/cloud_1.png<>uid://kreppu5t30jn::::res://level/background/cloud_2.png<>uid://bwhwlduoqnb15::::res://level/background/cloud_3.png<>uid://b4lffygwgc7vy::::res://level/background/distant_platforms_1.png
 planet_1_large.gd::GDScript::-1::1750911111::0::1::::<>Area2D<>::
 planet_1_large.tscn::PackedScene::5425246866123783230::1751048695::0::1::::<><>::res://level/planet_1_large.gd<>uid://qwwk4mpc40vl::::res://level/background/Planets/Baren.png
 planet_1_medium.gd::GDScript::-1::1750909047::0::1::::<>Area2D<>::
-planet_1_medium.tscn::PackedScene::1108555911811295266::1751261525::0::1::::<><>::res://level/planet_1_medium.gd<>uid://qwwk4mpc40vl::::res://level/background/Planets/Baren.png
+planet_1_medium.tscn::PackedScene::1108555911811295266::1751333421::0::1::::<><>::res://level/planet_1_medium.gd<>uid://qwwk4mpc40vl::::res://level/background/Planets/Baren.png
 planet_1_small.gd::GDScript::-1::1750909117::0::1::::<>Area2D<>::
 planet_1_small.tscn::PackedScene::5243057927089023095::1751048695::0::1::::<><>::res://level/planet_1_small.gd<>uid://qwwk4mpc40vl::::res://level/background/Planets/Baren.png
-planet_2_medium.tscn::PackedScene::5620167282510944858::1751261525::0::1::::<><>::res://level/planet_1_medium.gd<>uid://bp7st1ldvfvvj::::res://level/background/Planets/Lava.png
-planet_2_small.tscn::PackedScene::91851783447626575::1751261525::0::1::::<><>::res://level/planet_1_small.gd<>uid://bp7st1ldvfvvj::::res://level/background/Planets/Lava.png
+planet_2_medium.tscn::PackedScene::5620167282510944858::1751333421::0::1::::<><>::res://level/planet_1_medium.gd<>uid://bp7st1ldvfvvj::::res://level/background/Planets/Lava.png
+planet_2_small.tscn::PackedScene::91851783447626575::1751333421::0::1::::<><>::res://level/planet_1_small.gd<>uid://bp7st1ldvfvvj::::res://level/background/Planets/Lava.png
 ::res://level/background/::1750903761
 3.png::CompressedTexture2D::7338003009534840048::1672394200::1734852181::1::::<><>::
 4.png::CompressedTexture2D::8197324180684843227::1672394210::1734852181::1::::<><>::
@@ -152,8 +153,8 @@ Black_hole.png::CompressedTexture2D::1857229476927483410::1610081256::1750903769
 Ice.png::CompressedTexture2D::5351478838154120164::1581296524::1750903769::1::::<><>::
 Lava.png::CompressedTexture2D::3506441645112032191::1581296926::1750903769::1::::<><>::
 Terran.png::CompressedTexture2D::9026216713882069699::1581300562::1750903769::1::::<><>::
-::res://level/tileset/::1751067508
-tileset.tres::TileSet::7974549175926238436::1751067508::0::1::::<><>::uid://b54eod3j4xx34::::res://level/tileset/tiles_demo.png
+::res://level/tileset/::1751263207
+tileset.tres::TileSet::7974549175926238436::1751263207::0::1::::<><>::uid://b54eod3j4xx34::::res://level/tileset/tiles_demo.png
 tiles_demo.png::CompressedTexture2D::4552221018060718681::1688759558::1734123286::1::::<><>::
 ::res://platforms/::1750908607
 basic_neon_block_blue.png::CompressedTexture2D::6677319903771640325::1734678939::1734679016::1::::<><>::
@@ -196,16 +197,16 @@ platform_vertical_two_tb.gd::GDScript::-1::1735760069::0::1::::<>StaticBody2D<>:
 platform_vertical_two_tb.tscn::PackedScene::3654502165350161816::1750908607::0::1::::<><>::res://platforms/platform_vertical_two_tb.gd<>uid://dpi22so5t62ao::::res://platforms/neon_pink_basic.png
 simple_platform_horizontal_1.gd::GDScript::-1::1734384394::0::1::::<>Path2D<>::
 simple_platform_horizontal_1.tscn::PackedScene::499128389381294895::1750908607::0::1::::<><>::res://platforms/simple_platform_horizontal_1.gd<>uid://dnyev8swo8j63::::res://platforms/neon_purple_basic_double.png
-::res://player/::1751261525
+::res://player/::1751349535
 gBot.png::CompressedTexture2D::5221376751610704395::1735672972::1735689034::1::::<><>::
 gBot_green.png::CompressedTexture2D::40988744559294555::1734588699::1734588722::1::::<><>::
 gBot_ole.png::CompressedTexture2D::1610858457362156712::1734662375::1735541959::1::::<><>::
 gBot_red.png::CompressedTexture2D::2818500374147755125::1734510615::1734588721::1::::<><>::
 gBot_smolhead_red.png::CompressedTexture2D::8555042113162954802::1734662375::1734662417::1::::<><>::
-player.gd::GDScript::-1::1735778120::0::1::::Player<>CharacterBody2D<>::
-player.tscn::PackedScene::7012582639975348206::1751261525::0::1::::<><>::res://player/player.gd<>uid://cgnjku7sa0qyt::::res://player/gBot.png<>uid://5k17x00uemm6::::res://effects/BlockFlash.png<>uid://cs2btudfcqv3g::::res://audio/sfx_phase1.wav<>uid://bwcqom757jbp6::::res://audio/Mobile_Game_UI_Back_Button_Bonk_1.wav<>uid://5e6mulpa4d6b::::res://effects/FX052_nyknck/FX052_01.png<>uid://b1vakn723rkss::::res://effects/FX052_nyknck/FX052_02.png<>uid://dlbaoobmqqvvj::::res://effects/FX052_nyknck/FX052_03.png<>uid://b7bbhrjyf5m2e::::res://effects/FX052_nyknck/FX052_04.png<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png
+player.gd::GDScript::-1::1751263207::0::1::::Player<>CharacterBody2D<>::
+player.tscn::PackedScene::7012582639975348206::1751349535::0::1::::<><>::res://player/player.gd<>uid://cgnjku7sa0qyt::::res://player/gBot.png<>uid://5k17x00uemm6::::res://effects/BlockFlash.png<>uid://cs2btudfcqv3g::::res://audio/sfx_phase1.wav<>uid://bwcqom757jbp6::::res://audio/Mobile_Game_UI_Back_Button_Bonk_1.wav<>uid://5e6mulpa4d6b::::res://effects/FX052_nyknck/FX052_01.png<>uid://b1vakn723rkss::::res://effects/FX052_nyknck/FX052_02.png<>uid://dlbaoobmqqvvj::::res://effects/FX052_nyknck/FX052_03.png<>uid://b7bbhrjyf5m2e::::res://effects/FX052_nyknck/FX052_04.png<>uid://cr28y0bd8l5wm::::res://effects/Free Smoke Fx  Pixel 05.png
 player_stats.tscn::PackedScene::4793268916018886110::1736578430::0::1::::<><>::res://player_stats.gd
-::res://ui/::1751261525
+::res://ui/::1751349578
 exit_pixel_sign.png::CompressedTexture2D::1555339753838038640::1707115070::1751068275::1::::<><>::
 exit_pixel_sign_focused.png::CompressedTexture2D::6178926606671305498::1751069137::1751069163::1::::<><>::
 exit_pixel_sign_pressed.png::CompressedTexture2D::993195113468443831::1751069163::1751069163::1::::<><>::
@@ -220,8 +221,11 @@ ParthTut2.ogv::VideoStreamTheora::-1::1751242202::0::1::::<><>::
 ParthTut3.ogv::VideoStreamTheora::-1::1751257588::0::1::::<><>::
 ParthTutorial2.ogv::VideoStreamTheora::-1::1751258619::0::1::::<><>::
 ParthTutorial3.ogv::VideoStreamTheora::-1::1751258704::0::1::::<><>::
-pause_menu.gd::GDScript::-1::1736493334::0::1::::<>Node2D<>::
-pause_menu.tscn::PackedScene::6471788353007128183::1751261525::0::1::::<><>::uid://cbx183bn0nni4::::res://ui/green_border_1.png<>res://ui/pause_menu.gd<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
+ParthTutorial4.ogv::VideoStreamTheora::-1::1751263891::0::1::::<><>::
+ParthTutorial5.ogv::VideoStreamTheora::-1::1751264942::0::1::::<><>::
+ParthTutorial6.ogv::VideoStreamTheora::-1::1751320580::0::1::::<><>::
+pause_menu.gd::GDScript::-1::1751349535::0::1::::<>Node2D<>::
+pause_menu.tscn::PackedScene::6471788353007128183::1751349578::0::1::::<><>::uid://cbx183bn0nni4::::res://ui/green_border_1.png<>res://ui/pause_menu.gd<>uid://bf0q0pmkhfebo::::res://fonts/PixelTandysoft-0rJG.ttf
 ps4_gamepad isolated.png::CompressedTexture2D::7707363184505508124::1684994442::1751055441::1::::<><>::
 Single keyboard (dark).png::CompressedTexture2D::3293869029396195275::1748560156::1751066155::1::::<><>::
 Single keyboard (light) down.png::CompressedTexture2D::5013504630525722137::1751067091::1751067161::1::::<><>::
