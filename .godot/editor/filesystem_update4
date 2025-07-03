@@ -1,11 +1,6 @@
-res://enemies/bottom_catcher.tscn
-res://level/tileset/tileset.tres
-res://enemies/bottom_catcher.gd
 res://level.tscn
+res://level/tileset/tileset.tres
 res://player/player.tscn
 res://ui/pause_menu.tscn
 res://menu.tscn
-res://ControlsScreen.tscn
-res://TutorialScreen.tscn
-res://enemies/neon_bot_enemy1.tscn
-res://level/level.gd
+res://enemies/bottom_catcher.tscn
