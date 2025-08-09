@@ -1,0 +1,209 @@
+[gd_scene load_steps=18 format=3 uid="uid://wxmr0bt2v1su"]
+
+[ext_resource type="Script" path="res://platforms/platform_neon_t_blue.gd" id="1_jrd0f"]
+[ext_resource type="Texture2D" uid="uid://cxrcy3331rp4w" path="res://platforms/neon_blue_T_xl.png" id="2_ynxff"]
+[ext_resource type="Texture2D" uid="uid://3je60qq1xanp" path="res://effects/Eletric Aura.png" id="3_7yo8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxwi1"]
+size = Vector2(305.857, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_403fd"]
+size = Vector2(77.4286, 13.3571)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nflyn"]
+size = Vector2(127.857, 13.5714)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqx00"]
+size = Vector2(97.1429, 11.4286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqxuo"]
+size = Vector2(44.2857, 12.8572)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dsqn"]
+size = Vector2(44.2857, 12.8571)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rk3d"]
+atlas = ExtResource("3_7yo8i")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r40v"]
+atlas = ExtResource("3_7yo8i")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx8ko"]
+atlas = ExtResource("3_7yo8i")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4tfo"]
+atlas = ExtResource("3_7yo8i")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2uf8"]
+atlas = ExtResource("3_7yo8i")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kic41"]
+atlas = ExtResource("3_7yo8i")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dlrc"]
+atlas = ExtResource("3_7yo8i")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74pj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rk3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0r40v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx8ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4tfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2uf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kic41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dlrc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlatformNeonTBlueElectric" type="AnimatableBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 7
+script = ExtResource("1_jrd0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ynxff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0714187, 27.5)
+shape = SubResource("RectangleShape2D_gxwi1")
+one_way_collision = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.142854, -146.679)
+shape = SubResource("RectangleShape2D_403fd")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-88.5714, -33.5714)
+shape = SubResource("RectangleShape2D_nflyn")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(88.9286, -33.9286)
+shape = SubResource("RectangleShape2D_nflyn")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-31.4286, -90)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_dqx00")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(31.4286, -90.7142)
+rotation = -1.5708
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_dqx00")
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
+position = Vector2(-146.429, -3.57143)
+rotation = -1.5708
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_vqxuo")
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="."]
+position = Vector2(146.429, -3.57143)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_0dsqn")
+one_way_collision = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, -36)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.742634
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-86, -36)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.772876
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 26)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.371184
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(94, 28)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.776593
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(-86, 30)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.253619
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -148)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.274458
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(-150, -4)
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.905626
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(-34, -84)
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.355629
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(30, -84)
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.378449
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(148, -4)
+sprite_frames = SubResource("SpriteFrames_74pj7")
+autoplay = "default"
+frame_progress = 0.632758
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

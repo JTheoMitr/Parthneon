@@ -1,3 +1,4 @@
+AnimatedSprite2D
 Button
 Panel
 VideoStreamPlayer
@@ -8,7 +9,6 @@ HBoxContainer
 RichTextLabel
 Timer
 AudioStreamPlayer
-AnimatedSprite2D
 CollisionShape2D
 Area2D
 StaticBody2D
