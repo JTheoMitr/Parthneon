@@ -24,8 +24,7 @@ extends Node2D
 @onready var scroom = $Scroom
 @onready var scoreSweep = $ScoreSweep
 @onready var overlay = $Overlay
-@onready var hbox = $HBoxContainer
-@onready var button1 = $HBoxContainer/Button
+@onready var uiLayer = $CanvasLayer
 @onready var nightSky = $NightSky
 @onready var nightSky2 = $NightSky2
 @onready var xDisplay = $XDisplay
@@ -45,8 +44,15 @@ extends Node2D
 @onready var lrgPlanetTimer = $LrgPlanetTimer
 
 
+
+
 var rng = RandomNumberGenerator.new()
 var breathing
+
+var enteredInitials
+
+const InitialsUI = preload("res://initial_entry_ui.tscn")
+const LeaderboardUI = preload("res://ui/Leaderboard.tscn")
 
 #platforms and basic enemies
 var long1 = preload("res://platforms/platform_neon_long_one_horiz.tscn")
@@ -67,12 +73,15 @@ var gun1 = preload("res://enemies/gun_drone_boss.tscn")
 
 #planets
 var planet1med = preload("res://level/planet_1_medium.tscn")
+var planet1medspin = preload("res://level/planet_1_medium_spinning.tscn")
+var planet2medspin = preload("res://level/planet_2_medium_spinning.tscn")
 var planet1sm = preload("res://level/planet_1_small.tscn")
 var planet2med = preload("res://level/planet_2_medium.tscn")
 var planet2sm = preload("res://level/planet_2_small.tscn")
 
 var planet1lrg = preload("res://level/planet_1_large.tscn")
 
+var leaderboard_ui = LeaderboardUI.instantiate()
 
 var timerStart
 var timerStart2
@@ -86,11 +95,16 @@ var lrgPlanets
 
 var paused
 
+#@onready var entry_ui = $InitialEntryUI
+
 func _ready():
+	
+	Leaderboard.connect("score_submitted", Callable(self, "_show_leaderboard"))
+	#entry_ui.connect("initials_entered", Callable(self, "_on_initials_entered"))
 	
 	bossCount = 0
 	bosses = [boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
-	planets = [planet1med, planet1sm, planet2med, planet2sm]
+	planets = [planet1med, planet1sm, planet2med, planet2sm, planet1medspin, planet2medspin]
 	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false
 	
@@ -113,6 +127,12 @@ func _ready():
 	timerDisplay.hide()
 	timerDisplay2.hide()
 	timerDisplay3.hide()
+	
+	# Add leaderboard as a modal overlay
+	uiLayer.add_child(leaderboard_ui)
+	leaderboard_ui.visible = false
+
+	
 	await get_tree().create_timer(1.0).timeout
 	timerDisplay3.show()
 	$GetReady.play(0.0)
@@ -120,7 +140,7 @@ func _ready():
 	breathing = true
 	scoreBoom.hide()
 	overlay.hide()
-	hbox.hide()
+
 	pv1.speed = 1
 	pv2.speed = 1
 	floorsplosion.hide()
@@ -139,7 +159,7 @@ func _ready():
 	planetTimer.start(0.0)
 	lrgPlanetTimer.start(0.0)
 	
-	var randomNumber = rng.randf_range(0,3)
+	var randomNumber = rng.randf_range(0,5)
 	#print_debug(randomNumber)
 	var planetOne = planets[randomNumber].instantiate()
 	var my_random_number_x = rng.randf_range(1000.0, 1200.0)
@@ -251,7 +271,7 @@ func _on_timer_timeout() -> void:
 	var my_random_number_x5 = rng.randf_range(-1950.0, -180.0)
 	var my_random_number_y5 = rng.randf_range(-135.0, 65.0)
 	#bluetee
-	var my_random_number_x6 = rng.randf_range(1250.0, 3570.0)
+	var my_random_number_x6 = rng.randf_range(1250.0, 2570.0)
 	var my_random_number_y6 = rng.randf_range(-135.0, 65.0)
 	#blueCross2
 	#var my_random_number_x8 = rng.randf_range(3505.0, 5500.0)
@@ -373,9 +393,17 @@ func _on_death_display_timer_timeout() -> void:
 	xDisplay.hide()
 	scroom.play(0.0)
 	overlay.show()
-	hbox.show()
-	button1.grab_focus()
+	
+	stats.runScore = (stats.score * timerStart)
+	#button1.grab_focus()
 	timerDisplay.global_position.x = 292
+	
+	var initialsEntry = InitialsUI.instantiate()
+	uiLayer.add_child(initialsEntry)
+#	var viewport_size = get_viewport().get_visible_rect().size
+#	initialsEntry.position = viewport_size / 2
+#	initialsEntry.grab_focus()
+	
 
 
 func _on_multiply_timer_timeout() -> void:
@@ -442,7 +470,7 @@ func _on_timer_2_timeout() -> void:
 
 func _on_timer_3_timeout() -> void:
 	#print_debug("timer3up")
-	var my_random_number_x = rng.randf_range(950.0, 1350.0)
+	var my_random_number_x = rng.randf_range(950.0, 1150.0)
 	var my_random_number_y = rng.randf_range(-65.0, 65.0)
 	
 	var shortNeon = short1.instantiate()
@@ -546,3 +574,18 @@ func _on_lrg_planet_timer_timeout() -> void:
 	#planetOne.global_position.x = my_random_number_x
 	#planetOne.global_position.y = my_random_number_y
 	#add_child(planetOne)
+
+func _show_leaderboard() -> void:
+	# Load leaderboard UI scene
+	#var leaderboard_ui = preload("res://ui/Leaderboard.tscn").instantiate()
+	print_debug("score submitted!")
+	leaderboard_ui.visible = true
+
+
+	# Ask it to populate with latest scores
+	#leaderboard_ui.load_scores()
+
+
+#func _on_button_4_pressed() -> void:
+	#Leaderboard.submit_score("parthneon_leaderboard_local", enteredInitials, (stats.score * timerStart))
+	#Leaderboard.get_top_scores("parthneon_leaderboard_local")

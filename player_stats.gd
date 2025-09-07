@@ -4,6 +4,7 @@ var score
 var health
 var alive
 var bossPhase
+var runScore
 
 signal _game_unpaused
 # Called when the node enters the scene tree for the first time.

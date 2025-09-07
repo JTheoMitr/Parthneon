@@ -23,6 +23,7 @@ config/icon="res://icon.webp"
 [autoload]
 
 PlayerStats="*res://player_stats.gd"
+Leaderboard="*res://ui/leaderboard.gd"
 
 [display]
 

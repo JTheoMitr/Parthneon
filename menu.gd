@@ -20,6 +20,7 @@ extends Node2D
 @onready var exitButton = $TextureButton
 
 var levelOne = preload("res://level.tscn")
+var Nakama = preload("res://addons/com.heroiclabs.nakama/nakama.gd")
 var scrolling = false
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +34,10 @@ func _ready() -> void:
 	vbox.show()
 	hbox.hide()
 	exitButton.hide()
+	
+	# ensure Nakama is working
+	
+	print_debug("Nakama: ", Nakama)
 	
 
 

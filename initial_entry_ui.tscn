@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv6c3us3dp4qc"]
+
+[ext_resource type="Script" path="res://initial_entry_ui.gd" id="1_1715u"]
+[ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="2_folq6"]
+[ext_resource type="Texture2D" uid="uid://cbx183bn0nni4" path="res://ui/green_border_1.png" id="2_vxa2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0d2s"]
+bg_color = Color(0.192157, 0.772549, 0.282353, 0.654902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3fm58"]
+bg_color = Color(0, 0, 0, 0.435294)
+
+[node name="InitialEntryUI" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_1715u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1000, 900)
+scale = Vector2(25, 25)
+texture = ExtResource("2_vxa2s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 575.0
+offset_top = 225.0
+offset_right = 1462.0
+offset_bottom = 861.0
+
+[node name="Slot0" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_folq6")
+theme_override_font_sizes/font_size = 500
+text = "A"
+
+[node name="Slot1" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_folq6")
+theme_override_font_sizes/font_size = 500
+text = "A"
+
+[node name="Slot2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_folq6")
+theme_override_font_sizes/font_size = 500
+text = "A"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 900.0
+offset_right = 1555.0
+offset_bottom = 1300.0
+theme_override_fonts/font = ExtResource("2_folq6")
+theme_override_font_sizes/font_size = 250
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r0d2s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3fm58")
+text = "Submit"
+text_overrun_behavior = 2
+autowrap_mode = 2
+clip_text = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
