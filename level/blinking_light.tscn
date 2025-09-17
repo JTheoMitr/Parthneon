@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://ifkgtm8sk880"]
+
+[ext_resource type="Texture2D" uid="uid://bhcumq3qckn6s" path="res://level/background/buttonsfront.png" id="1_6vm8s"]
+[ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="2_x7e0r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gqjt"]
+atlas = ExtResource("2_x7e0r")
+region = Rect2(576, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhmw2"]
+atlas = ExtResource("2_x7e0r")
+region = Rect2(640, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cor8l"]
+atlas = ExtResource("2_x7e0r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1ols"]
+atlas = ExtResource("2_x7e0r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by1h5"]
+atlas = ExtResource("2_x7e0r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytv8s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gqjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhmw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gqjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gqjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cor8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1ols")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by1h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1ols")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BlinkingLight" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_6vm8s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.427451, 1, 0.376471, 0.52549)
+position = Vector2(-2, -43)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ytv8s")
+autoplay = "default"
+frame_progress = 0.0723751
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.882473, 0.140592, 0.280523, 0.52549)
+position = Vector2(-2, 53)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ytv8s")
+autoplay = "default"
+frame_progress = 0.878808

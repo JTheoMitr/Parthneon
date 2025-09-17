@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://by3yk0yhnnd1v"
+path="res://.godot/imported/SCIAlrm_UI Alarm Loop Medical Machine Pulse Sustained Note Light Reverb 01_ESM_SSG.wav-b18959b4f724f70baa08b2f6d53c72b7.sample"
+
+[deps]
+
+source_file="res://audio/SCIAlrm_UI Alarm Loop Medical Machine Pulse Sustained Note Light Reverb 01_ESM_SSG.wav"
+dest_files=["res://.godot/imported/SCIAlrm_UI Alarm Loop Medical Machine Pulse Sustained Note Light Reverb 01_ESM_SSG.wav-b18959b4f724f70baa08b2f6d53c72b7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdrl17d0iiv43"]
+
+[ext_resource type="Texture2D" uid="uid://c3v0wfw1l8hbj" path="res://level/background/caution_lining.png" id="1_vf6yl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdi0f"]
+size = Vector2(120, 27)
+
+[node name="CautionPlatform" type="Sprite2D"]
+position = Vector2(836, 448)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_vf6yl")
+metadata/_edit_group_ = true
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+visible = false
+position = Vector2(0.5, -2)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_fdi0f")

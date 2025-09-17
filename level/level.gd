@@ -35,6 +35,7 @@ extends Node2D
 @onready var bossPrepTimer = $BossPrepTimer
 @onready var bossCompletedTimer = $BossCompletedTimer
 @onready var bossTimer = $BossTimer
+@onready var satTimer = $SatelliteTimer
 @onready var floorsplosion = $Floorsplosion1
 @onready var floorsplosionTimer = $FloorsplosionTimer
 @onready var flspr1 = $FLSPSound1
@@ -69,15 +70,20 @@ var longAndLow1 = preload("res://platforms/platform_neon_longandlow_one_horiz.ts
 #bosses
 var smiley1 = preload("res://enemies/smiley_drone_boss.tscn")
 var boot1 = preload("res://enemies/boot_drone_boss.tscn")
+var mech1 = preload("res://enemies/mech_boss_1.tscn")
+var spaceLab1 = preload("res://platforms/space_lab_section_1.tscn")
 var gun1 = preload("res://enemies/gun_drone_boss.tscn")
 
 #planets
-var planet1med = preload("res://level/planet_1_medium.tscn")
 var planet1medspin = preload("res://level/planet_1_medium_spinning.tscn")
 var planet2medspin = preload("res://level/planet_2_medium_spinning.tscn")
-var planet1sm = preload("res://level/planet_1_small.tscn")
-var planet2med = preload("res://level/planet_2_medium.tscn")
-var planet2sm = preload("res://level/planet_2_small.tscn")
+var planet3medspin = preload("res://level/planet_3_medium_spinning.tscn")
+var planet4medspin = preload("res://level/planet_4_medium_spinning.tscn")
+var planet5smallspin = preload("res://level/planet_5_small_spinning.tscn")
+var planet6smallspin = preload("res://level/planet_6_small_spinning.tscn")
+
+#satellites
+var sat1 = preload("res://level/satellite_1_spinning.tscn")
 
 var planet1lrg = preload("res://level/planet_1_large.tscn")
 
@@ -90,6 +96,8 @@ var scoreFontSize
 
 var bosses
 var bossCount
+var satellites
+var satelliteCount
 var planets
 var lrgPlanets
 
@@ -103,8 +111,10 @@ func _ready():
 	#entry_ui.connect("initials_entered", Callable(self, "_on_initials_entered"))
 	
 	bossCount = 0
-	bosses = [boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
-	planets = [planet1med, planet1sm, planet2med, planet2sm, planet1medspin, planet2medspin]
+	satelliteCount = 0
+	satellites = [sat1]
+	bosses = [spaceLab1, mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
+	planets = [planet1medspin, planet2medspin, planet3medspin, planet4medspin, planet5smallspin, planet6smallspin]
 	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false
 	
@@ -254,6 +264,9 @@ func _process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	#print_debug("timer1up")
+	#Timer1: 14 Seconds, 5 platforms, 2 enemies
+	#Timer2: 7 seconds, 3 platforms, 1 enemy (L -> R enemy)
+	#Timer3: 3.5 Seconds, 1 Object, short platform
 	#use various timers to instance different platform types with various speeds and starting positions
 	#longNeon1
 	var my_random_number_x = rng.randf_range(2550.0, 5000.0)
@@ -426,7 +439,10 @@ func _on_button_2_pressed() -> void:
 
 func _on_timer_2_timeout() -> void:
 	#print_debug("timer2up")
-	# disperse some additional platforms and enemies here
+	#Timer1: 14 Seconds, 5 platforms, 2 enemies
+	#Timer2: 7 seconds, 2 platforms, 2 enemies
+	#Timer3: 3.5 Seconds, 1 Object, short platform
+	
 	#blueCross1
 	var my_random_number_x2 = rng.randf_range(1950.0, 3500.0)
 	var my_random_number_y2 = rng.randf_range(-135.0, 65.0)
@@ -470,6 +486,9 @@ func _on_timer_2_timeout() -> void:
 
 func _on_timer_3_timeout() -> void:
 	#print_debug("timer3up")
+	#Timer1: 14 Seconds, 5 platforms, 2 enemies
+	#Timer2: 7 seconds, 2 platforms, 2 enemies
+	#Timer3: 3.5 Seconds, 1 Object, short platform
 	var my_random_number_x = rng.randf_range(950.0, 1150.0)
 	var my_random_number_y = rng.randf_range(-65.0, 65.0)
 	
@@ -485,8 +504,19 @@ func _on_boss_timer_timeout() -> void:
 	var my_random_number_y = rng.randf_range(-75.0, -75.0)
 	
 	var currentBoss = bosses[bossCount].instantiate()
-	currentBoss.global_position.x = my_random_number_x
-	currentBoss.global_position.y = my_random_number_y
+	print_debug(currentBoss.name)
+	#adjust global starting point depending on which boss, og timer was 67 seconds, now 15
+	if currentBoss.name == 'MechBossOne':
+		print("its the mech")
+		currentBoss.global_position.x = 800 #save this above as a var 
+		currentBoss.global_position.y = 350
+	elif currentBoss.name == 'SpaceLab1':
+		print("space lab...in space!")
+		currentBoss.global_position.x = 1500 #save this above as a var 
+		currentBoss.global_position.y = 90
+	else :
+		currentBoss.global_position.x = my_random_number_x
+		currentBoss.global_position.y = my_random_number_y
 	add_child(currentBoss)
 	#boss should have a separate layer for damage (7) vs basic enemies (5 and 6). hurtbox should register
 	
@@ -550,7 +580,6 @@ func _on_floorsplosion_timer_timeout() -> void:
 func _unpause():
 	paused = false
 	
-	
 
 
 func _on_planet_timer_timeout() -> void:
@@ -589,3 +618,15 @@ func _show_leaderboard() -> void:
 #func _on_button_4_pressed() -> void:
 	#Leaderboard.submit_score("parthneon_leaderboard_local", enteredInitials, (stats.score * timerStart))
 	#Leaderboard.get_top_scores("parthneon_leaderboard_local")
+
+
+func _on_satellite_timer_timeout() -> void:
+	var launchPad = satellites[satelliteCount].instantiate()
+	launchPad.global_position.x = 900
+	launchPad.global_position.y = -80
+	add_child(launchPad)
+	
+	#og boss timer is 67 seconds, lets work out timings, satellite timing, 
+	#and new timing for platforms, spreading out
+	#need to add explosions/defeat path for mech, test both defeat and survive paths
+	#build first 'space lab' section

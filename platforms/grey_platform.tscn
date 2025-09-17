@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c88622c4ndodn"]
+
+[ext_resource type="Texture2D" uid="uid://bvpc0ppvk2ig3" path="res://level/background/flat_panel_grey_lab.png" id="1_xdwik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdi0f"]
+size = Vector2(93.3333, 37.5)
+
+[node name="GreyPlatform" type="Sprite2D"]
+position = Vector2(836, 448)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_xdwik")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2d" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2d"]
+visible = false
+position = Vector2(-4.00012, -7.25)
+shape = SubResource("RectangleShape2D_fdi0f")
+one_way_collision = true

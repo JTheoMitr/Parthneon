@@ -39,6 +39,15 @@ func _ready() -> void:
 	
 	print_debug("Nakama: ", Nakama)
 	
+	#ensure image sizing
+	var files = DirAccess.get_files_at("res://")
+	for f in files:
+		if f.get_extension() in ["png", "jpg", "webp"]:
+			var tex = load("res://" + f)
+			if tex is Texture2D:
+				var size = tex.get_size()
+				if size.x <= 0 or size.y <= 0:
+					print("⚠️ Problem texture:", f, " has size ", size)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
