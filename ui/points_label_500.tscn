@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnpl7oemwdxtf"]
+
+[ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="1_8bvkr"]
+[ext_resource type="Script" path="res://ui/points_label_500.gd" id="2_kxsih"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1mua3"]
+radius = 1309.69
+
+[node name="PointsLabel500" type="Area2D"]
+scale = Vector2(0.02, 0.02)
+script = ExtResource("2_kxsih")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -3700.0
+offset_top = -750.0
+offset_right = 4750.0
+offset_bottom = 1910.0
+theme_override_fonts/normal_font = ExtResource("1_8bvkr")
+theme_override_font_sizes/normal_font_size = 1000
+bbcode_enabled = true
+text = "[center][rainbow]+500 Points"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1mua3")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

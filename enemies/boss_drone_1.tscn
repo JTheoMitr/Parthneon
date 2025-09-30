@@ -1,48 +1,76 @@
-[gd_scene load_steps=21 format=3 uid="uid://dp2nc828ubgtu"]
+[gd_scene load_steps=25 format=3 uid="uid://dp2nc828ubgtu"]
 
 [ext_resource type="Script" path="res://enemies/boss_drone_1.gd" id="1_uuju8"]
-[ext_resource type="Texture2D" uid="uid://bhrf0wqcvqpk7" path="res://enemies/BigEnergyBall.png" id="2_882ha"]
+[ext_resource type="Texture2D" uid="uid://dcno6javeufa5" path="res://enemies/Bullet 24x24 Free Part 2A Purp rotator1.png" id="2_16xw8"]
 [ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="2_mkk56"]
 [ext_resource type="AudioStream" uid="uid://dkkc6n5od4tfa" path="res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav" id="4_sucl3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmgum"]
-atlas = ExtResource("2_882ha")
-region = Rect2(0, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ibjj"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(3, 0, 16, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ma643"]
-atlas = ExtResource("2_882ha")
-region = Rect2(24, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld5yx"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(27, 0, 16, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrg13"]
-atlas = ExtResource("2_882ha")
-region = Rect2(48, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_grkkc"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(51, 0, 16, 20)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xc3t5"]
-atlas = ExtResource("2_882ha")
-region = Rect2(72, 0, 24, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jde2r"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(75, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tug0t"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(99, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkyn0"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(123, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjsn1"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(147, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f7aq"]
+atlas = ExtResource("2_16xw8")
+region = Rect2(171, 0, 16, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_42gou"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mmgum")
+"texture": SubResource("AtlasTexture_1ibjj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ma643")
+"texture": SubResource("AtlasTexture_ld5yx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nrg13")
+"texture": SubResource("AtlasTexture_grkkc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xc3t5")
+"texture": SubResource("AtlasTexture_jde2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tug0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkyn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjsn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f7aq")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_43in4"]
-radius = 12.0
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6sn1u"]
 atlas = ExtResource("2_mkk56")
@@ -116,7 +144,7 @@ animations = [{
 }]
 
 [node name="BossDrone1" type="Area2D"]
-scale = Vector2(2.5, 2.5)
+scale = Vector2(1.5, 1.5)
 collision_layer = 64
 collision_mask = 64
 script = ExtResource("1_uuju8")
@@ -127,20 +155,21 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(0.996078, 0.290196, 0.533333, 1)
-rotation = 4.71239
+rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_42gou")
 autoplay = "default"
-frame_progress = 0.483455
+frame_progress = 0.461509
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_43in4")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-visible = false
 self_modulate = Color(1, 0.302668, 0.846189, 1)
-scale = Vector2(0.7, 0.7)
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_oidvu")
+frame = 8
+frame_progress = 1.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_sucl3")

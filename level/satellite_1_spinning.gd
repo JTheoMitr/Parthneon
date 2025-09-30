@@ -1,11 +1,12 @@
 extends Area2D
 
-@export var speed = 1.6
+@export var speed = 1.8
 var mechSpeed = 4.0
 
 @onready var launchAnim = $AnimatedSprite2D
 @onready var mech = $Mech
 @onready var whoosh = $Whoosh
+@onready var launchSound = $LaunchSound
 
 var mechLocked
 var launched
@@ -13,6 +14,7 @@ var launched
 func _ready() -> void:
 	launched = false
 	mech.visible = false
+	launchAnim.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,11 +23,13 @@ func _process(_delta: float) -> void:
 	if launched:
 		mech.visible = true
 		mech.global_position.x += mechSpeed
-		mech.scale += Vector2(0.7, 0.7) * _delta
+		mech.scale += Vector2(0.9, 0.9) * _delta # og is 0.7
 	#self.rotation += .03
 	if self.global_position.x <= 475.0 && launched == false:
+		launchAnim.visible = true
 		launchAnim.play("default")
 		whoosh.play()
+		launchSound.play()
 		launched = true
 		
 		

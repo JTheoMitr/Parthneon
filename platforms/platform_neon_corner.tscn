@@ -73,7 +73,7 @@ size = Vector2(190.5, 23.5)
 size = Vector2(122, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmor5"]
-size = Vector2(314, 24)
+size = Vector2(308, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agca3"]
 size = Vector2(156, 16)
@@ -90,6 +90,7 @@ collision_layer = 7
 script = ExtResource("1_1w4pl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource("2_bsvuk")
 
@@ -115,7 +116,7 @@ shape = SubResource("RectangleShape2D_e6rof")
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(-97, 48)
+position = Vector2(-94, 48)
 shape = SubResource("RectangleShape2D_vmor5")
 one_way_collision = true
 

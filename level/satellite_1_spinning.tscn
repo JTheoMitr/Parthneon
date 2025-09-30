@@ -1,10 +1,11 @@
-[gd_scene load_steps=86 format=3 uid="uid://c0xy7uiuqlmur"]
+[gd_scene load_steps=87 format=3 uid="uid://c0xy7uiuqlmur"]
 
 [ext_resource type="Script" path="res://level/satellite_1_spinning.gd" id="1_5wkpx"]
 [ext_resource type="Texture2D" uid="uid://dallucv3icg8q" path="res://level/background/Satellites/sat_spritesheet.png" id="2_g1d43"]
 [ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="3_o7rva"]
 [ext_resource type="Texture2D" uid="uid://cpd6btip5xd1k" path="res://enemies/mechani6done.png" id="4_4sbry"]
 [ext_resource type="AudioStream" uid="uid://ca6atbk5chbbo" path="res://audio/31-Sound-Effect-Whoosh.wav" id="5_wkg1b"]
+[ext_resource type="AudioStream" uid="uid://dkkc6n5od4tfa" path="res://audio/ESM_Retro_Game_Classic_Explosion_6_8_Bit_Arcade_80s_Weapon_Attack.wav" id="6_8mkns"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vuprk"]
 atlas = ExtResource("2_g1d43")
@@ -571,7 +572,7 @@ animations = [{
 
 [node name="Satellite1Spin" type="Area2D"]
 rotation = 5.75959
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.09, 0.09)
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("1_5wkpx")
@@ -596,6 +597,7 @@ frame = 10
 frame_progress = 1.0
 
 [node name="Mech" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.0437267, 0.962116, 0.445845, 1)
 position = Vector2(131.603, -27.9423)
 rotation = 0.698132
 sprite_frames = SubResource("SpriteFrames_d3qmi")
@@ -606,6 +608,11 @@ frame_progress = 0.469181
 stream = ExtResource("5_wkg1b")
 volume_db = -10.0
 pitch_scale = 0.7
+
+[node name="LaunchSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8mkns")
+volume_db = -6.0
+pitch_scale = 0.5
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

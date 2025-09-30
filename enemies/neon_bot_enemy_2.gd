@@ -7,6 +7,7 @@ extends Area2D
 @onready var bloop = $AudioStreamPlayer
 @onready var points = $RichTextLabel
 @onready var stats = PlayerStats
+@onready var hitbox = $CollisionShape2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim.play("default")
@@ -36,6 +37,7 @@ func _on_area_entered(_area: Area2D) -> void:
 	points.show()
 	$DeathTimer.start()
 	stats.score += 15
+	hitbox.queue_free()
 
 
 func _on_animated_sprite_2d_3_animation_finished() -> void:

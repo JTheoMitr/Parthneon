@@ -1,0 +1,108 @@
+[gd_scene load_steps=14 format=3 uid="uid://bjcpugre07thn"]
+
+[ext_resource type="Script" path="res://level/galaxy_1_anim.gd" id="1_kk8ct"]
+[ext_resource type="Texture2D" uid="uid://cll5ei5jfsfe1" path="res://level/background/ALTNS GalaxyPortal1.png" id="2_q5q6k"]
+[ext_resource type="Texture2D" uid="uid://c3hq3mcph4443" path="res://level/background/ALTNS Galaxy_FX.png" id="3_cby1f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77cbb"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(0, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6seh"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(88, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt5bi"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(176, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tapvp"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(264, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwlcs"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(352, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31fim"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(440, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5so3c"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(528, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8cja"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(616, 0, 88, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8pag"]
+atlas = ExtResource("3_cby1f")
+region = Rect2(704, 0, 88, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41f2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77cbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6seh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt5bi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tapvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwlcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31fim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5so3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8cja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8pag")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Galaxy1Anim" type="Area2D"]
+scale = Vector2(0.55, 0.55)
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_kk8ct")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.517647)
+rotation = -0.349066
+scale = Vector2(1.55, 1)
+texture = ExtResource("2_q5q6k")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.815686)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_41f2l")
+autoplay = "default"
+frame_progress = 0.530279
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

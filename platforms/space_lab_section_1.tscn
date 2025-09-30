@@ -239,7 +239,7 @@ animations = [{
 size = Vector2(176.428, 35.3572)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrr5t"]
-radius = 571.429
+radius = 842.977
 
 [node name="SpaceLab1" type="AnimatableBody2D"]
 position = Vector2(766, 692)
@@ -614,7 +614,6 @@ texture = ExtResource("13_535lv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D8"]
 self_modulate = Color(1, 1, 1, 0.784314)
 position = Vector2(15, 7)
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_3hn50")
 frame_progress = 0.323801
 
@@ -837,7 +836,7 @@ shape = SubResource("RectangleShape2D_3h7yf")
 one_way_collision = true
 
 [node name="Timer2" type="Timer" parent="."]
-autostart = true
+wait_time = 0.8
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -845,7 +844,7 @@ autostart = true
 position = Vector2(1946.43, -453.571)
 shape = SubResource("CircleShape2D_lrr5t")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Alarm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_lkjdy")
 pitch_scale = 0.55
 

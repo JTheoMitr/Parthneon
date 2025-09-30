@@ -24,6 +24,7 @@ config/icon="res://icon.webp"
 
 PlayerStats="*res://player_stats.gd"
 Leaderboard="*res://ui/leaderboard.gd"
+GlobalTracking="*res://global_tracking.gd"
 
 [display]
 

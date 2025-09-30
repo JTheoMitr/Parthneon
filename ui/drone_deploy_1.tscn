@@ -1,0 +1,162 @@
+[gd_scene load_steps=10 format=3 uid="uid://esmc6oscx3rg"]
+
+[ext_resource type="Texture2D" uid="uid://yl4gkkf8x1uh" path="res://level/background/electric_opening.png" id="1_iq4yp"]
+[ext_resource type="Script" path="res://ui/drone_deploy_1.gd" id="2_oj1ih"]
+[ext_resource type="Texture2D" uid="uid://blki0k416jyc" path="res://level/background/EnemyId_150101.png" id="3_kqhfo"]
+[ext_resource type="AudioStream" uid="uid://cs2btudfcqv3g" path="res://audio/sfx_phase1.wav" id="4_7qiu7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq4oe"]
+atlas = ExtResource("1_iq4yp")
+region = Rect2(0, 14, 112, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tewrd"]
+atlas = ExtResource("1_iq4yp")
+region = Rect2(0, 41, 112, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0ti0"]
+atlas = ExtResource("1_iq4yp")
+region = Rect2(0, 68, 112, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unj7b"]
+atlas = ExtResource("1_iq4yp")
+region = Rect2(0, 95, 112, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7ofk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq4oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tewrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0ti0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unj7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0ti0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tewrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq4oe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="DroneDeploy1" type="AnimatedSprite2D"]
+self_modulate = Color(0, 0.993691, 0.681029, 0.796078)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_c7ofk")
+script = ExtResource("2_oj1ih")
+
+[node name="Drone1" type="Sprite2D" parent="."]
+position = Vector2(-40, 4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kqhfo")
+
+[node name="Drone2" type="Sprite2D" parent="."]
+position = Vector2(-14, 8)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kqhfo")
+
+[node name="Drone3" type="Sprite2D" parent="."]
+position = Vector2(11, 4)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kqhfo")
+
+[node name="Drone4" type="Sprite2D" parent="."]
+position = Vector2(33, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kqhfo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7qiu7")
+volume_db = 5.0
+pitch_scale = 0.5
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

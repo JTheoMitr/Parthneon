@@ -11,13 +11,12 @@ extends Area2D
 @onready var aimTimer = $AimTimer
 @onready var liftTimer = $LiftTimer
 @onready var waitTimer = $WaitTimer
-@onready var slideRTimer = $SlideRightTimer
 @onready var slideLTimer = $SlideLeftTimer
-@onready var stompTimer2 = $StompTimer2
 @onready var mechHeart = $MechHeart
 @onready var heartMeter = $MechHeart/Sprite2D
 @onready var crossHair = $MechHeart/Crosshair
 @onready var heartNRG = $MechHeart/heartEnergy
+@onready var heartHitBox = $MechHeart/Area2D/CollisionShape2D
 @onready var shootTimer = $ShootTimer
 @onready var bossEntrySound = $AudioStreamPlayer
 @onready var blastFX = $AudioStreamPlayer2
@@ -32,9 +31,9 @@ extends Area2D
 @onready var explosion = $Explosion
 @onready var explosion2 = $Explosion2
 @onready var explosion3 = $Explosion3
-@onready var explosion4 = $Explosion4
+@onready var explosion4 = $ShoulderShard/Explosion4
 @onready var explosion5 = $Explosion5
-@onready var explosion6 = $Explosion6
+@onready var explosion6 = $AhmPit/Explosion6
 @onready var explosion7 = $Explosion7
 @onready var explosion8 = $Explosion8
 @onready var explosion9 = $Explosion9
@@ -48,23 +47,27 @@ extends Area2D
 @onready var explosion17 = $Explosion17
 @onready var explosion18 = $Explosion18
 @onready var explosion19 = $Explosion19
-
+@onready var descendTimer = $DescendTimer
 @onready var explosionSound = $ExplosionSound
 
 @onready var cracked = $Cracked
 
+@onready var shoulderShard = $ShoulderShard
+@onready var ahmPit = $AhmPit
+@onready var pointsTarget = $PointsTarget
 
-
-
+var globalTracking = GlobalTracking
+var playerStats = PlayerStats
 
 const BossDrone = preload("res://enemies/boss_drone_1.tscn")
+const PointsLabel = preload("res://ui/points_label_500.tscn")
 
 var stompStarted
 var movingRight
 var movingLeft
 var stomping
 var lifting
-var send1
+var send1 #might not need any sends
 var send2
 var send3
 var stompedOnce
@@ -100,6 +103,7 @@ func _ready() -> void:
 	living = true
 	descending = false
 	explosionCount = 0
+	heartHitBox.disabled = true
 	
 	
 
@@ -128,10 +132,10 @@ func _process(_delta: float) -> void:
 		self.global_position.x -= 3.0
 		
 	if stomping:
-		self.global_position.y += 0.8
+		self.global_position.y += 1.0
 		
 	if lifting:
-		self.global_position.y -= 0.8
+		self.global_position.y -= 1.0
 			
 	if rotating:
 		self.rotation_degrees += 2.3
@@ -149,33 +153,42 @@ func _process(_delta: float) -> void:
 	
 
 func _on_disperse_timer_timeout() -> void:
-	shootCount = 0
-	shootTimer.start()
-	send2 = true
-	send3 = true
-	rotating = false
-	stomping = true
-	await get_tree().create_timer(2.0).timeout
-	stomping = false
-	lifting = false
-	await get_tree().create_timer(2.0).timeout
-	stomping = false
-	lifting = true
-	await get_tree().create_timer(3.0).timeout
-	stomping = true
-	lifting = false
-	await get_tree().create_timer(2.0).timeout
-	stomping = false
-	lifting = true
-	await get_tree().create_timer(3.0).timeout
-	stomping = false
-	lifting = false
+	if descending == false:
+		shootCount = 0
+		shootTimer.start()
+		send2 = true
+		send3 = true
+		rotating = false
+		heartMeter.visible = true
+		heartMeter.play("default")
+		chargeUpSound.play()
+		heartNRG.visible = true
+		crossHair.visible = true
+
+		stomping = true
+		lifting = false
+		await get_tree().create_timer(2.0).timeout
+		stomping = false
+		lifting = true
+		await get_tree().create_timer(2.5).timeout
+		stomping = true
+		lifting = false
+		await get_tree().create_timer(1.5).timeout
+		stomping = false
+		lifting = true
+		await get_tree().create_timer(1.5).timeout
+		stomping = true
+		lifting = false
+		await get_tree().create_timer(1.0).timeout
+		stomping = false
+		lifting = false
+		
 	
 
 func _on_queue_free_timer_timeout() -> void:
 	speed = 3.0
 	bossEntrySound.play()
-	await get_tree().create_timer(6.0).timeout
+	await get_tree().create_timer(7.0).timeout
 	self.queue_free()
 
 
@@ -189,7 +202,7 @@ func _on_shake_l_timer_timeout() -> void:
 	#stomping = false
 	#lifting = true
 	aimTimer.start(0.0)
-	shootTimer.start(0.0)
+	
 	heartMeter.play("default")
 	
 	chargeUpSound.play()
@@ -201,6 +214,7 @@ func _on_aim_timer_timeout() -> void:
 	#lifting = false
 	stomping = true
 	stompTimer.start(0.0)
+	shootTimer.start(0.0)
 	
 
 func _on_stomp_timer_timeout() -> void:
@@ -219,6 +233,11 @@ func _on_wait_timer_timeout() -> void:
 		slideLTimer.start(0.0)
 		stomping = false
 		pulse_visor()
+		
+		heartNRG.visible = false
+		crossHair.visible = false
+		heartMeter.visible = false
+		heartHitBox.disabled = true
 		#sword attack notice here...sound? visual pop? both?
 		#maybe flash modulation color changes on the chest monitors and play an alert sound
 		
@@ -233,12 +252,6 @@ func pulse_visor():
 		tween.tween_property(visorScreen, "self_modulate", Color(1, 0, 0), 0.25) # fade to red
 		tween.tween_property(visorScreen, "self_modulate", original_color, 0.25) # fade back to normal
 
-
-func _on_slide_right_timer_timeout() -> void:
-	stompTimer2.start(0.0)
-
-
-
 func _on_slide_left_timer_timeout() -> void:
 	disperseTimer.start(0.0)
 	rotating = true
@@ -247,33 +260,30 @@ func _on_slide_left_timer_timeout() -> void:
 	
 	
 
-
-func _on_stomp_timer_2_timeout() -> void:
-	stomping = false
-	lifting = true
-	liftTimer.start(0.0)
-	rotating = true
+	
 
 
 func _on_shoot_timer_timeout() -> void:
 	blastFX.play()
 	var bossDroneBullet = BossDrone.instantiate()
-	#bossDroneBullet.global_position = target.global_position
-	target.add_child(bossDroneBullet)
+	bossDroneBullet.global_position = target.global_position
+	target.get_parent().get_parent().add_child(bossDroneBullet)
 	print_debug(shootCount)
 	shootCount += 1
-	if shootCount >= 4:
+	if shootCount >= 12:
 		shootTimer.stop()
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
-	descending = true
+	descendTimer.start()
+	
 	living = false
 	lifting = false
 	stomping = false
+	rotating = false
 	explosion19.visible = true
 	explosion19.play("default")
-	
+	visorScreen.play("sad")
 	explosionSound.play(0.0)
 	mechHeart.visible = false
 	cracked.visible = true
@@ -284,24 +294,29 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 	liftTimer.stop()
 	waitTimer.stop()
 	stompTimer.stop()
-	stompTimer2.stop()
 	shakeLTimer.stop()
 	shakeRTimer.stop()
 	disperseTimer.stop()
+	slideLTimer.stop()
 	
-	pass # this is the mechHeart! touch? die?! (maybe not) flash? destory the mech! 
-	#destroying the mech will trigger the explosions and slow crash animation, 
-	#and award the player 1000(?)XP, look at basic enemies for trigger pattern (die vs eliminate)
+	heartHitBox.queue_free()
+	
+	var points = PointsLabel.instantiate()
+	points.global_position = pointsTarget.global_position
+	pointsTarget.get_parent().get_parent().call_deferred("add_child", points)
+	playerStats.score += 500
+	
 
 
 func _on_sprite_2d_animation_finished() -> void:
 	heartMeter.play("living")
 	heartNRG.visible = true
 	crossHair.visible = true
+	heartHitBox.disabled = false
 
 
 func _on_explosion_timer_timeout() -> void:
-	match int(shootCount):
+	match int(explosionCount):
 		1:
 			explosion.visible = true
 			explosion.play("default")
@@ -314,10 +329,12 @@ func _on_explosion_timer_timeout() -> void:
 			explosion3.visible = true
 			explosion3.play("default")
 			explosionSound.play(0.0)
+			globalTracking.emit_signal("boss_1_defeated")
 		4:
 			explosion4.visible = true
 			explosion4.play("default")	
 			explosionSound.play(0.0)
+			shoulderShard.visible = true #first scrap here, add scrap images to explosion anim for positioning
 		5:
 			explosion5.visible = true
 			explosion5.play("default")
@@ -326,6 +343,7 @@ func _on_explosion_timer_timeout() -> void:
 			explosion6.visible = true
 			explosion6.play("default")
 			explosionSound.play(0.0)
+			ahmPit.visible = true
 		7:
 			explosion7.visible = true
 			explosion7.play("default")
@@ -337,42 +355,52 @@ func _on_explosion_timer_timeout() -> void:
 		9:
 			explosion9.visible = true
 			explosion9.play("default")
-			explosionSound.play(0.0)
+			explosionSound.play(0.0)	
+
 		10:
 			explosion10.visible = true
 			explosion10.play("default")
-			explosionSound.play(0.0)
+			explosionSound.play(0.0)	
+
 		11:
 			explosion11.visible = true
 			explosion11.play("default")
-			explosionSound.play(0.0)
+
 		12:
 			explosion12.visible = true
 			explosion12.play("default")	
-			explosionSound.play(0.0)
+
 		13:
 			explosion13.visible = true
 			explosion13.play("default")
-			explosionSound.play(0.0)
+
 		14:
 			explosion14.visible = true
 			explosion14.play("default")
-			explosionSound.play(0.0)
+
 		15:
 			explosion15.visible = true
 			explosion15.play("default")
-			explosionSound.play(0.0)
+
 		16:
 			explosion16.visible = true
 			explosion16.play("default")	
-			explosionSound.play(0.0)
+
 		17:
 			explosion17.visible = true
 			explosion17.play("default")
-			explosionSound.play(0.0)
+
 		18:
 			explosion18.visible = true
 			explosion18.play("default")	
-			explosionSound.play(0.0)
+
+		19:
+			print_debug('mech has freed')
+			self.queue_free()
 			
-	shootCount += 1
+			
+	explosionCount += 1
+
+
+func _on_descend_timer_timeout() -> void:
+	descending = true

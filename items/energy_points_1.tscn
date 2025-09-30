@@ -137,6 +137,7 @@ animations = [{
 }]
 
 [node name="EnergyPoints1" type="Area2D"]
+z_index = 1
 collision_layer = 0
 script = ExtResource("1_liy5m")
 

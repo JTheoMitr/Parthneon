@@ -43,9 +43,12 @@ extends Node2D
 @onready var pauseMenu = $PauseMenu
 @onready var planetTimer = $PlanetTimer
 @onready var lrgPlanetTimer = $LrgPlanetTimer
-
-
-
+@onready var commsTimer = $CommsTimer
+@onready var enemyTimer = $EnemyTimer
+@onready var enemyTimer2 = $EnemyTimer2
+@onready var bossDefeatedTimer = $BossDefeatedTimer
+@onready var clearTimer = $ClearTimer
+@onready var droneTimer = $DroneTimer
 
 var rng = RandomNumberGenerator.new()
 var breathing
@@ -74,16 +77,27 @@ var mech1 = preload("res://enemies/mech_boss_1.tscn")
 var spaceLab1 = preload("res://platforms/space_lab_section_1.tscn")
 var gun1 = preload("res://enemies/gun_drone_boss.tscn")
 
-#planets
+#planets n galaxies
 var planet1medspin = preload("res://level/planet_1_medium_spinning.tscn")
 var planet2medspin = preload("res://level/planet_2_medium_spinning.tscn")
 var planet3medspin = preload("res://level/planet_3_medium_spinning.tscn")
 var planet4medspin = preload("res://level/planet_4_medium_spinning.tscn")
+var planet5medspin = preload("res://level/planet_4_medium_spinning.tscn")
 var planet5smallspin = preload("res://level/planet_5_small_spinning.tscn")
 var planet6smallspin = preload("res://level/planet_6_small_spinning.tscn")
 
+var galaxy1 = preload("res://level/galaxy_1_anim.tscn")
+
 #satellites
 var sat1 = preload("res://level/satellite_1_spinning.tscn")
+
+#comss Uis
+var comms1 = preload("res://ui/comms_ui_1.tscn")
+var comms2 = preload("res://ui/comms_ui_2.tscn")
+var commsMech1 = preload("res://ui/comms_ui_mech_1.tscn")
+
+#drones
+var drones = preload("res://ui/drone_deploy_1.tscn")
 
 var planet1lrg = preload("res://level/planet_1_large.tscn")
 
@@ -100,21 +114,23 @@ var satellites
 var satelliteCount
 var planets
 var lrgPlanets
-
+var screen_size
 var paused
 
 #@onready var entry_ui = $InitialEntryUI
 
 func _ready():
-	
+	#droneTimer.start() #testing, remove this after
 	Leaderboard.connect("score_submitted", Callable(self, "_show_leaderboard"))
 	#entry_ui.connect("initials_entered", Callable(self, "_on_initials_entered"))
+	GlobalTracking.connect("boss_1_defeated", Callable(self, "_boss_1_defeated"))
+	screen_size = get_viewport().get_visible_rect().size
 	
 	bossCount = 0
 	satelliteCount = 0
 	satellites = [sat1]
-	bosses = [spaceLab1, mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
-	planets = [planet1medspin, planet2medspin, planet3medspin, planet4medspin, planet5smallspin, planet6smallspin]
+	bosses = [mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
+	planets = [planet1medspin, galaxy1, planet2medspin, planet3medspin, planet4medspin, planet5medspin, planet5smallspin, planet6smallspin]
 	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false
 	
@@ -123,6 +139,8 @@ func _ready():
 	timeScroll = false
 	
 	scoreFontSize = 250
+	
+	enemyTimer.start()
 	
 	var camera = find_child("Camera2D")
 	var min_pos = $CameraLimit_min.global_position
@@ -133,7 +151,7 @@ func _ready():
 	camera.limit_right = max_pos.x
 	camera.limit_bottom = max_pos.y
 	
-	levelSong.play(0.0)
+	#levelSong.play(0.0)
 	timerDisplay.hide()
 	timerDisplay2.hide()
 	timerDisplay3.hide()
@@ -187,8 +205,8 @@ func _process(_delta: float) -> void:
 			paused = true
 	
 	#nightsky background mvmt
-	nightSky.global_position.x -= .08
-	nightSky2.global_position.x -= .08
+	nightSky.global_position.x -= .13 #original demo speed is .08
+	nightSky2.global_position.x -= .13 #original demo speed is .08
 	if (nightSky.global_position.x <= 0):
 		nightSky.global_position.x = 960
 	if (nightSky2.global_position.x <= 0):
@@ -264,9 +282,9 @@ func _process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	#print_debug("timer1up")
-	#Timer1: 14 Seconds, 5 platforms, 2 enemies
-	#Timer2: 7 seconds, 3 platforms, 1 enemy (L -> R enemy)
-	#Timer3: 3.5 Seconds, 1 Object, short platform
+	#Timer1: 14 Seconds, 4 platforms
+	#Timer2: 7 seconds, 3 platforms
+	#Timer3: 3.5 Seconds, 1 Platform, short neon platform
 	#use various timers to instance different platform types with various speeds and starting positions
 	#longNeon1
 	var my_random_number_x = rng.randf_range(2550.0, 5000.0)
@@ -277,12 +295,6 @@ func _on_timer_timeout() -> void:
 	#corner1
 	var my_random_number_x3 = rng.randf_range(2950.0, 3500.0)
 	var my_random_number_y3 = rng.randf_range(-135.0, 65.0)
-	#enemy1
-	var my_random_number_x4 = rng.randf_range(1950.0, 3500.0)
-	var my_random_number_y4 = rng.randf_range(-135.0, 65.0)
-	#enemy2 L->R
-	var my_random_number_x5 = rng.randf_range(-1950.0, -180.0)
-	var my_random_number_y5 = rng.randf_range(-135.0, 65.0)
 	#bluetee
 	var my_random_number_x6 = rng.randf_range(1250.0, 2570.0)
 	var my_random_number_y6 = rng.randf_range(-135.0, 65.0)
@@ -290,8 +302,8 @@ func _on_timer_timeout() -> void:
 	#var my_random_number_x8 = rng.randf_range(3505.0, 5500.0)
 	#var my_random_number_y8 = rng.randf_range(-135.0, 65.0)
 	#corner2
-	var my_random_number_x9 = rng.randf_range(3500.0, 5500.0)
-	var my_random_number_y9 = rng.randf_range(-135.0, 65.0)
+	#var my_random_number_x9 = rng.randf_range(3500.0, 5500.0)
+	#var my_random_number_y9 = rng.randf_range(-135.0, 65.0)
 	
 	var longNeon1 = long1.instantiate()
 	longNeon1.global_position.x = my_random_number_x
@@ -305,14 +317,7 @@ func _on_timer_timeout() -> void:
 	korner1.global_position.x = my_random_number_x3
 	korner1.global_position.y = my_random_number_y3
 	add_child(korner1)
-	var enemyOne = enemy1.instantiate()
-	enemyOne.global_position.x = my_random_number_x4
-	enemyOne.global_position.y = my_random_number_y4
-	add_child(enemyOne)
-	var enemyTwo = enemy2.instantiate()
-	enemyTwo.global_position.x = my_random_number_x5
-	enemyTwo.global_position.y = my_random_number_y5
-	add_child(enemyTwo)
+	
 	var blueTee = blueT1.instantiate()
 	blueTee.global_position.x = my_random_number_x6
 	blueTee.global_position.y = my_random_number_y6
@@ -321,10 +326,10 @@ func _on_timer_timeout() -> void:
 	#blue2.global_position.x = my_random_number_x8
 	#blue2.global_position.y = my_random_number_y8
 	#add_child(blue2)
-	var korner2 = corner1.instantiate()
-	korner2.global_position.x = my_random_number_x9
-	korner2.global_position.y = my_random_number_y9
-	add_child(korner2)
+	#var korner2 = corner1.instantiate()
+	#korner2.global_position.x = my_random_number_x9
+	#korner2.global_position.y = my_random_number_y9
+	#add_child(korner2)
 	#give L an R enemies different collision layers and put both in player hutbox? yes, works. current setup
 	
 	
@@ -368,6 +373,9 @@ func _on_ready_timer_timeout() -> void:
 	energyTimer.start(0.0)
 	energyTimer2.start(0.0)
 	$Timer3.start(0.0)
+	
+	
+	enemyTimer2.start()
 	
 	
 
@@ -439,42 +447,30 @@ func _on_button_2_pressed() -> void:
 
 func _on_timer_2_timeout() -> void:
 	#print_debug("timer2up")
-	#Timer1: 14 Seconds, 5 platforms, 2 enemies
-	#Timer2: 7 seconds, 2 platforms, 2 enemies
-	#Timer3: 3.5 Seconds, 1 Object, short platform
+	#Timer1: 14 Seconds, 4 platforms
+	#Timer2: 7 seconds, 3 platforms
+	#Timer3: 3.5 Seconds, 1 Platform, short neon platform
 	
-	#blueCross1
-	var my_random_number_x2 = rng.randf_range(1950.0, 3500.0)
-	var my_random_number_y2 = rng.randf_range(-135.0, 65.0)
+	#shortneon
+	var my_random_number_x = rng.randf_range(1250.0, 1350.0)
+	var my_random_number_y = rng.randf_range(-65.0, 65.0)
 	#corner1
 	var my_random_number_x3 = rng.randf_range(950.0, 3500.0)
 	var my_random_number_y3 = rng.randf_range(-135.0, 65.0)
-	#enemy1
-	var my_random_number_x4 = rng.randf_range(950.0, 2500.0)
-	var my_random_number_y4 = rng.randf_range(-135.0, 65.0)
-	#enemy2 L->R
-	var my_random_number_x5 = rng.randf_range(-1950.0, -180.0)
-	var my_random_number_y5 = rng.randf_range(-135.0, 65.0)
+	
 	#longNeon2
 	#var my_random_number_x7 = rng.randf_range(3005.0, 8000.0)
 	#var my_random_number_y7 = rng.randf_range(-135.0, 65.0)
 	
-	var blue1 = bcross1.instantiate()
-	blue1.global_position.x = my_random_number_x2
-	blue1.global_position.y = my_random_number_y2
-	add_child(blue1)
+	var shortNeon = short1.instantiate()
+	shortNeon.global_position.x = my_random_number_x
+	shortNeon.global_position.y = my_random_number_y
+	add_child(shortNeon)
 	var korner1 = corner1.instantiate()
 	korner1.global_position.x = my_random_number_x3
 	korner1.global_position.y = my_random_number_y3
 	add_child(korner1)
-	var enemyOne = enemy1.instantiate()
-	enemyOne.global_position.x = my_random_number_x4
-	enemyOne.global_position.y = my_random_number_y4
-	add_child(enemyOne)
-	var enemyTwo = enemy2.instantiate()
-	enemyTwo.global_position.x = my_random_number_x5
-	enemyTwo.global_position.y = my_random_number_y5
-	add_child(enemyTwo)
+
 	#var longNeon2 = long1.instantiate()
 	#longNeon2.global_position.x = my_random_number_x7
 	#longNeon2.global_position.y = my_random_number_y7
@@ -492,10 +488,18 @@ func _on_timer_3_timeout() -> void:
 	var my_random_number_x = rng.randf_range(950.0, 1150.0)
 	var my_random_number_y = rng.randf_range(-65.0, 65.0)
 	
+	var my_random_number_x2 = rng.randf_range(1150.0, 2150.0)
+	var my_random_number_y2 = rng.randf_range(-65.0, 65.0)
+	
 	var shortNeon = short1.instantiate()
 	shortNeon.global_position.x = my_random_number_x
 	shortNeon.global_position.y = my_random_number_y
 	add_child(shortNeon)
+	
+	var shortNeon2 = short1.instantiate()
+	shortNeon.global_position.x = my_random_number_x2
+	shortNeon.global_position.y = my_random_number_y2
+	add_child(shortNeon2)
 
 
 func _on_boss_timer_timeout() -> void:
@@ -541,20 +545,22 @@ func _on_boss_prep_timer_timeout() -> void:
 	#change direction of all platforms that are not the most basic design to clear screen for boss. will need to revert to false once boss phase is complete.
 	stats.bossPhase = true
 	#stop creating new platforms and enemies for boss phase, will need to start these up again after boss phase is over
-	timer.stop()
-	timer2.stop()
-	timer3.stop()
+	#timer.stop()
+	#timer2.stop()
+	#timer3.stop()
 	#creating a run of low plats to use during fight, will need to stop this timer at the end of the fight, as well
-	lowPlatTimer.start(0.0)
-	floorsplosionTimer.start(0.0)
-	
+	#lowPlatTimer.start(0.0)
+	#floorsplosionTimer.start(0.0)
+	enemyTimer.start()
+	enemyTimer2.start()
 	#print_debug("bosspreppd")
+	#map out all timers / triggers as a flow chart in your book
 
 
 func _on_boss_completed_timer_timeout() -> void:
 	timer.start()
 	timer2.start()
-	timer3.start()
+	#timer3.start()
 	stats.bossPhase = false
 	lowPlatTimer.stop()
 	#print_debug("completed")
@@ -562,6 +568,7 @@ func _on_boss_completed_timer_timeout() -> void:
 	#re-start boss prep and boss entrance
 	bossPrepTimer.start(0.0)
 	bossTimer.start(0.0)
+	clearTimer.start() #might remove this
 
 
 func _on_floorsplosion_1_animation_finished() -> void:
@@ -584,7 +591,7 @@ func _unpause():
 
 func _on_planet_timer_timeout() -> void:
 	#randomize from a list of small and medium planets, create a second timer for the large planets with a lower y (more of a close-to-the-surface effect) and go from there.
-	var randomNumber = rng.randf_range(0,4)
+	var randomNumber = rng.randf_range(0,7)
 	#print_debug(randomNumber)
 	var planetOne = planets[randomNumber].instantiate()
 	var my_random_number_x = rng.randf_range(1000.0, 1200.0)
@@ -623,10 +630,78 @@ func _show_leaderboard() -> void:
 func _on_satellite_timer_timeout() -> void:
 	var launchPad = satellites[satelliteCount].instantiate()
 	launchPad.global_position.x = 900
-	launchPad.global_position.y = -80
+	launchPad.global_position.y = -65
 	add_child(launchPad)
 	
-	#og boss timer is 67 seconds, lets work out timings, satellite timing, 
-	#and new timing for platforms, spreading out
-	#need to add explosions/defeat path for mech, test both defeat and survive paths
-	#build first 'space lab' section
+	lowPlatTimer.start(0.0)
+	floorsplosionTimer.start(0.0)
+	
+	
+	
+
+
+func _on_comms_timer_timeout() -> void:
+	print_debug("comms1")
+	print_debug(screen_size)
+	var commsPart1 = comms1.instantiate()
+	commsPart1.global_position.x = 350
+	commsPart1.global_position.y = 15
+	add_child(commsPart1)
+	
+
+
+func _on_enemy_timer_timeout() -> void:
+	#5 seconds
+	#enemy1
+	var my_random_number_x4 = rng.randf_range(1950.0, 2500.0)
+	var my_random_number_y4 = rng.randf_range(-135.0, 65.0)
+	var enemyOne = enemy1.instantiate()
+	enemyOne.global_position.x = my_random_number_x4
+	enemyOne.global_position.y = my_random_number_y4
+	add_child(enemyOne)
+	
+
+
+func _on_enemy_timer_2_timeout() -> void:
+	
+	#15 seconds
+	#enemy2 L->R
+	var my_random_number_x5 = rng.randf_range(-1950.0, -180.0)
+	var my_random_number_y5 = rng.randf_range(-135.0, 65.0)
+	var enemyTwo = enemy2.instantiate()
+	enemyTwo.global_position.x = my_random_number_x5
+	enemyTwo.global_position.y = my_random_number_y5
+	add_child(enemyTwo)
+
+
+func _on_boss_defeated_timer_timeout() -> void:
+	print_debug("comms2")
+	print_debug(screen_size)
+	var commsPart2 = comms2.instantiate()
+	commsPart2.global_position.x = 350
+	commsPart2.global_position.y = 15
+	add_child(commsPart2)
+	droneTimer.start()
+	
+func _boss_1_defeated() -> void:
+	bossDefeatedTimer.start()
+	var commsMechDefeated = commsMech1.instantiate()
+	commsMechDefeated.global_position.x = 550
+	commsMechDefeated.global_position.y = -135
+	add_child(commsMechDefeated)
+
+
+func _on_clear_timer_timeout() -> void:
+	
+	timer.stop()
+	timer2.stop()
+	enemyTimer.stop()
+	enemyTimer2.stop()
+
+
+func _on_drone_timer_timeout() -> void:
+	var droneDeploy = drones.instantiate()
+	droneDeploy.global_position.x = 300
+	droneDeploy.global_position.y = -150
+	add_child(droneDeploy)
+	print_debug("drones deployed")

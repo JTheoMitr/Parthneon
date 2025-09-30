@@ -7,10 +7,12 @@ var stats = PlayerStats
 
 @onready var blinkingRed = $Sprite2D8/BlinkingRed
 @onready var blinkTimer = $Timer2
+@onready var alarm = $Alarm
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	real_pos = position
+	blinkTimer.stop()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,14 +30,18 @@ func _on_timer_timeout() -> void:
 func _on_timer_2_timeout() -> void:
 	if blinkingRed.visible:
 		blinkingRed.visible = false
+		alarm.stop()
 	else:
 		blinkingRed.visible = true
+		alarm.play()
 		
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	blinkTimer.start(0.0)
+	#alarm.play()
 
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	blinkTimer.stop()
+	alarm.stop()
