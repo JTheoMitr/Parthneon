@@ -168,7 +168,7 @@ position = Vector2(113, 110)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_6dwb1")
 autoplay = "default"
-frame_progress = 0.446781
+frame_progress = 0.541804
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
 self_modulate = Color(1, 1, 1, 0.156863)
@@ -176,7 +176,7 @@ position = Vector2(112.75, 113)
 scale = Vector2(24.5625, 24.75)
 sprite_frames = SubResource("SpriteFrames_gqgyc")
 autoplay = "default"
-frame_progress = 0.377183
+frame_progress = 0.47189
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 self_modulate = Color(0.275248, 0.673013, 0.511816, 1)
@@ -205,7 +205,7 @@ position = Vector2(525, 51.125)
 scale = Vector2(32.8125, 7.47449)
 sprite_frames = SubResource("SpriteFrames_h6xlp")
 autoplay = "default"
-frame_progress = 0.171966
+frame_progress = 0.581776
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_f7gr6")

@@ -144,7 +144,7 @@ one_way_collision = true
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="."]
 position = Vector2(-146.429, -3.57143)
-rotation = -1.5708
+rotation = 1.5708
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_vqxuo")
 one_way_collision = true

@@ -11,6 +11,7 @@ extends Node2D
 @onready var timerDisplay2 = $TimerDisplay2
 @onready var scoreDisplay = $ScoreDisplay
 @onready var stats = PlayerStats
+@onready var g_tracking = GlobalTracking
 @onready var levelSong = $LevelSong
 @onready var neonPrison = $NeonPrison
 @onready var energyTimer = $EnergyTimer1
@@ -49,6 +50,7 @@ extends Node2D
 @onready var bossDefeatedTimer = $BossDefeatedTimer
 @onready var clearTimer = $ClearTimer
 @onready var droneTimer = $DroneTimer
+@onready var gemsTimer = $GemsTimer
 
 var rng = RandomNumberGenerator.new()
 var breathing
@@ -123,13 +125,16 @@ func _ready():
 	#droneTimer.start() #testing, remove this after
 	Leaderboard.connect("score_submitted", Callable(self, "_show_leaderboard"))
 	#entry_ui.connect("initials_entered", Callable(self, "_on_initials_entered"))
-	GlobalTracking.connect("boss_1_defeated", Callable(self, "_boss_1_defeated"))
+	g_tracking.connect("boss_1_defeated", Callable(self, "_boss_1_defeated"))
+	g_tracking.connect("space_lab_entered", Callable(self, "_entering_space_lab"))
+	g_tracking.connect("timers_startup", Callable(self, "_timers_go"))
+	
 	screen_size = get_viewport().get_visible_rect().size
 	
 	bossCount = 0
 	satelliteCount = 0
 	satellites = [sat1]
-	bosses = [mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
+	bosses = [spaceLab1, mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
 	planets = [planet1medspin, galaxy1, planet2medspin, planet3medspin, planet4medspin, planet5medspin, planet5smallspin, planet6smallspin]
 	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false
@@ -151,7 +156,7 @@ func _ready():
 	camera.limit_right = max_pos.x
 	camera.limit_bottom = max_pos.y
 	
-	#levelSong.play(0.0)
+	levelSong.play(0.0)
 	timerDisplay.hide()
 	timerDisplay2.hide()
 	timerDisplay3.hide()
@@ -705,3 +710,38 @@ func _on_drone_timer_timeout() -> void:
 	droneDeploy.global_position.y = -150
 	add_child(droneDeploy)
 	print_debug("drones deployed")
+	
+func _entering_space_lab() -> void:
+	gemsTimer.start()
+	timer.stop()
+	timer2.stop()
+	timer3.stop()
+	lowPlatTimer.stop()
+	var nodes_to_clear = get_tree().get_nodes_in_group("cleanup_on_lab_enter")
+	for n in nodes_to_clear:
+		if is_instance_valid(n):
+			n.queue_free()
+	
+func _timers_go() -> void:
+	timer.start()
+	timer2.start()
+	timer3.start()
+	lowPlatTimer.start()
+	gemsTimer.stop()
+
+
+func _on_gems_timer_timeout() -> void:
+	var energy1 = nrg1.instantiate()
+	var my_random_number_x = rng.randf_range(248.0, 720.0)
+	var my_random_number_y = rng.randf_range(-175.0, 65.0)
+	energy1.global_position.x = my_random_number_x
+	energy1.global_position.y = my_random_number_y
+	add_child(energy1)
+	#print_debug("nrg1")
+	var energy2 = nrg2.instantiate()
+	var my_random_number_x2 = rng.randf_range(248.0, 720.0)
+	var my_random_number_y2 = rng.randf_range(-175.0, 65.0)
+	energy2.global_position.x = my_random_number_x2
+	energy2.global_position.y = my_random_number_y2
+	add_child(energy2)
+	#print_debug("nrg2")

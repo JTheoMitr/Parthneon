@@ -80,7 +80,7 @@ func _process(delta: float) -> void:
 		22:
 			text.text = "[center]I'l "
 		23:
-			text.text = "[center]I'l"
+			text.text = "[center]I'll"
 		24:
 			text.text = "[center]I'll s"
 		25:

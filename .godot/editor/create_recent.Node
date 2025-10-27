@@ -1,9 +1,9 @@
-AudioStreamPlayer
-AnimatedSprite2D
-Sprite2D
 Timer
 CollisionShape2D
 Area2D
+Sprite2D
+AnimatedSprite2D
+AudioStreamPlayer
 RichTextLabel
 Panel
 TileMap

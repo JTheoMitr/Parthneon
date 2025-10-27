@@ -4,15 +4,42 @@ extends AnimatableBody2D
 @export var lift = 0.0
 var real_pos : Vector2
 var stats = PlayerStats
+var global_tracking = GlobalTracking
 
 @onready var blinkingRed = $Sprite2D8/BlinkingRed
 @onready var blinkTimer = $Timer2
 @onready var alarm = $Alarm
 
+@onready var lab_1_screen_2 =  $Screen2
+
+@onready var lab_man_1 = $LabNPC1
+
+@onready var light_glow_1 = $Sprite2D35/LightGlow1
+@onready var light_glow_2 = $Sprite2D44/LightGlow2
+@onready var light_glow_3 = $Sprite2D45/LightGlow3
+@onready var light_glow_4 = $Sprite2D46/LightGlow4
+@onready var light_glow_5 = $Sprite2D47/LightGlow5
+@onready var light_glow_6 = $Sprite2D48/LightGlow6
+@onready var light_glow_7 = $Sprite2D49/LightGlow7
+@onready var light_glow_8 = $Sprite2D50/LightGlow8
+@onready var light_glow_9 = $Sprite2D51/LightGlow9
+@onready var light_glow_10 = $Sprite2D52/LightGlow10
+@onready var light_glow_11 = $Sprite2D69/LightGlow11
+
+
+var lab_man_right
+var lab_man_left
+
+var light_glow_up
+var light_glow_down
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	real_pos = position
 	blinkTimer.stop()
+	lab_man_right = true
+	lab_man_left = false
+	light_glow_down = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +48,51 @@ func _process(_delta: float) -> void:
 	real_pos.x -= speed
 	#self.global_position.y += lift
 	position = real_pos.round()
+	
+	if lab_man_1.position.x > 628.0:
+		lab_man_right = false
+		lab_man_left = true
+		
+	if lab_man_1.position.x < 278.0:
+		lab_man_right = true
+		lab_man_left = false
+		
+	if lab_man_left:
+		lab_man_1.flip_h = true
+		lab_man_1.position.x -= 1.0
+		
+	if lab_man_right:
+		lab_man_1.flip_h = false
+		lab_man_1.position.x += 1.0
+		
+	if light_glow_down:
+		if light_glow_1.self_modulate.a >= 0.0:
+			light_glow_1.self_modulate.a -= 0.005
+			light_glow_2.self_modulate.a += 0.005
+			light_glow_3.self_modulate.a -= 0.005
+			light_glow_4.self_modulate.a += 0.005
+			light_glow_5.self_modulate.a -= 0.005
+			light_glow_6.self_modulate.a += 0.005
+			light_glow_7.self_modulate.a -= 0.005
+			light_glow_8.self_modulate.a += 0.005
+			light_glow_9.self_modulate.a -= 0.005
+			light_glow_10.self_modulate.a += 0.005
+			light_glow_11.self_modulate.a += 0.005
+
+		
+	if light_glow_up:
+		if light_glow_1.self_modulate.a <= 1.0:
+			light_glow_1.self_modulate.a += 0.005
+			light_glow_2.self_modulate.a -= 0.005
+			light_glow_3.self_modulate.a += 0.005
+			light_glow_4.self_modulate.a -= 0.005
+			light_glow_5.self_modulate.a += 0.005
+			light_glow_6.self_modulate.a -= 0.005
+			light_glow_7.self_modulate.a += 0.005
+			light_glow_8.self_modulate.a -= 0.005
+			light_glow_9.self_modulate.a += 0.005
+			light_glow_10.self_modulate.a -= 0.005
+			light_glow_11.self_modulate.a -= 0.005
 
 
 func _on_timer_timeout() -> void:
@@ -39,9 +111,31 @@ func _on_timer_2_timeout() -> void:
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
 	blinkTimer.start(0.0)
+	
 	#alarm.play()
 
 
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	blinkTimer.stop()
 	alarm.stop()
+	global_tracking.emit_signal("timers_startup")
+
+
+func _on_timer_3_timeout() -> void:
+	if lab_1_screen_2.visible:
+		lab_1_screen_2.visible = false
+	else:
+		lab_1_screen_2.visible = true
+
+
+func _on_timer_4_timeout() -> void:
+	if light_glow_down:
+		light_glow_up = true
+		light_glow_down = false
+	else:
+		light_glow_down = true
+		light_glow_up = false
+
+
+func _on_area_2d_2_area_entered(area: Area2D) -> void:
+	global_tracking.emit_signal("space_lab_entered")

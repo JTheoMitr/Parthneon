@@ -804,6 +804,9 @@ autostart = true
 wait_time = 7.5
 one_shot = true
 
+[node name="GemsTimer" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]
 [connection signal="timeout" from="GameTimer1" to="." method="_on_game_timer_1_timeout"]
@@ -832,5 +835,6 @@ one_shot = true
 [connection signal="timeout" from="BossDefeatedTimer" to="." method="_on_boss_defeated_timer_timeout"]
 [connection signal="timeout" from="ClearTimer" to="." method="_on_clear_timer_timeout"]
 [connection signal="timeout" from="DroneTimer" to="." method="_on_drone_timer_timeout"]
+[connection signal="timeout" from="GemsTimer" to="." method="_on_gems_timer_timeout"]
 
 [editable path="PauseMenu"]

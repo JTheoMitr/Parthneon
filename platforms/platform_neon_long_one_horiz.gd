@@ -8,6 +8,7 @@ var stats = PlayerStats
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	real_pos = position
+	add_to_group("cleanup_on_lab_enter")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
