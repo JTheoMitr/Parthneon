@@ -34,6 +34,7 @@ var alive
 @onready var sprinkle = $Sprinkle
 @onready var hurtbox = $Hurtbox
 @onready var area2d = $Area2D
+@onready var blastSmoke = $JPSmoke
 
 
 func _ready():
@@ -45,6 +46,7 @@ func _ready():
 	alive = true
 	stats.health = 1
 	sprinkle.hide()
+	blastSmoke.hide()
 
 
 func _physics_process(delta: float) -> void:
@@ -98,6 +100,7 @@ func _physics_process(delta: float) -> void:
 		$AnimationTree["parameters/jump/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
 
 	if is_on_floor():
+		blastSmoke.hide()
 		# Most animations change when we run, land, or take off.
 		# add pixel dust to landing anims
 		if falling_fast:
@@ -122,6 +125,7 @@ func _physics_process(delta: float) -> void:
 		falling_fast = false
 		falling_slow = false
 	else:
+		blastSmoke.show()
 		if velocity.y > 0:
 			$AnimationTree["parameters/state/transition_request"] = States.FALL
 		else:
