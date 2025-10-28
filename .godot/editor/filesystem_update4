@@ -5,3 +5,5 @@ res://player/player.tscn
 res://menu.tscn
 res://platforms/space_lab_section_1.tscn
 res://enemies/alien_enemy1.tscn
+res://items/energy_points_2.tscn
+res://items/energy_points_1.tscn

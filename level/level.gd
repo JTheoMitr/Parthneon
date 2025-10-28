@@ -51,6 +51,7 @@ extends Node2D
 @onready var clearTimer = $ClearTimer
 @onready var droneTimer = $DroneTimer
 @onready var gemsTimer = $GemsTimer
+@onready var alienTimer = $AlienTimer
 
 var rng = RandomNumberGenerator.new()
 var breathing
@@ -71,6 +72,8 @@ var enemy1 = preload("res://enemies/neon_bot_enemy1.tscn")
 var enemy2 = preload("res://enemies/neon_bot_enemy2.tscn")
 var blueT1 = preload("res://platforms/platform_neon_T_blue.tscn")
 var longAndLow1 = preload("res://platforms/platform_neon_longandlow_one_horiz.tscn")
+
+var alienEnemy1 = preload("res://enemies/alien_enemy1.tscn")
 
 #bosses
 var smiley1 = preload("res://enemies/smiley_drone_boss.tscn")
@@ -716,7 +719,10 @@ func _entering_space_lab() -> void:
 	timer.stop()
 	timer2.stop()
 	timer3.stop()
+	enemyTimer.stop()
+	enemyTimer2.stop()
 	lowPlatTimer.stop()
+	alienTimer.start()
 	var nodes_to_clear = get_tree().get_nodes_in_group("cleanup_on_lab_enter")
 	for n in nodes_to_clear:
 		if is_instance_valid(n):
@@ -726,8 +732,11 @@ func _timers_go() -> void:
 	timer.start()
 	timer2.start()
 	timer3.start()
+	enemyTimer.start()
+	enemyTimer2.start()
 	lowPlatTimer.start()
 	gemsTimer.stop()
+	alienTimer.stop()
 
 
 func _on_gems_timer_timeout() -> void:
@@ -745,3 +754,12 @@ func _on_gems_timer_timeout() -> void:
 	energy2.global_position.y = my_random_number_y2
 	add_child(energy2)
 	#print_debug("nrg2")
+
+
+func _on_alien_timer_timeout() -> void:
+	var my_random_number_x4 = rng.randf_range(1950.0, 2500.0)
+	var my_random_number_y4 = rng.randf_range(-135.0, 65.0)
+	var enemyOne = alienEnemy1.instantiate()
+	enemyOne.global_position.x = my_random_number_x4
+	enemyOne.global_position.y = my_random_number_y4
+	add_child(enemyOne)
