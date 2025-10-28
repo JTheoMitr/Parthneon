@@ -7,3 +7,6 @@ res://platforms/space_lab_section_1.tscn
 res://enemies/alien_enemy1.tscn
 res://items/energy_points_2.tscn
 res://items/energy_points_1.tscn
+res://enemies/alien_plant.tscn
+res://enemies/alien_plant.gd
+res://enemies/alien_enemy_1.gd

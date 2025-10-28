@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://cylimaxlkvvpo"]
+[gd_scene load_steps=56 format=4 uid="uid://cylimaxlkvvpo"]
 
 [ext_resource type="Script" path="res://platforms/space_lab_section_1.gd" id="1_fucm0"]
 [ext_resource type="Texture2D" uid="uid://b2s0g2fhn7l44" path="res://platforms/neon_blue_basic_colorchange.png" id="3_6nxiq"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bw0nfgc4brsei" path="res://level/background/floatingBody.png" id="17_gpr03"]
 [ext_resource type="Texture2D" uid="uid://wmusf5g7qf4l" path="res://level/background/wall_light_1.png" id="18_3jv6f"]
 [ext_resource type="Texture2D" uid="uid://bjn0qos4ejbsh" path="res://level/background/LampGlow1.png" id="19_1p6rh"]
+[ext_resource type="PackedScene" uid="uid://dien2sww3m4lw" path="res://enemies/alien_plant.tscn" id="20_abh7n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u12qe"]
 atlas = ExtResource("3_6nxiq")
@@ -1316,6 +1317,20 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-1763.21, -450.714)
 shape = SubResource("RectangleShape2D_cjnpq")
+
+[node name="AlienPlant" parent="." instance=ExtResource("20_abh7n")]
+position = Vector2(17.8571, -171.429)
+
+[node name="AlienPlant3" parent="." instance=ExtResource("20_abh7n")]
+position = Vector2(1175, -192.857)
+
+[node name="AlienPlant4" parent="." instance=ExtResource("20_abh7n")]
+position = Vector2(2492.86, -592.857)
+rotation = 3.14159
+
+[node name="AlienPlant2" parent="." instance=ExtResource("20_abh7n")]
+position = Vector2(-485.714, -692.857)
+rotation = 3.14159
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
