@@ -59,7 +59,7 @@ animations = [{
 }]
 
 [node name="AlienPlant" type="Area2D"]
-scale = Vector2(3, 3)
+scale = Vector2(3.3, 3.3)
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("1_2nvrk")
@@ -71,4 +71,4 @@ shape = SubResource("CircleShape2D_emqwc")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_44t5x")
 autoplay = "default"
-frame_progress = 0.243574
+frame_progress = 0.861884

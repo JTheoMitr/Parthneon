@@ -1,6 +1,7 @@
+res://player
+res://level/background
 res://audio
 res://enemies
-res://level/background
 res://ui
 res://level/background/Planets
 res://platforms
@@ -10,7 +11,6 @@ res://effects
 res://level
 res://level/background/Satellites
 res://items
-res://player
 /Users/johnmitropoulos/Desktop
 res://level/background/pixel-sky-backgrounds-byCaniaEast
 res://effects/FX052_nyknck

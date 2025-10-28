@@ -98,6 +98,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_llbnj"]
+height = 21.5385
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d56f0"]
 atlas = ExtResource("2_24qjm")
@@ -144,6 +145,7 @@ animations = [{
 
 [node name="AlienEnemy" type="Area2D"]
 z_index = 2
+scale = Vector2(1.3, 1.3)
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("1_scpb3")
@@ -154,7 +156,7 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_42gou")
-frame_progress = 0.00599671
+frame_progress = 0.479022
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

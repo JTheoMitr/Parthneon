@@ -10,3 +10,4 @@ res://items/energy_points_1.tscn
 res://enemies/alien_plant.tscn
 res://enemies/alien_plant.gd
 res://enemies/alien_enemy_1.gd
+res://platforms/space_lab_section_1.gd
