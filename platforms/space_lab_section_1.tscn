@@ -1323,14 +1323,14 @@ shape = SubResource("RectangleShape2D_cjnpq")
 position = Vector2(17.8571, -171.429)
 
 [node name="AlienPlant3" parent="." instance=ExtResource("20_abh7n")]
-position = Vector2(1175, -192.857)
+position = Vector2(1475, -92.8571)
 
 [node name="AlienPlant4" parent="." instance=ExtResource("20_abh7n")]
 position = Vector2(2492.86, -592.857)
 rotation = 3.14159
 
 [node name="AlienPlant2" parent="." instance=ExtResource("20_abh7n")]
-position = Vector2(-485.714, -692.857)
+position = Vector2(-860.714, -603.571)
 rotation = 3.14159
 
 [node name="Sprite2D70" type="Sprite2D" parent="."]

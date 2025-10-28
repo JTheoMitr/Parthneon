@@ -82,8 +82,10 @@ func _physics_process(delta: float) -> void:
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
 			sprite.scale.x = 1.0 * sprite_scale
+			blastSmoke.position.x = -8.0
 		else:
 			sprite.scale.x = -1.0 * sprite_scale
+			blastSmoke.position.x = 8.0
 
 	move_and_slide()
 
@@ -125,7 +127,7 @@ func _physics_process(delta: float) -> void:
 		falling_fast = false
 		falling_slow = false
 	else:
-		blastSmoke.show()
+		
 		if velocity.y > 0:
 			$AnimationTree["parameters/state/transition_request"] = States.FALL
 		else:
@@ -145,6 +147,7 @@ func try_jump() -> bool:
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jumpSound.play(0.0)
+		blastSmoke.show()
 		return true
 	return false
 

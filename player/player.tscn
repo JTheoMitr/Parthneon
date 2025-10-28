@@ -1967,6 +1967,15 @@ animations = [{
 "texture": SubResource("AtlasTexture_gv8c2")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_gv8c2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ku8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gv8c2")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7ku8k")
 }, {
 "duration": 1.0,
@@ -2258,11 +2267,12 @@ sprite_frames = SubResource("SpriteFrames_qu22o")
 offset = Vector2(0, -25)
 
 [node name="JPSmoke" type="AnimatedSprite2D" parent="."]
-position = Vector2(-6, -8)
-scale = Vector2(0.65, 0.65)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(-8, -10)
+scale = Vector2(0.5125, 0.54375)
 sprite_frames = SubResource("SpriteFrames_suqi3")
 autoplay = "default"
-frame_progress = 0.788696
+frame_progress = 0.699735
 
 [connection signal="animation_finished" from="BlockFlash" to="." method="_on_block_flash_animation_finished"]
 [connection signal="animation_finished" from="Dust" to="." method="_on_dust_animation_finished"]
