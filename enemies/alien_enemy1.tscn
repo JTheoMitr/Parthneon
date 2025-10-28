@@ -156,7 +156,7 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_42gou")
-frame_progress = 0.479022
+frame_progress = 0.351563
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

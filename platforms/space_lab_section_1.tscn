@@ -322,6 +322,7 @@ frame_progress = 0.191249
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(951, 29.5)
 shape = SubResource("RectangleShape2D_gxwi1")
+disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(942, -961)
@@ -1320,17 +1321,19 @@ position = Vector2(-1763.21, -450.714)
 shape = SubResource("RectangleShape2D_cjnpq")
 
 [node name="AlienPlant" parent="." instance=ExtResource("20_abh7n")]
-position = Vector2(17.8571, -171.429)
+position = Vector2(-771.429, -157.143)
+scale = Vector2(8.5, 8.5)
 
 [node name="AlienPlant3" parent="." instance=ExtResource("20_abh7n")]
-position = Vector2(1475, -92.8571)
+position = Vector2(667.857, -175)
+scale = Vector2(9, 9)
 
 [node name="AlienPlant4" parent="." instance=ExtResource("20_abh7n")]
 position = Vector2(2492.86, -592.857)
 rotation = 3.14159
 
 [node name="AlienPlant2" parent="." instance=ExtResource("20_abh7n")]
-position = Vector2(-860.714, -603.571)
+position = Vector2(-99.9999, -592.857)
 rotation = 3.14159
 
 [node name="Sprite2D70" type="Sprite2D" parent="."]
