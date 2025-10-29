@@ -137,7 +137,7 @@ func _ready():
 	bossCount = 0
 	satelliteCount = 0
 	satellites = [sat1]
-	bosses = [spaceLab1, mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
+	bosses = [mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
 	planets = [planet1medspin, galaxy1, planet2medspin, planet3medspin, planet4medspin, planet5medspin, planet5smallspin, planet6smallspin]
 	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false

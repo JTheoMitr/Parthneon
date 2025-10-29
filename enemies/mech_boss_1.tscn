@@ -2078,10 +2078,21 @@ autoplay = "default"
 frame_progress = 0.529929
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-visible = false
 self_modulate = Color(0.54902, 0.54902, 0.54902, 0.886275)
-position = Vector2(-322.222, -112)
-scale = Vector2(0.95, 0.95)
+position = Vector2(-326.667, -137.778)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_lc61e")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 0.886275)
+position = Vector2(-315.556, -137.778)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_lc61e")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+self_modulate = Color(0.54902, 0.54902, 0.54902, 0.886275)
+position = Vector2(-304.444, -137.778)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("24_lc61e")
 
 [connection signal="timeout" from="ShakeLTimer" to="." method="_on_shake_l_timer_timeout"]

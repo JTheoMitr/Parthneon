@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://c657hgr7fcptm"]
+[gd_scene load_steps=80 format=3 uid="uid://c657hgr7fcptm"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cqy4jj5eglef6" path="res://player/gBot_space_suit_smaller_helmet_jpack.png" id="2_lftk1"]
@@ -1993,7 +1993,92 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r5qod")
 }],
-"loop": true,
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyo41"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(0, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fdtc"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(64, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sii8"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(128, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shlo8"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(192, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfn2h"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(256, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46nhf"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(320, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hluo7"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(384, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47p2m"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(448, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crlna"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(512, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltkat"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(576, 576, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocolp"]
+atlas = ExtResource("10_0qvuj")
+region = Rect2(640, 576, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vyyav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyo41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fdtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sii8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shlo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfn2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46nhf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hluo7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_47p2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crlna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltkat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocolp")
+}],
+"loop": false,
 "name": &"default",
 "speed": 10.0
 }]
@@ -2206,12 +2291,10 @@ bones = ["Hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 internal_vertex_count = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0.776211, -16.4722)
 shape = SubResource("24")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2(0, -32)
 zoom = Vector2(4, 4)
 
@@ -2221,12 +2304,10 @@ collision_layer = 129
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
 position = Vector2(2, -20)
 shape = SubResource("CapsuleShape2D_kbpuy")
 
 [node name="BlockFlash" type="AnimatedSprite2D" parent="."]
-visible = false
 self_modulate = Color(0.785892, 0.505292, 0.793028, 1)
 position = Vector2(0, -20)
 scale = Vector2(2, 2)
@@ -2268,13 +2349,23 @@ offset = Vector2(0, -25)
 
 [node name="JPSmoke" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 0, 1)
-position = Vector2(-8, -10)
+position = Vector2(-6, -12)
 scale = Vector2(0.5125, 0.54375)
 sprite_frames = SubResource("SpriteFrames_suqi3")
-autoplay = "default"
-frame_progress = 0.560572
+frame = 11
+frame_progress = 1.0
+
+[node name="JPSmoke2" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0.952941, 0.294118, 0, 0.709804)
+position = Vector2(-6, -10)
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_vyyav")
+frame = 10
+frame_progress = 1.0
 
 [connection signal="animation_finished" from="BlockFlash" to="." method="_on_block_flash_animation_finished"]
 [connection signal="animation_finished" from="Dust" to="." method="_on_dust_animation_finished"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="animation_finished" from="Sprinkle" to="." method="_on_sprinkle_animation_finished"]
+[connection signal="animation_finished" from="JPSmoke" to="." method="_on_jp_smoke_animation_finished"]
+[connection signal="animation_finished" from="JPSmoke2" to="." method="_on_jp_smoke_2_animation_finished"]

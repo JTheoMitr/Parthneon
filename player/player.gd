@@ -35,6 +35,7 @@ var alive
 @onready var hurtbox = $Hurtbox
 @onready var area2d = $Area2D
 @onready var blastSmoke = $JPSmoke
+@onready var blastSmoke2 = $JPSmoke2
 
 
 func _ready():
@@ -47,6 +48,11 @@ func _ready():
 	stats.health = 1
 	sprinkle.hide()
 	blastSmoke.hide()
+	blastSmoke2.hide()
+	blastSmoke.frame = 0
+	blastSmoke2.frame = 0
+	#blastSmoke.z_as_relative = false
+	#blastSmoke.z_index = 999
 
 
 func _physics_process(delta: float) -> void:
@@ -82,10 +88,12 @@ func _physics_process(delta: float) -> void:
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
 			sprite.scale.x = 1.0 * sprite_scale
-			blastSmoke.position.x = -8.0
+			blastSmoke.position.x = -6.0
+			blastSmoke2.position.x = -6.0
 		else:
 			sprite.scale.x = -1.0 * sprite_scale
-			blastSmoke.position.x = 8.0
+			blastSmoke.position.x = 6.0
+			blastSmoke2.position.x = 6.0
 
 	move_and_slide()
 
@@ -102,7 +110,10 @@ func _physics_process(delta: float) -> void:
 		$AnimationTree["parameters/jump/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
 
 	if is_on_floor():
-		blastSmoke.hide()
+		#blastSmoke.hide()
+		#blastSmoke.stop()
+		#blastSmoke2.hide()
+		#blastSmoke2.stop()
 		# Most animations change when we run, land, or take off.
 		# add pixel dust to landing anims
 		if falling_fast:
@@ -147,7 +158,11 @@ func try_jump() -> bool:
 	if is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jumpSound.play(0.0)
+		print_debug("JUMP")
 		blastSmoke.show()
+		blastSmoke.play("default")
+		blastSmoke2.show()
+		blastSmoke2.play("default")
 		return true
 	return false
 
@@ -186,3 +201,15 @@ func _on_sprinkle_animation_finished() -> void:
 	
 	
 	#queue free(?) the player and show the death alert, which displays the score, and gives the player to quit or retry. at this point, if the player is connected, the score should be sent up to the high score list and saved
+
+
+func _on_jp_smoke_animation_finished() -> void:
+	blastSmoke.hide()
+	blastSmoke.stop()
+	blastSmoke.frame = 0
+
+
+func _on_jp_smoke_2_animation_finished() -> void:
+	blastSmoke2.hide()
+	blastSmoke2.stop()
+	blastSmoke2.frame = 0
