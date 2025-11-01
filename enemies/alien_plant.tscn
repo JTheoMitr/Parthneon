@@ -335,43 +335,46 @@ collision_mask = 32
 script = ExtResource("1_2nvrk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_emqwc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_44t5x")
 autoplay = "default"
-frame_progress = 0.0587455
+frame_progress = 0.0437431
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(-9.39394, 23.9394)
 rotation = 1.0472
 shape = SubResource("CapsuleShape2D_vv01a")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(10.6061, 23.6364)
 rotation = 5.23599
 shape = SubResource("CapsuleShape2D_vv01a")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(0.603922, 1, 0.65098, 0.678431)
+self_modulate = Color(0.305882, 0.329412, 0.866667, 0.419608)
 position = Vector2(-18.1818, 20.303)
 sprite_frames = SubResource("SpriteFrames_e5g8v")
 autoplay = "default"
-frame_progress = 0.357702
+frame_progress = 0.342704
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(0.603922, 1, 0.65098, 0.678431)
+self_modulate = Color(0.129412, 0.309804, 0.831373, 0.486275)
 position = Vector2(19.697, 26.9697)
 sprite_frames = SubResource("SpriteFrames_e5g8v")
 autoplay = "default"
-frame_progress = 0.566074
+frame_progress = 0.551077
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(0.239216, 0.592157, 0.427451, 0.686275)
-position = Vector2(1.81818, 5.45455)
+self_modulate = Color(0.239216, 0.592157, 0.698039, 0.686275)
+position = Vector2(0.30303, 20.6061)
 sprite_frames = SubResource("SpriteFrames_wcfdq")
 autoplay = "default"
-frame_progress = 0.307936
+frame_progress = 0.292938

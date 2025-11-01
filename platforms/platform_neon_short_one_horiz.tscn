@@ -100,6 +100,7 @@ animations = [{
 size = Vector2(1792, 6)
 
 [node name="PlatformNeonShortOneHoriz" type="AnimatableBody2D"]
+z_index = 3
 scale = Vector2(0.1, 1)
 collision_layer = 7
 script = ExtResource("1_k6ubp")

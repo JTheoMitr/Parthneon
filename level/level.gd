@@ -137,7 +137,7 @@ func _ready():
 	bossCount = 0
 	satelliteCount = 0
 	satellites = [sat1]
-	bosses = [mech1, spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
+	bosses = [spaceLab1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1, boot1, gun1, smiley1]
 	planets = [planet1medspin, galaxy1, planet2medspin, planet3medspin, planet4medspin, planet5medspin, planet5smallspin, planet6smallspin]
 	lrgPlanets = [planet1lrg, planet1lrg]
 	stats.bossPhase = false
@@ -212,8 +212,8 @@ func _process(_delta: float) -> void:
 		if paused == false:
 			paused = true
 	
-	#nightsky background mvmt
-	nightSky.global_position.x -= .13 #original demo speed is .08
+	#nightsky background mvmt, we need to increase this time goes on...remember everything needs to speed up to match
+	nightSky.global_position.x -= .13 #original demo speed is .08, then moved to .13
 	nightSky2.global_position.x -= .13 #original demo speed is .08
 	if (nightSky.global_position.x <= 0):
 		nightSky.global_position.x = 960
@@ -757,7 +757,7 @@ func _on_gems_timer_timeout() -> void:
 
 
 func _on_alien_timer_timeout() -> void:
-	var my_random_number_x4 = rng.randf_range(1950.0, 2500.0)
+	var my_random_number_x4 = rng.randf_range(950.0, 1000.0)
 	var my_random_number_y4 = rng.randf_range(-135.0, 65.0)
 	var enemyOne = alienEnemy1.instantiate()
 	enemyOne.global_position.x = my_random_number_x4

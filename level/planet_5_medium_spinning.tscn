@@ -460,6 +460,7 @@ animations = [{
 }]
 
 [node name="Planet4MedSpin" type="Area2D"]
+z_index = 1
 collision_layer = 32
 collision_mask = 32
 script = ExtResource("1_evwkn")

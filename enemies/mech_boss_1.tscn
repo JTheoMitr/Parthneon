@@ -1661,6 +1661,7 @@ animations = [{
 }]
 
 [node name="MechBossOne" type="Area2D"]
+z_index = 2
 position = Vector2(-2, 3)
 scale = Vector2(0.45, 0.45)
 collision_layer = 0

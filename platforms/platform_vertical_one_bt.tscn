@@ -69,7 +69,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_u2l8w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
-scale = Vector2(1, 1)
+z_index = 3
 sprite_frames = SubResource("SpriteFrames_3qexg")
 autoplay = "default"
 frame_progress = 0.234972

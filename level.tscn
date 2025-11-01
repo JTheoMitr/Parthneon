@@ -531,6 +531,7 @@ offset = Vector2(0, -250)
 transform = Transform2D(1, 0, 0, 1, 0, -250)
 
 [node name="SkeletalPlayer" parent="." instance=ExtResource("4")]
+z_index = 6
 position = Vector2(482, -24)
 platform_wall_layers = 1
 
@@ -566,7 +567,7 @@ position = Vector2(3942, -85)
 wait_time = 3.0
 
 [node name="TimerDisplay" type="RichTextLabel" parent="."]
-z_index = 2
+z_index = 7
 offset_left = 292.0
 offset_top = -183.0
 offset_right = 7872.0
@@ -580,7 +581,7 @@ text = "[center]59[/center]"
 fit_content = true
 
 [node name="XDisplay" type="RichTextLabel" parent="."]
-z_index = 2
+z_index = 7
 offset_left = 292.0
 offset_top = 110.0
 offset_right = 7872.0
@@ -594,6 +595,7 @@ text = "[center]X[/center]"
 fit_content = true
 
 [node name="TimerDisplay2" type="RichTextLabel" parent="."]
+z_index = 7
 offset_left = 317.0
 offset_top = -161.0
 offset_right = 7897.0
@@ -613,6 +615,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="ScoreDisplay" type="RichTextLabel" parent="."]
+z_index = 7
 offset_left = 632.0
 offset_top = -172.0
 offset_right = 2472.0
@@ -671,7 +674,7 @@ wait_time = 4.0
 one_shot = true
 
 [node name="TimerDisplay3" type="RichTextLabel" parent="."]
-z_index = 2
+z_index = 6
 offset_left = 292.0
 offset_top = -155.0
 offset_right = 7872.0
@@ -760,7 +763,7 @@ pitch_scale = 0.5
 
 [node name="PauseMenu" parent="." instance=ExtResource("21_fjd8j")]
 visible = false
-z_index = 2
+z_index = 7
 position = Vector2(479, -31)
 metadata/_edit_group_ = true
 
@@ -805,10 +808,10 @@ wait_time = 7.5
 one_shot = true
 
 [node name="GemsTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 1.5
 
 [node name="AlienTimer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 3.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="EnergyTimer1" to="." method="_on_energy_timer_1_timeout"]

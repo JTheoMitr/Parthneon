@@ -571,6 +571,7 @@ animations = [{
 }]
 
 [node name="Satellite1Spin" type="Area2D"]
+z_index = 2
 rotation = 5.75959
 scale = Vector2(0.09, 0.09)
 collision_layer = 32

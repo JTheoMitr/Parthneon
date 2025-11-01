@@ -19,6 +19,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	self.global_position.x += speed
 	#self.rotation += .03
+	add_to_group("cleanup_on_lab_enter")
 	
 	
 	

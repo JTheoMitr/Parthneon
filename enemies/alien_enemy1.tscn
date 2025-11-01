@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://c0c68m56njpo"]
+[gd_scene load_steps=34 format=3 uid="uid://c0c68m56njpo"]
 
 [ext_resource type="Script" path="res://enemies/alien_enemy_1.gd" id="1_scpb3"]
 [ext_resource type="Texture2D" uid="uid://6nrxyna8oej1" path="res://enemies/Brain Mole Monarch Sprite Sheet.png" id="2_24qjm"]
+[ext_resource type="Texture2D" uid="uid://cr28y0bd8l5wm" path="res://effects/Free Smoke Fx  Pixel 05.png" id="2_qim80"]
 [ext_resource type="AudioStream" uid="uid://doiy8fkmy4sky" path="res://audio/squanch_sound.wav" id="3_g07su"]
 [ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="5_22y1k"]
 
@@ -120,6 +121,38 @@ region = Rect2(160, 96, 32, 32)
 atlas = ExtResource("2_24qjm")
 region = Rect2(192, 96, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_73ft0"]
+atlas = ExtResource("2_qim80")
+region = Rect2(192, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5da4q"]
+atlas = ExtResource("2_qim80")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrxao"]
+atlas = ExtResource("2_qim80")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru5p5"]
+atlas = ExtResource("2_qim80")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr47o"]
+atlas = ExtResource("2_qim80")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyt2k"]
+atlas = ExtResource("2_qim80")
+region = Rect2(512, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41y3i"]
+atlas = ExtResource("2_qim80")
+region = Rect2(576, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7obp"]
+atlas = ExtResource("2_qim80")
+region = Rect2(640, 384, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_oidvu"]
 animations = [{
 "frames": [{
@@ -137,6 +170,30 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7gm1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73ft0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5da4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrxao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru5p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr47o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyt2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41y3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7obp")
 }],
 "loop": false,
 "name": &"default",
@@ -145,9 +202,9 @@ animations = [{
 
 [node name="AlienEnemy" type="Area2D"]
 z_index = 2
-scale = Vector2(1.3, 1.3)
-collision_layer = 32
-collision_mask = 32
+scale = Vector2(1.5, 1.5)
+collision_layer = 16
+collision_mask = 16
 script = ExtResource("1_scpb3")
 
 [node name="Timer" type="Timer" parent="."]
@@ -156,17 +213,17 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_42gou")
-frame_progress = 0.351563
+frame_progress = 0.875569
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_llbnj")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_oidvu")
-frame = 4
+frame = 12
 frame_progress = 1.0
 flip_h = true
 

@@ -1,12 +1,12 @@
-res://effects
 res://audio
-res://player
 res://level/background
+res://fonts
+res://effects
 res://enemies
+res://player
 res://ui
 res://level/background/Planets
 res://platforms
-res://fonts
 res://
 res://level
 res://level/background/Satellites

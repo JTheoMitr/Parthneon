@@ -15,6 +15,7 @@ autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.554955, 0.554953, 0.554955, 1)
+z_index = 1
 rotation = 3.14159
 scale = Vector2(7, 7)
 texture = ExtResource("2_216f3")

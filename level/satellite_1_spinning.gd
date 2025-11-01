@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 	if launched:
 		mech.visible = true
 		mech.global_position.x += mechSpeed
-		mech.scale += Vector2(0.9, 0.9) * _delta # og is 0.7
+		mech.scale += Vector2(1.2, 1.2) * _delta # og is 0.7
 	#self.rotation += .03
 	if self.global_position.x <= 475.0 && launched == false:
 		launchAnim.visible = true

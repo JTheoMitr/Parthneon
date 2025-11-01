@@ -27,6 +27,17 @@ var global_tracking = GlobalTracking
 @onready var light_glow_11 = $Sprite2D69/LightGlow11
 @onready var neon_arrow_1 = $Sprite2D70
 
+@onready var outer_panel = $OuterPanel1
+@onready var outer_panel2 = $OuterPanel2
+@onready var outer_panel3 = $OuterPanel3
+@onready var outer_panel4 = $OuterPanel4
+@onready var outer_panel5 = $OuterPanel5
+@onready var outer_panel6 = $OuterPanel6
+@onready var outer_panel7 = $OuterPanel7
+@onready var outer_panel8 = $OuterPanel8
+
+@onready var glitch_overlay = $AnimatedSprite2D4
+@onready var glitch_sfx = $AudioStreamPlayer2D
 
 var lab_man_right
 var lab_man_left
@@ -37,6 +48,8 @@ var light_glow_down
 var neon_arrow_left
 var neon_arrow_right
 
+var panel_fading
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	real_pos = position
@@ -46,6 +59,8 @@ func _ready() -> void:
 	light_glow_down = true
 	neon_arrow_left = true
 	neon_arrow_right = false
+	glitch_overlay.hide()
+	panel_fading = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -104,6 +119,16 @@ func _process(_delta: float) -> void:
 		neon_arrow_1.global_position.x -= 0.6
 	if neon_arrow_right:
 		neon_arrow_1.global_position.x += 0.6
+		
+	if panel_fading:
+		outer_panel.self_modulate.a -= .01
+		outer_panel2.self_modulate.a -= .01
+		outer_panel3.self_modulate.a -= .01
+		outer_panel4.self_modulate.a -= .01
+		outer_panel5.self_modulate.a -= .01
+		outer_panel6.self_modulate.a -= .01
+		outer_panel7.self_modulate.a -= .01
+		outer_panel8.self_modulate.a -= .01
 
 
 func _on_timer_timeout() -> void:
@@ -129,8 +154,6 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 func _on_area_2d_area_exited(_area: Area2D) -> void:
 	blinkTimer.stop()
 	alarm.stop()
-	await get_tree().create_timer(1.5).timeout
-	global_tracking.emit_signal("timers_startup")
 
 
 func _on_timer_3_timeout() -> void:
@@ -150,7 +173,11 @@ func _on_timer_4_timeout() -> void:
 
 
 func _on_area_2d_2_area_entered(area: Area2D) -> void:
+	glitch_overlay.show()
 	global_tracking.emit_signal("space_lab_entered")
+	glitch_sfx.play()
+	panel_fading = true
+	
 
 
 func _on_timer_5_timeout() -> void:
@@ -161,3 +188,8 @@ func _on_timer_5_timeout() -> void:
 	else:
 		neon_arrow_left = true
 		neon_arrow_right = false
+
+
+func _on_area_2d_3_area_entered(area: Area2D) -> void:
+	global_tracking.emit_signal("timers_startup")
+	glitch_overlay.hide()
