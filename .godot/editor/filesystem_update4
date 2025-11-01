@@ -43,3 +43,7 @@ res://enemies/bug.tscn
 res://enemies/bug.gd
 res://enemies/neon_bot_enemy_1.gd
 res://enemies/neon_bot_enemy_2.gd
+res://ui/comms_ui_2.tscn
+res://ui/comms_ui_3.tscn
+res://ui/comms_ui_mech_1.tscn
+res://ui/comms_ui_3.gd
