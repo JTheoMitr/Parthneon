@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bnbc8vd1ggpyu"]
+[gd_scene load_steps=19 format=3 uid="uid://bnbc8vd1ggpyu"]
 
 [ext_resource type="Script" path="res://ui/comms_ui_3.gd" id="1_bm1la"]
-[ext_resource type="Texture2D" uid="uid://c0lpjderb1423" path="res://ui/large portrait 3 no bg.png" id="2_4t8v6"]
+[ext_resource type="Texture2D" uid="uid://dbad2orxh0k6s" path="res://ui/mina_talking_1.png" id="2_epo81"]
 [ext_resource type="Texture2D" uid="uid://dyqd0hrkesuuq" path="res://ui/SpaceShooterAssetPack_Characters.png" id="3_ke0rn"]
 [ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="4_qqhyj"]
 [ext_resource type="AudioStream" uid="uid://bro0f4rls0c2k" path="res://audio/ESM_Futuristic_Micro_Bot_Vocalization_Sci_fi_Beep_Chirp_Futuristic_Machine_Chatter_Texture_Loading_Screen.wav" id="5_sm12n"]
@@ -11,6 +11,42 @@ size = Vector2(1047.5, 222)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv8id"]
 bg_color = Color(0.4, 0.305882, 0.768627, 0.537255)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr6ku"]
+atlas = ExtResource("2_epo81")
+region = Rect2(0, 0, 255, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tggvg"]
+atlas = ExtResource("2_epo81")
+region = Rect2(255, 0, 255, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hq1cn"]
+atlas = ExtResource("2_epo81")
+region = Rect2(510, 0, 255, 258)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpsd5"]
+atlas = ExtResource("2_epo81")
+region = Rect2(765, 0, 255, 258)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2fvu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr6ku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tggvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hq1cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vpsd5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tunww"]
 atlas = ExtResource("3_ke0rn")
@@ -80,10 +116,11 @@ offset_right = 212.0
 offset_bottom = 213.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kv8id")
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Panel"]
 position = Vector2(113, 110)
-scale = Vector2(0.242188, 0.201562)
-texture = ExtResource("2_4t8v6")
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_m2fvu")
+autoplay = "default"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
 self_modulate = Color(1, 1, 1, 0.156863)
