@@ -53,6 +53,8 @@ var neon_arrow_right
 
 var panel_fading
 
+var glitch_fading
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	real_pos = position
@@ -64,6 +66,7 @@ func _ready() -> void:
 	neon_arrow_right = false
 	glitch_overlay.hide()
 	panel_fading = false
+	glitch_fading = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -134,6 +137,9 @@ func _process(_delta: float) -> void:
 		outer_panel8.self_modulate.a -= .01
 		haven5.self_modulate.a -= .01
 		flag.self_modulate.a -= .01
+		
+	if glitch_fading:
+		glitch_overlay.self_modulate.a -= .005
 
 
 func _on_timer_timeout() -> void:
@@ -197,4 +203,5 @@ func _on_timer_5_timeout() -> void:
 
 func _on_area_2d_3_area_entered(area: Area2D) -> void:
 	global_tracking.emit_signal("timers_startup")
-	glitch_overlay.hide()
+	glitch_fading = true
+	glitch_sfx.play()

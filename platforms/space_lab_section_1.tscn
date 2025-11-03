@@ -342,7 +342,7 @@ animations = [{
 size = Vector2(176.428, 35.3572)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrr5t"]
-radius = 496.428
+radius = 732.156
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0kj44"]
 atlas = ExtResource("17_gpr03")
@@ -373,7 +373,7 @@ animations = [{
 size = Vector2(55.0001, 415.714)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8p5xa"]
-radius = 382.21
+radius = 300.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8tuh"]
 bg_color = Color(0.925353, 0.925353, 0.925353, 1)
@@ -1122,7 +1122,7 @@ position = Vector2(2150, -340)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_3hn50")
 autoplay = "default"
-frame_progress = 0.0851366
+frame_progress = 0.611867
 
 [node name="Sprite2D8" type="Sprite2D" parent="."]
 position = Vector2(1950, -400)
@@ -1687,10 +1687,6 @@ position = Vector2(2446.43, -800)
 rotation = 3.14159
 scale = Vector2(5, 5)
 
-[node name="AlienPlant4" parent="." instance=ExtResource("20_abh7n")]
-position = Vector2(703.571, -878.571)
-rotation = 3.14159
-
 [node name="AlienPlant2" parent="." instance=ExtResource("20_abh7n")]
 position = Vector2(-475, -689.286)
 rotation = 3.14159
@@ -1705,7 +1701,7 @@ texture = ExtResource("21_lxr2a")
 autostart = true
 
 [node name="Area2D3" type="Area2D" parent="."]
-position = Vector2(2825, -525)
+position = Vector2(3250, -525)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(17.8571, 71.4286)
@@ -1803,8 +1799,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_j8gvr")
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.32549)
 z_index = 8
-position = Vector2(1146.43, -453.571)
-scale = Vector2(9.08036, 3.1746)
+position = Vector2(1000, -453.571)
+scale = Vector2(9.44643, 3.1746)
 sprite_frames = SubResource("SpriteFrames_2m81x")
 autoplay = "default"
 frame_progress = 0.0401093

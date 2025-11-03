@@ -36,6 +36,7 @@ var alive
 @onready var area2d = $Area2D
 @onready var blastSmoke = $JPSmoke
 @onready var blastSmoke2 = $JPSmoke2
+@onready var impact_sound = $ImpactSound
 
 
 func _ready():
@@ -121,10 +122,13 @@ func _physics_process(delta: float) -> void:
 			no_move_horizontal_time = 0.4
 			dust.show()
 			dust.play("default")
+			impact_sound.play()
+			
 		elif falling_slow:
 			$AnimationTree["parameters/land/request"] = AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
 			dust.show()
 			dust.play("default")
+			impact_sound.play()
 			
 		if abs(velocity.x) > 50:
 			$AnimationTree["parameters/state/transition_request"] = States.RUN

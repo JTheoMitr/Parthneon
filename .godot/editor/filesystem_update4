@@ -1,2 +1,10 @@
 res://platforms/space_lab_section_1.tscn
 res://level/tileset/tileset.tres
+res://ui/comms_ui_3.tscn
+res://player/player.tscn
+res://player/player.gd
+res://level.tscn
+res://enemies/alien_plant.tscn
+res://ui/comms_ui_3.gd
+res://platforms/space_lab_section_1.gd
+res://level/level.gd

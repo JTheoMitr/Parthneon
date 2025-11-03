@@ -117,13 +117,14 @@ offset_bottom = 213.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kv8id")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Panel"]
+self_modulate = Color(0.305882, 1, 1, 1)
 position = Vector2(113, 110)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_m2fvu")
 autoplay = "default"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
-self_modulate = Color(1, 1, 1, 0.156863)
+self_modulate = Color(1, 1, 1, 0.301961)
 position = Vector2(112.75, 113)
 scale = Vector2(24.5625, 24.75)
 sprite_frames = SubResource("SpriteFrames_gqgyc")

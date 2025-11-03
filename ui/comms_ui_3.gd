@@ -208,47 +208,47 @@ func _process(delta: float) -> void:
 		95:
 			text.text = "[center]Enter at your own risk.\nI can't track your movements"
 		96:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements o"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\no"
 		97:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements on"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\non"
 		98:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements onc"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonc"
 		99:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce"
 		100:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once y"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce y"
 		101:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once yo"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce yo"
 		102:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you"
 		103:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you'"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you'"
 		104:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you'r"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you'r"
 		105:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're"
 		106:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're i"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're i"
 		107:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're in"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're in"
 		108:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're ins"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're ins"
 		109:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're insi"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're insi"
 		110:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're insid"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're insid"
 		111:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside"
 		112:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside."
 		113:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside."
 		114:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside.."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside.."
 		115:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside.."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside.."
 		116:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside..."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside..."
 		117:
 			wordTimer.stop()
 			self.queue_free()
@@ -270,12 +270,12 @@ func _on_timer_timeout() -> void:
 		wordTimer.start()
 		chatter.stop()
 		
-	if letterCount == 114:
+	if letterCount == 115:
 		wordTimer.stop()
 		await get_tree().create_timer(0.5).timeout
 		wordTimer.start()
 		
-	if letterCount == 115:
+	if letterCount == 116:
 		wordTimer.stop()
 		await get_tree().create_timer(0.5).timeout
 		wordTimer.start()

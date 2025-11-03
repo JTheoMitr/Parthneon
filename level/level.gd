@@ -648,7 +648,7 @@ func _on_satellite_timer_timeout() -> void:
 	
 
 
-func _on_comms_timer_timeout() -> void:
+func _on_comms_timer_timeout() -> void: #changed timer from 51 to 53
 	print_debug("comms1")
 	print_debug(screen_size)
 	var commsPart1 = comms1.instantiate()
