@@ -1,11 +1,11 @@
-AnimatedSprite2D
 AudioStreamPlayer2D
+Timer
+AnimatedSprite2D
 Sprite2D
 RichTextLabel
 Panel
 CollisionShape2D
 Area2D
-Timer
 StaticBody2D
 AudioStreamPlayer
 TileMap

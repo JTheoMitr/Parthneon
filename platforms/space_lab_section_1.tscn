@@ -807,7 +807,7 @@ position = Vector2(617.857, -396.429)
 texture = ExtResource("4_0g0dt")
 
 [node name="Sprite2D10" type="Sprite2D" parent="."]
-z_index = 6
+z_index = 7
 position = Vector2(-1775, -451.525)
 scale = Vector2(2.3, 2.42273)
 texture = ExtResource("5_isnn4")
@@ -1639,6 +1639,7 @@ position = Vector2(17.8571, 71.4286)
 shape = SubResource("CircleShape2D_8p5xa")
 
 [node name="OuterPanel1" type="Panel" parent="."]
+z_index = 6
 offset_left = -1761.0
 offset_top = -643.0
 offset_right = 40.0
@@ -1646,6 +1647,7 @@ offset_bottom = -254.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8tuh")
 
 [node name="OuterPanel2" type="Panel" parent="."]
+z_index = 6
 offset_left = -917.857
 offset_top = -960.714
 offset_right = 883.143
@@ -1653,6 +1655,7 @@ offset_bottom = -571.714
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8tuh")
 
 [node name="OuterPanel4" type="Panel" parent="."]
+z_index = 6
 offset_left = -1771.43
 offset_top = -653.572
 offset_right = -804.429
@@ -1661,6 +1664,7 @@ rotation = 5.93412
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8tuh")
 
 [node name="OuterPanel3" type="Panel" parent="."]
+z_index = 6
 offset_left = -1621.0
 offset_top = -643.0
 offset_right = -654.0
@@ -1669,6 +1673,7 @@ rotation = 0.349066
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8tuh")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="OuterPanel3"]
+z_index = 7
 layout_mode = 0
 offset_left = 527.618
 offset_top = 344.004
@@ -1681,6 +1686,7 @@ theme_override_font_sizes/normal_font_size = 250
 text = "HAVEN-5"
 
 [node name="Sprite2D" type="Sprite2D" parent="OuterPanel3"]
+z_index = 6
 position = Vector2(826.047, 391.211)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("23_o8hn1")
@@ -1688,6 +1694,7 @@ texture = ExtResource("23_o8hn1")
 [node name="Sprite2D2" type="Sprite2D" parent="OuterPanel3"]
 
 [node name="OuterPanel5" type="Panel" parent="."]
+z_index = 6
 offset_left = -896.429
 offset_top = -360.714
 offset_right = 904.571
@@ -1695,6 +1702,7 @@ offset_bottom = 28.2858
 theme_override_styles/panel = SubResource("StyleBoxFlat_s8tuh")
 
 [node name="OuterPanel6" type="Panel" parent="."]
+z_index = 7
 offset_left = -1421.0
 offset_top = -782.0
 offset_right = -1257.0
@@ -1702,6 +1710,7 @@ offset_bottom = -129.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4fkji")
 
 [node name="OuterPanel7" type="Panel" parent="."]
+z_index = 7
 offset_left = -1401.0
 offset_top = -184.0
 offset_right = -1247.0
@@ -1710,6 +1719,7 @@ rotation = 0.349066
 theme_override_styles/panel = SubResource("StyleBoxFlat_j8gvr")
 
 [node name="OuterPanel8" type="Panel" parent="."]
+z_index = 7
 offset_left = -1421.43
 offset_top = -782.143
 offset_right = -1267.43
@@ -1724,7 +1734,7 @@ position = Vector2(1146.43, -453.571)
 scale = Vector2(9.08036, 3.1746)
 sprite_frames = SubResource("SpriteFrames_2m81x")
 autoplay = "default"
-frame_progress = 0.955057
+frame_progress = 0.0401093
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_8fqpu")

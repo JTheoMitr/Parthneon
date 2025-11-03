@@ -68,59 +68,59 @@ func _process(delta: float) -> void:
 		25:
 			text.text = "[center]You got some kind of derelicte"
 		26:
-			text.text = "[center]You got some kind of derelicte \n  s"
+			text.text = "[center]You got some kind of derelicte\ns"
 		27:
-			text.text = "[center]You got some kind of derelicte \n  sp"
+			text.text = "[center]You got some kind of derelicte\nsp"
 		28:
-			text.text = "[center]You got some kind of derelicte \n  spa"
+			text.text = "[center]You got some kind of derelicte\nspa"
 		29:
-			text.text = "[center]You got some kind of derelicte \n  spac"
+			text.text = "[center]You got some kind of derelicte\nspac"
 		30:
-			text.text = "[center]You got some kind of derelicte \n  space"
+			text.text = "[center]You got some kind of derelicte\nspace"
 		31:
-			text.text = "[center]You got some kind of derelicte \n  space s"
+			text.text = "[center]You got some kind of derelicte\nspace s"
 		32:
-			text.text = "[center]You got some kind of derelicte \n  space st"
+			text.text = "[center]You got some kind of derelicte\nspace st"
 		33:
-			text.text = "[center]You got some kind of derelicte \n  space sta"
+			text.text = "[center]You got some kind of derelicte\nspace sta"
 		34:
-			text.text = "[center]You got some kind of derelicte \n  space stat"
+			text.text = "[center]You got some kind of derelicte\nspace stat"
 		35:
-			text.text = "[center]You got some kind of derelicte \n  space stati"
+			text.text = "[center]You got some kind of derelicte\nspace stati"
 		36:
-			text.text = "[center]You got some kind of derelicte \n  space statio"
+			text.text = "[center]You got some kind of derelicte\nspace statio"
 		37:
-			text.text = "[center]You got some kind of derelicte \n  space station"
+			text.text = "[center]You got some kind of derelicte\nspace station"
 		38:
-			text.text = "[center]You got some kind of derelicte \n  space station f"
+			text.text = "[center]You got some kind of derelicte\nspace station f"
 		39:
-			text.text = "[center]You got some kind of derelicte \n  space station fl"
+			text.text = "[center]You got some kind of derelicte\nspace station fl"
 		40:
-			text.text = "[center]You got some kind of derelicte \n  space station flo"
+			text.text = "[center]You got some kind of derelicte\nspace station flo"
 		41:
-			text.text = "[center]You got some kind of derelicte \n  space station floa"
+			text.text = "[center]You got some kind of derelicte\nspace station floa"
 		42:
-			text.text = "[center]You got some kind of derelicte \n  space station float"
+			text.text = "[center]You got some kind of derelicte\nspace station float"
 		43:
-			text.text = "[center]You got some kind of derelicte \n  space station floati"
+			text.text = "[center]You got some kind of derelicte\nspace station floati"
 		44:
-			text.text = "[center]You got some kind of derelicte \n  space station floatin"
+			text.text = "[center]You got some kind of derelicte\nspace station floatin"
 		45:
-			text.text = "[center]You got some kind of derelicte \n  space station floating"
+			text.text = "[center]You got some kind of derelicte\nspace station floating"
 		46:
-			text.text = "[center]You got some kind of derelicte \n  space station floating y"
+			text.text = "[center]You got some kind of derelicte\nspace station floating y"
 		47:
-			text.text = "[center]You got some kind of derelicte \n  space station floating yo"
+			text.text = "[center]You got some kind of derelicte\nspace station floating yo"
 		48:
-			text.text = "[center]You got some kind of derelicte \n  space station floating you"
+			text.text = "[center]You got some kind of derelicte\nspace station floating you"
 		49:
-			text.text = "[center]You got some kind of derelicte \n  space station floating your"
+			text.text = "[center]You got some kind of derelicte\nspace station floating your"
 		50:
-			text.text = "[center]You got some kind of derelicte \n  space station floating your w"
+			text.text = "[center]You got some kind of derelicte\nspace station floating your w"
 		51:
-			text.text = "[center]You got some kind of derelicte \n  space station floating your wa"
+			text.text = "[center]You got some kind of derelicte\nspace station floating your wa"
 		52:
-			text.text = "[center]You got some kind of derelicte \n  space station floating your way"
+			text.text = "[center]You got some kind of derelicte\nspace station floating your way"
 		53:
 			text.text = "[center]E"
 		54:
@@ -160,95 +160,95 @@ func _process(delta: float) -> void:
 		71:
 			text.text = "[center]Enter at your own risk."
 		72:
-			text.text = "[center]Enter at your own risk. \n I"
+			text.text = "[center]Enter at your own risk.\nI"
 		73:
-			text.text = "[center]Enter at your own risk. \n I c"
+			text.text = "[center]Enter at your own risk.\nI c"
 		74:
-			text.text = "[center]Enter at your own risk. \n I ca"
+			text.text = "[center]Enter at your own risk.\nI ca"
 		75:
-			text.text = "[center]Enter at your own risk. \n I can"
+			text.text = "[center]Enter at your own risk.\nI can"
 		76:
-			text.text = "[center]Enter at your own risk. \n I can'"
+			text.text = "[center]Enter at your own risk.\nI can'"
 		77:
-			text.text = "[center]Enter at your own risk. \n I can't"
+			text.text = "[center]Enter at your own risk.\nI can't"
 		78:
-			text.text = "[center]Enter at your own risk. \n I can't t"
+			text.text = "[center]Enter at your own risk.\nI can't t"
 		79:
-			text.text = "[center]Enter at your own risk. \n I can't tr"
+			text.text = "[center]Enter at your own risk.\nI can't tr"
 		80:
-			text.text = "[center]Enter at your own risk. \n I can't tra"
+			text.text = "[center]Enter at your own risk.\nI can't tra"
 		81:
-			text.text = "[center]Enter at your own risk. \n I can't trac"
+			text.text = "[center]Enter at your own risk.\nI can't trac"
 		82:
-			text.text = "[center]Enter at your own risk. \n I can't track"
+			text.text = "[center]Enter at your own risk.\nI can't track"
 		83:
-			text.text = "[center]Enter at your own risk. \n I can't track y"
+			text.text = "[center]Enter at your own risk.\nI can't track y"
 		84:
-			text.text = "[center]Enter at your own risk. \n I can't track yo"
+			text.text = "[center]Enter at your own risk.\nI can't track yo"
 		85:
-			text.text = "[center]Enter at your own risk. \n I can't track you"
+			text.text = "[center]Enter at your own risk.\nI can't track you"
 		86:
-			text.text = "[center]Enter at your own risk. \n I can't track your"
+			text.text = "[center]Enter at your own risk.\nI can't track your"
 		87:
-			text.text = "[center]Enter at your own risk. \n I can't track your m"
+			text.text = "[center]Enter at your own risk.\nI can't track your m"
 		88:
-			text.text = "[center]Enter at your own risk. \n I can't track your mo"
+			text.text = "[center]Enter at your own risk.\nI can't track your mo"
 		89:
-			text.text = "[center]Enter at your own risk. \n I can't track your mov"
+			text.text = "[center]Enter at your own risk.\nI can't track your mov"
 		90:
-			text.text = "[center]Enter at your own risk. \n I can't track your move"
+			text.text = "[center]Enter at your own risk.\nI can't track your move"
 		91:
-			text.text = "[center]Enter at your own risk. \n I can't track your movem"
+			text.text = "[center]Enter at your own risk.\nI can't track your movem"
 		92:
-			text.text = "[center]Enter at your own risk. \n I can't track your moveme"
+			text.text = "[center]Enter at your own risk.\nI can't track your moveme"
 		93:
-			text.text = "[center]Enter at your own risk. \n I can't track your movemen"
+			text.text = "[center]Enter at your own risk.\nI can't track your movemen"
 		94:
-			text.text = "[center]Enter at your own risk. \n I can't track your movement"
+			text.text = "[center]Enter at your own risk.\nI can't track your movement"
 		95:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements"
 		96:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements o"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements o"
 		97:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements on"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements on"
 		98:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements onc"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements onc"
 		99:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once"
 		100:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once y"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once y"
 		101:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once yo"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once yo"
 		102:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you"
 		103:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you'"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you'"
 		104:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you'r"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you'r"
 		105:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're"
 		106:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're i"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're i"
 		107:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're in"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're in"
 		108:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're ins"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're ins"
 		109:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're insi"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're insi"
 		110:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're insid"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're insid"
 		111:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're inside"
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside"
 		112:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're inside."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside."
 		113:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're inside."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside."
 		114:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're inside.."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside.."
 		115:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're inside.."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside.."
 		116:
-			text.text = "[center]Enter at your own risk. \n I can't track your movements once you're inside..."
+			text.text = "[center]Enter at your own risk.\nI can't track your movements once you're inside..."
 		117:
 			wordTimer.stop()
 			self.queue_free()
@@ -260,6 +260,9 @@ func _on_timer_timeout() -> void:
 		wordTimer.stop()
 		await get_tree().create_timer(0.5).timeout
 		wordTimer.start()
+		
+	if letterCount == 109:
+		chatter.stop()
 		
 	if letterCount == 113:
 		wordTimer.stop()
