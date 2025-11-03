@@ -8,3 +8,5 @@ res://enemies/alien_plant.tscn
 res://ui/comms_ui_3.gd
 res://platforms/space_lab_section_1.gd
 res://level/level.gd
+res://ui/comms_ui_4.tscn
+res://ui/comms_ui_4.gd
