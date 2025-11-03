@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://player/player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://cqy4jj5eglef6" path="res://player/gBot_space_suit_smaller_helmet_jpack.png" id="2_lftk1"]
 [ext_resource type="Texture2D" uid="uid://5k17x00uemm6" path="res://effects/BlockFlash.png" id="3_1y1a0"]
-[ext_resource type="AudioStream" uid="uid://cs2btudfcqv3g" path="res://audio/sfx_phase1.wav" id="4_f6xu6"]
 [ext_resource type="AudioStream" uid="uid://be2ncb5xpfxa5" path="res://audio/saber_swipe.wav" id="5_hcupg"]
+[ext_resource type="AudioStream" uid="uid://cgr30u8n5cm40" path="res://audio/ESM_Builder_Game_Weapon_Heavy_Swing_4_Swoosh_Quick_Whoosh_Transition_Page_Turn.wav" id="5_vb1eb"]
 [ext_resource type="Texture2D" uid="uid://5e6mulpa4d6b" path="res://effects/FX052_nyknck/FX052_01.png" id="6_xuhuo"]
 [ext_resource type="Texture2D" uid="uid://b1vakn723rkss" path="res://effects/FX052_nyknck/FX052_02.png" id="7_ibrja"]
 [ext_resource type="Texture2D" uid="uid://dlbaoobmqqvvj" path="res://effects/FX052_nyknck/FX052_03.png" id="8_f1f6l"]
@@ -2320,9 +2320,9 @@ volume_db = -14.0
 pitch_scale = 0.65
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_f6xu6")
-volume_db = -2.0
-pitch_scale = 0.75
+stream = ExtResource("5_vb1eb")
+volume_db = -18.0
+pitch_scale = 0.65
 
 [node name="Dust" type="AnimatedSprite2D" parent="."]
 visible = false

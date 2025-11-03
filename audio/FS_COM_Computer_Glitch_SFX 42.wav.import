@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtjobwordmmxe"
+path="res://.godot/imported/FS_COM_Computer_Glitch_SFX 42.wav-a10e58d6b227db7df94b40e1752d242e.sample"
+
+[deps]
+
+source_file="res://audio/FS_COM_Computer_Glitch_SFX 42.wav"
+dest_files=["res://.godot/imported/FS_COM_Computer_Glitch_SFX 42.wav-a10e58d6b227db7df94b40e1752d242e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

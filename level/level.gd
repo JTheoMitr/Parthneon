@@ -97,7 +97,7 @@ var galaxy1 = preload("res://level/galaxy_1_anim.tscn")
 var sat1 = preload("res://level/satellite_1_spinning.tscn")
 
 #comss Uis
-var comms1 = preload("res://ui/comms_ui_1.tscn")
+var comms1 = preload("res://ui/comms_ui_3.tscn") #change back to 1
 var comms2 = preload("res://ui/comms_ui_2.tscn")
 var commsMech1 = preload("res://ui/comms_ui_mech_1.tscn")
 

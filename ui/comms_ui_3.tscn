@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbad2orxh0k6s" path="res://ui/mina_talking_1.png" id="2_epo81"]
 [ext_resource type="Texture2D" uid="uid://dyqd0hrkesuuq" path="res://ui/SpaceShooterAssetPack_Characters.png" id="3_ke0rn"]
 [ext_resource type="FontFile" uid="uid://bf0q0pmkhfebo" path="res://fonts/PixelTandysoft-0rJG.ttf" id="4_qqhyj"]
-[ext_resource type="AudioStream" uid="uid://bro0f4rls0c2k" path="res://audio/ESM_Futuristic_Micro_Bot_Vocalization_Sci_fi_Beep_Chirp_Futuristic_Machine_Chatter_Texture_Loading_Screen.wav" id="5_sm12n"]
+[ext_resource type="AudioStream" uid="uid://d24jlf6h572ml" path="res://audio/ESM_Scifi_Loading_Screen_Loop_9_Sci_Fi_Glitch_Morph_Mechanism_Texture_Futuristic.wav" id="5_8iuu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adm1x"]
 size = Vector2(1047.5, 222)
@@ -145,8 +145,9 @@ bbcode_enabled = true
 wait_time = 0.08
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_sm12n")
-volume_db = -5.0
-pitch_scale = 0.2
+stream = ExtResource("5_8iuu8")
+volume_db = -3.0
+pitch_scale = 0.75
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -36,6 +36,9 @@ var global_tracking = GlobalTracking
 @onready var outer_panel7 = $OuterPanel7
 @onready var outer_panel8 = $OuterPanel8
 
+@onready var haven5 = $OuterPanel3/RichTextLabel
+@onready var flag = $OuterPanel3/Sprite2D
+
 @onready var glitch_overlay = $AnimatedSprite2D4
 @onready var glitch_sfx = $AudioStreamPlayer2D
 
@@ -129,6 +132,8 @@ func _process(_delta: float) -> void:
 		outer_panel6.self_modulate.a -= .01
 		outer_panel7.self_modulate.a -= .01
 		outer_panel8.self_modulate.a -= .01
+		haven5.self_modulate.a -= .01
+		flag.self_modulate.a -= .01
 
 
 func _on_timer_timeout() -> void:

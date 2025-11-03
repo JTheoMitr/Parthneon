@@ -261,7 +261,22 @@ func _on_timer_timeout() -> void:
 		await get_tree().create_timer(0.5).timeout
 		wordTimer.start()
 		
-	if letterCount == 116:
+	if letterCount == 113:
 		wordTimer.stop()
 		await get_tree().create_timer(0.5).timeout
 		wordTimer.start()
+		chatter.stop()
+		
+	if letterCount == 114:
+		wordTimer.stop()
+		await get_tree().create_timer(0.5).timeout
+		wordTimer.start()
+		
+	if letterCount == 115:
+		wordTimer.stop()
+		await get_tree().create_timer(0.5).timeout
+		wordTimer.start()
+
+
+func _on_audio_stream_player_finished() -> void:
+	chatter.play()
