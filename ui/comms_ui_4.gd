@@ -176,80 +176,12 @@ func _process(delta: float) -> void:
 		79:
 			text.text = "[center]Good to see you made\nit out in one piece"
 		80:
-			text.text = "[center]Enter at your own risk.\nI can't tra"
+			text.text = "[center]Good to see you made\nit out in one piece."
 		81:
-			text.text = "[center]Enter at your own risk.\nI can't trac"
+			text.text = "[center]Good to see you made\nit out in one piece.."
 		82:
-			text.text = "[center]Enter at your own risk.\nI can't track"
+			text.text = "[center]Good to see you made\nit out in one piece..."
 		83:
-			text.text = "[center]Enter at your own risk.\nI can't track y"
-		84:
-			text.text = "[center]Enter at your own risk.\nI can't track yo"
-		85:
-			text.text = "[center]Enter at your own risk.\nI can't track you"
-		86:
-			text.text = "[center]Enter at your own risk.\nI can't track your"
-		87:
-			text.text = "[center]Enter at your own risk.\nI can't track your m"
-		88:
-			text.text = "[center]Enter at your own risk.\nI can't track your mo"
-		89:
-			text.text = "[center]Enter at your own risk.\nI can't track your mov"
-		90:
-			text.text = "[center]Enter at your own risk.\nI can't track your move"
-		91:
-			text.text = "[center]Enter at your own risk.\nI can't track your movem"
-		92:
-			text.text = "[center]Enter at your own risk.\nI can't track your moveme"
-		93:
-			text.text = "[center]Enter at your own risk.\nI can't track your movemen"
-		94:
-			text.text = "[center]Enter at your own risk.\nI can't track your movement"
-		95:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements"
-		96:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\no"
-		97:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\non"
-		98:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonc"
-		99:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce"
-		100:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce y"
-		101:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce yo"
-		102:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you"
-		103:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you'"
-		104:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you'r"
-		105:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're"
-		106:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're i"
-		107:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're in"
-		108:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're ins"
-		109:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're insi"
-		110:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're insid"
-		111:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside"
-		112:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside."
-		113:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside."
-		114:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside.."
-		115:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside.."
-		116:
-			text.text = "[center]Enter at your own risk.\nI can't track your movements\nonce you're inside..."
-		117:
 			wordTimer.stop()
 			self.queue_free()
 			
@@ -261,24 +193,24 @@ func _on_timer_timeout() -> void:
 		await get_tree().create_timer(1.0).timeout
 		wordTimer.start()
 		
-	if letterCount == 77:
+	if letterCount == 80:
 		chatter.stop()
-		
-	if letterCount == 79:
-		wordTimer.stop()
-		await get_tree().create_timer(1.5).timeout
-		wordTimer.start()
-		chatter.stop()
-		
-	if letterCount == 115:
 		wordTimer.stop()
 		await get_tree().create_timer(0.5).timeout
 		wordTimer.start()
 		
-	if letterCount == 116:
+		
+	if letterCount == 81:
 		wordTimer.stop()
 		await get_tree().create_timer(0.5).timeout
 		wordTimer.start()
+		
+	if letterCount == 82:
+		wordTimer.stop()
+		await get_tree().create_timer(0.5).timeout
+		wordTimer.start()
+		
+		
 
 
 func _on_audio_stream_player_finished() -> void:

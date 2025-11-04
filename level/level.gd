@@ -58,6 +58,8 @@ var breathing
 
 var enteredInitials
 
+var leaving
+
 const InitialsUI = preload("res://initial_entry_ui.tscn")
 const LeaderboardUI = preload("res://ui/Leaderboard.tscn")
 
@@ -100,6 +102,7 @@ var sat1 = preload("res://level/satellite_1_spinning.tscn")
 var comms1 = preload("res://ui/comms_ui_3.tscn") #change back to 1
 var comms2 = preload("res://ui/comms_ui_2.tscn")
 var commsMech1 = preload("res://ui/comms_ui_mech_1.tscn")
+var comms4 = preload("res://ui/comms_ui_4.tscn")
 
 #drones
 var drones = preload("res://ui/drone_deploy_1.tscn")
@@ -133,6 +136,7 @@ func _ready():
 	g_tracking.connect("timers_startup", Callable(self, "_timers_go"))
 	
 	screen_size = get_viewport().get_visible_rect().size
+	leaving = false
 	
 	bossCount = 0
 	satelliteCount = 0
@@ -159,7 +163,7 @@ func _ready():
 	camera.limit_right = max_pos.x
 	camera.limit_bottom = max_pos.y
 	
-	levelSong.play(0.0)
+	#levelSong.play(0.0)
 	timerDisplay.hide()
 	timerDisplay2.hide()
 	timerDisplay3.hide()
@@ -729,14 +733,20 @@ func _entering_space_lab() -> void:
 			n.queue_free()
 	
 func _timers_go() -> void:
-	timer.start()
-	timer2.start()
-	timer3.start()
-	enemyTimer.start()
-	enemyTimer2.start()
-	lowPlatTimer.start()
-	gemsTimer.stop()
-	alienTimer.stop()
+	if leaving == false:
+		timer.start()
+		timer2.start()
+		timer3.start()
+		enemyTimer.start()
+		enemyTimer2.start()
+		lowPlatTimer.start()
+		gemsTimer.stop()
+		alienTimer.stop()
+		var comms = comms4.instantiate()
+		comms.global_position.x = 350
+		comms.global_position.y = 15
+		add_child(comms)
+		leaving = true
 
 
 func _on_gems_timer_timeout() -> void:

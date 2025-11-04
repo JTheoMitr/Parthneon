@@ -31,7 +31,7 @@ func _on_area_entered(_area: Area2D) -> void:
 	if grabbed == false:
 		buganim.hide()
 		timer.start()
-		stats.score += 10
+		stats.score += 30
 		pickupSound.play(0.0)
 		grabbed = true
 		explode.show()

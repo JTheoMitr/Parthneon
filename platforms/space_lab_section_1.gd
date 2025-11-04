@@ -203,5 +203,11 @@ func _on_timer_5_timeout() -> void:
 
 func _on_area_2d_3_area_entered(area: Area2D) -> void:
 	global_tracking.emit_signal("timers_startup")
+	print_debug("timers starting")
+	
+
+func _on_end_area_area_entered(area: Area2D) -> void:
+	
+	print_debug("ending area")
 	glitch_fading = true
 	glitch_sfx.play()

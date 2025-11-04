@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=4 uid="uid://cylimaxlkvvpo"]
+[gd_scene load_steps=116 format=4 uid="uid://cylimaxlkvvpo"]
 
 [ext_resource type="Script" path="res://platforms/space_lab_section_1.gd" id="1_fucm0"]
 [ext_resource type="Texture2D" uid="uid://b2s0g2fhn7l44" path="res://platforms/neon_blue_basic_colorchange.png" id="3_6nxiq"]
@@ -129,6 +129,9 @@ bg_color = Color(0.160784, 0.2, 0.231373, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6r7j"]
 bg_color = Color(0.599789, 0.671624, 0.732014, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l503"]
+size = Vector2(13.9751, 165.548)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2f20t"]
 size = Vector2(904.971, 9.99457)
@@ -373,7 +376,7 @@ animations = [{
 size = Vector2(55.0001, 415.714)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8p5xa"]
-radius = 300.0
+radius = 214.286
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8tuh"]
 bg_color = Color(0.925353, 0.925353, 0.925353, 1)
@@ -876,10 +879,18 @@ scale = Vector2(2.3, 2.42273)
 texture = ExtResource("5_isnn4")
 
 [node name="Sprite2D22" type="Sprite2D" parent="."]
-z_index = 1
+z_index = 7
 position = Vector2(3648, -461.168)
 scale = Vector2(2.3, 2.37307)
 texture = ExtResource("5_isnn4")
+
+[node name="EndArea" type="Area2D" parent="Sprite2D22"]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D22/EndArea"]
+position = Vector2(4.75171, -1.31372)
+shape = SubResource("RectangleShape2D_6l503")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2(-1322.98, -813.691)
@@ -1673,6 +1684,8 @@ wait_time = 2.0
 autostart = true
 
 [node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(-1763.21, -450.714)
@@ -1683,7 +1696,7 @@ position = Vector2(1200, -250)
 scale = Vector2(5, 5)
 
 [node name="AlienPlant5" parent="." instance=ExtResource("20_abh7n")]
-position = Vector2(2446.43, -800)
+position = Vector2(2700, -800)
 rotation = 3.14159
 scale = Vector2(5, 5)
 
@@ -1701,7 +1714,7 @@ texture = ExtResource("21_lxr2a")
 autostart = true
 
 [node name="Area2D3" type="Area2D" parent="."]
-position = Vector2(3250, -525)
+position = Vector2(3500, -525)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
 position = Vector2(17.8571, 71.4286)
@@ -1811,6 +1824,7 @@ volume_db = 0.35
 pitch_scale = 0.75
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Sprite2D22/EndArea" to="." method="_on_end_area_area_entered"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
